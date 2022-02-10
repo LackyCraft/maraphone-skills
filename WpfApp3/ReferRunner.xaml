@@ -7,7 +7,7 @@
       x:Class="WpfApp3.Page2"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Page2">
+      Title="Спонсировать бегунов">
 
     <Grid Background="White">
         <Grid.RowDefinitions>
@@ -23,7 +23,8 @@
             </Grid.ColumnDefinitions>
 
             <TextBlock Text="MARAPHONE SKILLS 2022"  Grid.Column="1" Foreground="White" TextAlignment="Left" FontWeight="Bold" FontSize="36" Margin="0,15,0,0"/>
-            <Button Content="Назад" Grid.Column="0" Background="{StaticResource Grey}"  Height="30" VerticalAlignment="Top" Margin="5,19,5,0"/>
+            <Button Content="Назад" Grid.Column="0" Background="{StaticResource Grey}"  Height="30" VerticalAlignment="Top" Margin="5,19,5,0" Click="buttonBack"/>
+
         </Grid>
 
         <Grid Grid.Row="1">
@@ -62,7 +63,7 @@
                     </Grid.RowDefinitions>
                     <TextBlock  Foreground="{StaticResource DarkGrey}" Text="Фонд кошек" TextAlignment="Center" Margin="0,6,0,0" FontSize="18"/>
                     <TextBlock Text="Сумма пожертвования" Foreground="{StaticResource Grey}" Grid.Row="1" FontWeight="Bold" FontSize="18" TextAlignment="Center"/>
-                    <TextBlock Text="$0" Foreground="{StaticResource Grey}" Grid.Row="2" FontSize="90" TextAlignment="Center"/>
+                    <TextBlock Text="$0" x:Name="payTextBlock" Foreground="{StaticResource Grey}" Grid.Row="2" FontSize="90" TextAlignment="Center"/>
 
                     <Grid  Grid.Row="3">
                         <Grid.ColumnDefinitions>
@@ -71,17 +72,17 @@
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
                         <Button Content="-" Background="{StaticResource LightGrey}" HorizontalAlignment="Right" Height="29" VerticalAlignment="Top" Width="83"/>
-                        <TextBox Grid.Column="1" Background="White" HorizontalAlignment="Center" Height="29" VerticalAlignment="Top" Width="83"/>
+                        <TextBox  Text="0" TextChanged="payBoxTextChanged" x:Name="payBox" TextAlignment="Center" Grid.Column="1" Background="White" HorizontalAlignment="Center" Height="29" VerticalAlignment="Top" Width="83" />
                         <Button Grid.Column="2" Content="+" Background="{StaticResource LightGrey}" HorizontalAlignment="Left" Height="29" VerticalAlignment="Top" Width="83"/>
                     </Grid>
 
                     <Grid  Grid.Row="4">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
+                            <ColumnDefinition Width="200"/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
-                        <Button Content="Заполнить" Background="{StaticResource LightGrey}" Height="29" VerticalAlignment="Top" Margin="0,10,0,0" Click="Button_Click_1" />
-                        <Button Grid.Column="1" Content="Отмена" Background="{StaticResource LightGrey}" Height="29" VerticalAlignment="Top" Margin="0,10,0,0"/>
+                        <Button Content="Заполнить" Background="{StaticResource LightGrey}" Height="29" VerticalAlignment="Top" Margin="50,10,10,0"/>
+                        <Button Grid.Column="1" Content="Отмена" Background="{StaticResource LightGrey}" Height="29" VerticalAlignment="Top" Margin="0,10,50,0"/>
                     </Grid>
 
                 </Grid>
@@ -102,7 +103,7 @@
 
                     <StackPanel Grid.Column="1">
                         <TextBox Margin="5,5,0,0"/>
-                        <ComboBox x:Name="Runner"  Margin="5,5,0,0"/>
+                        <ComboBox x:Name="Runner"  Margin="5,5,0,0" DisplayMemberPath="FirstName"/>
                         <TextBox Margin="5,5,0,0"/>
                         <TextBox Margin="5,5,0,0"/>
                         <TextBox Margin="5,5,0,0"/>

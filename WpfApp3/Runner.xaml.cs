@@ -24,5 +24,9 @@ namespace WpfApp3
         {
             InitializeComponent();
         }
+        private void buttonBack(object sender, RoutedEventArgs e)
+        {
+            this.Content = null;
+        }
     }
 }

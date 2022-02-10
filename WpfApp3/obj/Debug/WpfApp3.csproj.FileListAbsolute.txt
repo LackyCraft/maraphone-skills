@@ -84,3 +84,14 @@ C:\Users\ExamWSR\Desktop\maraphone-skills\WpfApp3\bin\Debug\ru\EntityFramework.r
 C:\Users\ExamWSR\Desktop\maraphone-skills\WpfApp3\obj\Debug\WpfApp3_Content.g.cs
 C:\Users\ExamWSR\Desktop\maraphone-skills\WpfApp3\obj\Debug\WpfApp3.csproj.CopyComplete
 C:\Users\ExamWSR\Desktop\maraphone-skills\WpfApp3\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Даниил\Desktop\Marafon\WpfApp3\bin\Debug\EntityFramework.dll
+C:\Users\Даниил\Desktop\Marafon\WpfApp3\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Даниил\Desktop\Marafon\WpfApp3\bin\Debug\EntityFramework.xml
+C:\Users\Даниил\Desktop\Marafon\WpfApp3\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Даниил\Desktop\Marafon\WpfApp3\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\Даниил\Desktop\Marafon\WpfApp3\obj\Debug\Info.g.cs
+C:\Users\Даниил\Desktop\Marafon\WpfApp3\obj\Debug\ReferRunner.g.cs
+C:\Users\Даниил\Desktop\Marafon\WpfApp3\obj\Debug\WpfApp3_Content.g.cs
+C:\Users\Даниил\Desktop\Marafon\WpfApp3\obj\Debug\Info.baml
+C:\Users\Даниил\Desktop\Marafon\WpfApp3\obj\Debug\ReferRunner.baml
+C:\Users\Даниил\Desktop\Marafon\WpfApp3\obj\Debug\WpfApp3.csproj.CopyComplete

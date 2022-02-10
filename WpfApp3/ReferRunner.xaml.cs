@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,22 +21,33 @@ namespace WpfApp3
     /// </summary>
     public partial class Page2 : Page
     {
+
         public Page2()
         {
             InitializeComponent();
 
             //Заменить потом на имя через users
-            Runner.ItemsSource = ws2016Entities10.GetContext().Gender.ToList();
+
+            Runner.ItemsSource = ws2016Entities10.GetContext().User.ToList().ToList();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void payBoxTextChanged(object sender, TextChangedEventArgs e)
         {
-            
+            int intRes;
+            bool isInt = Int32.TryParse(payBox.Text, out intRes);
+            if (isInt && intRes >= 0)
+            payTextBlock.Text = "$" + payBox.Text;
+            else
+            {
+                MessageBox.Show("Введите целое, положительное число");
+                payTextBlock.Text = "$0";
+                payBox.Text = "0";
+            }
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void buttonBack(object sender, RoutedEventArgs e)
         {
-
+            this.Content = null;
         }
     }
 }
