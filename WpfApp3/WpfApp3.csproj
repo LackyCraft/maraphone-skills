@@ -68,6 +68,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ReferRanner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Runner.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -78,6 +82,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ReferRanner.xaml.cs">
+      <DependentUpon>ReferRanner.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Runner.xaml.cs">
       <DependentUpon>Runner.xaml</DependentUpon>
     </Compile>
@@ -105,6 +112,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Pages\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
