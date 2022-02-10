@@ -75,6 +75,8 @@ namespace WpfApp5
             //nav = NavigationService.GetNavigationService(this);
        if(sender == runnerMain)
                 frame.NavigationService.Navigate(new Uri("Runner.xaml", UriKind.Relative));
+       if (sender == ReferRunner)
+                frame.NavigationService.Navigate(new Uri("ReferRunner.xaml", UriKind.Relative));
             
 
         }
