@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:WpfApp5"
         mc:Ignorable="d"
         Title="Marathon Skills 2022" Height="450" Width="743"
-        MinHeight="570"
-        MinWidth="820"
+        MinHeight="700"
+        MinWidth="1300"
         >
 
     <Grid>

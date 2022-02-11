@@ -36,25 +36,9 @@ namespace WpfApp3 {
     
     
     /// <summary>
-    /// Page2
+    /// Window1
     /// </summary>
-    public partial class Page2 : System.Windows.Controls.Page, System.Windows.Markup.IComponentConnector {
-        
-        
-        #line 31 "..\..\Window1.xaml"
-        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Grid Column1;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 38 "..\..\Window1.xaml"
-        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Grid Column2;
-        
-        #line default
-        #line hidden
+    public partial class Window1 : System.Windows.Window, System.Windows.Markup.IComponentConnector {
         
         private bool _contentLoaded;
         
@@ -84,15 +68,6 @@ namespace WpfApp3 {
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
         void System.Windows.Markup.IComponentConnector.Connect(int connectionId, object target) {
-            switch (connectionId)
-            {
-            case 1:
-            this.Column1 = ((System.Windows.Controls.Grid)(target));
-            return;
-            case 2:
-            this.Column2 = ((System.Windows.Controls.Grid)(target));
-            return;
-            }
             this._contentLoaded = true;
         }
     }

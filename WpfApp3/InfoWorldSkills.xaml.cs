@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace WpfApp3
 {
     /// <summary>
-    /// Логика взаимодействия для Page3.xaml
+    /// Логика взаимодействия для Page5.xaml
     /// </summary>
-    public partial class Page3 : Page
+    public partial class Page5 : Page
     {
-        public Page3()
+        public Page5()
         {
             InitializeComponent();
         }
@@ -28,17 +28,6 @@ namespace WpfApp3
         {
             this.Content = null;
         }
-        private void ScrolPage(object sender, RoutedEventArgs e)
-        {
-            if (sender == InfoWorldSkills)
-            {
-                frame.NavigationService.Navigate(new Uri("InfoWorldSkills.xaml", UriKind.Relative));
-            }
-        }
 
-        private void InfoWorldSkills_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }

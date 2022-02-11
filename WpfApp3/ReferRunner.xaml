@@ -23,7 +23,7 @@
             </Grid.ColumnDefinitions>
 
             <TextBlock Text="MARAPHONE SKILLS 2022"  Grid.Column="1" Foreground="White" TextAlignment="Left" FontWeight="Bold" FontSize="36" Margin="0,15,0,0"/>
-            <Button Content="Назад" Grid.Column="0" Background="{StaticResource Grey}"  Height="30" VerticalAlignment="Top" Margin="5,19,5,0" Click="buttonBack"/>
+            <Button Click="buttonBack" Content="Назад" Grid.Column="0" Background="{StaticResource Grey}"  Height="30" VerticalAlignment="Top" Margin="5,19,5,0"/>
 
         </Grid>
 
@@ -71,20 +71,20 @@
                             <ColumnDefinition/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
-                        <Button Content="-" Background="{StaticResource LightGrey}" HorizontalAlignment="Right" Height="29" VerticalAlignment="Top" Width="83"/>
+                        <Button Content="-" Background="{StaticResource LightGrey}" HorizontalAlignment="Right" Height="29" VerticalAlignment="Top" Width="83" Click="buttonMinus"/>
                         <TextBox  Text="0" TextChanged="payBoxTextChanged" x:Name="payBox" TextAlignment="Center" Grid.Column="1" Background="White" HorizontalAlignment="Center" Height="29" VerticalAlignment="Top" Width="83" />
-                        <Button Grid.Column="2" Content="+" Background="{StaticResource LightGrey}" HorizontalAlignment="Left" Height="29" VerticalAlignment="Top" Width="83"/>
+                        <Button Click="buttonPlus" Grid.Column="2" Content="+" Background="{StaticResource LightGrey}" HorizontalAlignment="Left" Height="29" VerticalAlignment="Top" Width="83"/>
                     </Grid>
 
                     <Grid  Grid.Row="4">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="0.2*"/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
-                        <Button Content="Заполнить" Background="{StaticResource LightGrey}" Height="29" VerticalAlignment="Top" Margin="50,10,10,0"/>
-                        <Button Grid.Column="1" Content="Отмена" Background="{StaticResource LightGrey}" Height="29" VerticalAlignment="Top" Margin="0,10,50,0"/>
+                        <Button Content="Заполнить" Background="{StaticResource LightGrey}" HorizontalAlignment="Right" Height="29" VerticalAlignment="Top" Width="132" Margin="0,5,0,0"  Click="buttonAdd" />
+                        <Button Grid.Column="2" Content="отмена" Background="{StaticResource LightGrey}" HorizontalAlignment="Left" Height="29" VerticalAlignment="Top" Width="134" Margin="0,5,0,0" Click="buttonCancel"/>
                     </Grid>
-
                 </Grid>
 
                 <Grid Grid.Row="1" Grid.Column="0" Margin="0,5,0,0">
@@ -93,21 +93,22 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <StackPanel Grid.Column="0">
-                        <TextBlock  Foreground="{StaticResource DarkGrey}" Text="Ваше имя:" TextAlignment="Right" Margin="0,6,0,0" FontSize="18"/>
-                        <TextBlock  Foreground="{StaticResource DarkGrey}" Text="Бегун:" TextAlignment="Right" Margin="0,6,0,0" FontSize="18"/>
-                        <TextBlock  Foreground="{StaticResource DarkGrey}" Text="Карта:" TextAlignment="Right" Margin="0,6,0,0" FontSize="18"/>
-                        <TextBlock  Foreground="{StaticResource DarkGrey}" Text="Номер карты#:" TextAlignment="Right" Margin="0,6,0,0" FontSize="18"/>
-                        <TextBlock  Foreground="{StaticResource DarkGrey}" Text="Срок действия:" TextAlignment="Right" Margin="0,6,0,0" FontSize="18"/>
-                        <TextBlock  Foreground="{StaticResource DarkGrey}" Text="CVC:" TextAlignment="Right" Margin="0,6,0,0" FontSize="18"/>
+                        <TextBlock Foreground="{StaticResource DarkGrey}" Text="Ваше имя:" TextAlignment="Right" Margin="0,6,0,0" FontSize="18"/>
+                        <TextBlock x:Name="textRunner"  Foreground="{StaticResource DarkGrey}" Text="Бегун:" TextAlignment="Right" Margin="0,6,0,0" FontSize="18"/>
+                        <TextBlock Foreground="{StaticResource DarkGrey}" Text="Карта:" TextAlignment="Right" Margin="0,6,0,0" FontSize="18"/>
+                        <TextBlock Foreground="{StaticResource DarkGrey}" Text="Номер карты#:" TextAlignment="Right" Margin="0,6,0,0" FontSize="18"/>
+                        <TextBlock Foreground="{StaticResource DarkGrey}" Text="Срок действия:" TextAlignment="Right" Margin="0,6,0,0" FontSize="18"/>
+                        <TextBlock Foreground="{StaticResource DarkGrey}" Text="CVC:" TextAlignment="Right" Margin="0,6,0,0" FontSize="18"/>
                     </StackPanel>
 
                     <StackPanel Grid.Column="1">
-                        <TextBox Margin="5,5,0,0"/>
+                        <TextBox x:Name="textName" Margin="5,5,0,0"/>
                         <ComboBox x:Name="Runner"  Margin="5,5,0,0" DisplayMemberPath="FirstName"/>
-                        <TextBox Margin="5,5,0,0"/>
-                        <TextBox Margin="5,5,0,0"/>
-                        <TextBox Margin="5,5,0,0"/>
-                        <TextBox Margin="5,5,0,0"/>
+                        <TextBox x:Name="textCard" Margin="5,5,0,0"/>
+                        <TextBox x:Name="textCardNumber" Margin="5,5,0,0"/>
+                        <TextBox x:Name="textPeriod"  Margin="5,5,0,0"/>
+                        <TextBox x:Name="textCodeCVC" Margin="5,5,0,0"/>
+                        <TextBlock x:Name="ErrorMessage"  Foreground="Red" Text="" TextAlignment="Center" Margin="0,6,0,0" FontSize="10"/>
                     </StackPanel>
 
                 </Grid>
