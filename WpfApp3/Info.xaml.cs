@@ -30,10 +30,12 @@ namespace WpfApp3
         }
         private void ScrolPage(object sender, RoutedEventArgs e)
         {
-            if (sender == InfoWorldSkills)
+            if (sender == infoWorldSkills)
             {
                 frame.NavigationService.Navigate(new Uri("InfoWorldSkills.xaml", UriKind.Relative));
             }
+            if (sender == oldResult)
+                frame.NavigationService.Navigate(new Uri("OldResult.xaml", UriKind.Relative));
         }
 
         private void InfoWorldSkills_Click(object sender, RoutedEventArgs e)

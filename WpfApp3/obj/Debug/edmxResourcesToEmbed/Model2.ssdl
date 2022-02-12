@@ -1,0 +1,1504 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище ws2016Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Charity">
+    <Key>
+      <PropertyRef Name="CharityId" />
+    </Key>
+    <Property Name="CharityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CharityName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="CharityDescription" Type="nvarchar" MaxLength="2000" />
+    <Property Name="CharityLogo" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="CountryCode" />
+    </Key>
+    <Property Name="CountryCode" Type="nchar" MaxLength="3" Nullable="false" />
+    <Property Name="CountryName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="CountryFlag" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Event">
+    <Key>
+      <PropertyRef Name="EventId" />
+    </Key>
+    <Property Name="EventId" Type="nchar" MaxLength="6" Nullable="false" />
+    <Property Name="EventName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="EventTypeId" Type="nchar" MaxLength="2" Nullable="false" />
+    <Property Name="MarathonId" Type="tinyint" Nullable="false" />
+    <Property Name="StartDateTime" Type="datetime" />
+    <Property Name="Cost" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="MaxParticipants" Type="smallint" />
+  </EntityType>
+  <EntityType Name="EventType">
+    <Key>
+      <PropertyRef Name="EventTypeId" />
+    </Key>
+    <Property Name="EventTypeId" Type="nchar" MaxLength="2" Nullable="false" />
+    <Property Name="EventTypeName" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Gender">
+    <Key>
+      <PropertyRef Name="Gender" />
+    </Key>
+    <Property Name="Gender" Type="nvarchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Marathon">
+    <Key>
+      <PropertyRef Name="MarathonId" />
+    </Key>
+    <Property Name="MarathonId" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MarathonName" Type="nvarchar" MaxLength="80" Nullable="false" />
+    <Property Name="CityName" Type="nvarchar" MaxLength="80" />
+    <Property Name="CountryCode" Type="nchar" MaxLength="3" Nullable="false" />
+    <Property Name="YearHeld" Type="smallint" />
+  </EntityType>
+  <EntityType Name="Position">
+    <Key>
+      <PropertyRef Name="PositionId" />
+    </Key>
+    <Property Name="PositionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PositionName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PositionDescription" Type="varchar" MaxLength="1000" />
+    <Property Name="PayPeriod" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Payrate" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RaceKitOption">
+    <Key>
+      <PropertyRef Name="RaceKitOptionId" />
+    </Key>
+    <Property Name="RaceKitOptionId" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="RaceKitOption" Type="nvarchar" MaxLength="80" Nullable="false" />
+    <Property Name="Cost" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Registration">
+    <Key>
+      <PropertyRef Name="RegistrationId" />
+    </Key>
+    <Property Name="RegistrationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RunnerId" Type="int" Nullable="false" />
+    <Property Name="RegistrationDateTime" Type="datetime" Nullable="false" />
+    <Property Name="RaceKitOptionId" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="RegistrationStatusId" Type="tinyint" Nullable="false" />
+    <Property Name="Cost" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="CharityId" Type="int" Nullable="false" />
+    <Property Name="SponsorshipTarget" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RegistrationEvent">
+    <Key>
+      <PropertyRef Name="RegistrationEventId" />
+    </Key>
+    <Property Name="RegistrationEventId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RegistrationId" Type="int" Nullable="false" />
+    <Property Name="EventId" Type="nchar" MaxLength="6" Nullable="false" />
+    <Property Name="BibNumber" Type="smallint" />
+    <Property Name="RaceTime" Type="int" />
+  </EntityType>
+  <EntityType Name="RegistrationStatus">
+    <Key>
+      <PropertyRef Name="RegistrationStatusId" />
+    </Key>
+    <Property Name="RegistrationStatusId" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RegistrationStatus" Type="nvarchar" MaxLength="80" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Runner">
+    <Key>
+      <PropertyRef Name="RunnerId" />
+    </Key>
+    <Property Name="RunnerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="DateOfBirth" Type="datetime" />
+    <Property Name="CountryCode" Type="nchar" MaxLength="3" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sponsorship">
+    <Key>
+      <PropertyRef Name="SponsorshipId" />
+    </Key>
+    <Property Name="SponsorshipId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SponsorName" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="RegistrationId" Type="int" Nullable="false" />
+    <Property Name="Amount" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Staff">
+    <Key>
+      <PropertyRef Name="StaffId" />
+    </Key>
+    <Property Name="StaffId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="DateOfDBirth" Type="datetime" Nullable="false" />
+    <Property Name="Gender" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="PositionId" Type="int" Nullable="false" />
+    <Property Name="Comments" Type="varchar" MaxLength="2000" />
+  </EntityType>
+  <EntityType Name="Timesheet">
+    <Key>
+      <PropertyRef Name="TimesheetId" />
+    </Key>
+    <Property Name="TimesheetId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StaffId" Type="int" Nullable="false" />
+    <Property Name="StartDateTime" Type="datetime" />
+    <Property Name="EndDateTime" Type="datetime" />
+    <Property Name="PayAmount" Type="decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Email" />
+    </Key>
+    <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="80" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="80" />
+    <Property Name="RoleId" Type="nchar" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Volunteer">
+    <Key>
+      <PropertyRef Name="VolunteerId" />
+    </Key>
+    <Property Name="VolunteerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="80" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="80" />
+    <Property Name="CountryCode" Type="nchar" MaxLength="3" Nullable="false" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Event__EventType__1DB06A4F">
+    <End Role="EventType" Type="Self.EventType" Multiplicity="1" />
+    <End Role="Event" Type="Self.Event" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EventType">
+        <PropertyRef Name="EventTypeId" />
+      </Principal>
+      <Dependent Role="Event">
+        <PropertyRef Name="EventTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Event__MarathonI__1EA48E88">
+    <End Role="Marathon" Type="Self.Marathon" Multiplicity="1" />
+    <End Role="Event" Type="Self.Event" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Marathon">
+        <PropertyRef Name="MarathonId" />
+      </Principal>
+      <Dependent Role="Event">
+        <PropertyRef Name="MarathonId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Marathon__Countr__1F98B2C1">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="Marathon" Type="Self.Marathon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryCode" />
+      </Principal>
+      <Dependent Role="Marathon">
+        <PropertyRef Name="CountryCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Registrat__Chari__208CD6FA">
+    <End Role="Charity" Type="Self.Charity" Multiplicity="1" />
+    <End Role="Registration" Type="Self.Registration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Charity">
+        <PropertyRef Name="CharityId" />
+      </Principal>
+      <Dependent Role="Registration">
+        <PropertyRef Name="CharityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Registrat__RaceK__2180FB33">
+    <End Role="RaceKitOption" Type="Self.RaceKitOption" Multiplicity="1" />
+    <End Role="Registration" Type="Self.Registration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RaceKitOption">
+        <PropertyRef Name="RaceKitOptionId" />
+      </Principal>
+      <Dependent Role="Registration">
+        <PropertyRef Name="RaceKitOptionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Registrat__Regis__22751F6C">
+    <End Role="RegistrationStatus" Type="Self.RegistrationStatus" Multiplicity="1" />
+    <End Role="Registration" Type="Self.Registration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RegistrationStatus">
+        <PropertyRef Name="RegistrationStatusId" />
+      </Principal>
+      <Dependent Role="Registration">
+        <PropertyRef Name="RegistrationStatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Runner__CountryC__05D8E0BE">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="Runner" Type="Self.Runner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryCode" />
+      </Principal>
+      <Dependent Role="Runner">
+        <PropertyRef Name="CountryCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Runner__CountryC__0C85DE4D">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="Runner" Type="Self.Runner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryCode" />
+      </Principal>
+      <Dependent Role="Runner">
+        <PropertyRef Name="CountryCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Runner__CountryC__1332DBDC">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="Runner" Type="Self.Runner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryCode" />
+      </Principal>
+      <Dependent Role="Runner">
+        <PropertyRef Name="CountryCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Runner__CountryC__19DFD96B">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="Runner" Type="Self.Runner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryCode" />
+      </Principal>
+      <Dependent Role="Runner">
+        <PropertyRef Name="CountryCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Runner__CountryC__2645B050">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="Runner" Type="Self.Runner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryCode" />
+      </Principal>
+      <Dependent Role="Runner">
+        <PropertyRef Name="CountryCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Runner__CountryC__4222D4EF">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="Runner" Type="Self.Runner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryCode" />
+      </Principal>
+      <Dependent Role="Runner">
+        <PropertyRef Name="CountryCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Runner__CountryC__5DCAEF64">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="Runner" Type="Self.Runner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryCode" />
+      </Principal>
+      <Dependent Role="Runner">
+        <PropertyRef Name="CountryCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Runner__CountryC__6477ECF3">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="Runner" Type="Self.Runner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryCode" />
+      </Principal>
+      <Dependent Role="Runner">
+        <PropertyRef Name="CountryCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Runner__CountryC__6B24EA82">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="Runner" Type="Self.Runner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryCode" />
+      </Principal>
+      <Dependent Role="Runner">
+        <PropertyRef Name="CountryCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Runner__CountryC__71D1E811">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="Runner" Type="Self.Runner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryCode" />
+      </Principal>
+      <Dependent Role="Runner">
+        <PropertyRef Name="CountryCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Runner__CountryC__787EE5A0">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="Runner" Type="Self.Runner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryCode" />
+      </Principal>
+      <Dependent Role="Runner">
+        <PropertyRef Name="CountryCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Runner__CountryC__7F2BE32F">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="Runner" Type="Self.Runner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryCode" />
+      </Principal>
+      <Dependent Role="Runner">
+        <PropertyRef Name="CountryCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Runner__Email__03F0984C">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Runner" Type="Self.Runner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Email" />
+      </Principal>
+      <Dependent Role="Runner">
+        <PropertyRef Name="Email" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Runner__Email__0A9D95DB">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Runner" Type="Self.Runner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Email" />
+      </Principal>
+      <Dependent Role="Runner">
+        <PropertyRef Name="Email" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Runner__Email__114A936A">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Runner" Type="Self.Runner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Email" />
+      </Principal>
+      <Dependent Role="Runner">
+        <PropertyRef Name="Email" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Runner__Email__17F790F9">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Runner" Type="Self.Runner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Email" />
+      </Principal>
+      <Dependent Role="Runner">
+        <PropertyRef Name="Email" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Runner__Email__2739D489">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Runner" Type="Self.Runner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Email" />
+      </Principal>
+      <Dependent Role="Runner">
+        <PropertyRef Name="Email" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Runner__Email__403A8C7D">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Runner" Type="Self.Runner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Email" />
+      </Principal>
+      <Dependent Role="Runner">
+        <PropertyRef Name="Email" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Runner__Email__5BE2A6F2">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Runner" Type="Self.Runner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Email" />
+      </Principal>
+      <Dependent Role="Runner">
+        <PropertyRef Name="Email" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Runner__Email__628FA481">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Runner" Type="Self.Runner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Email" />
+      </Principal>
+      <Dependent Role="Runner">
+        <PropertyRef Name="Email" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Runner__Email__693CA210">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Runner" Type="Self.Runner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Email" />
+      </Principal>
+      <Dependent Role="Runner">
+        <PropertyRef Name="Email" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Runner__Email__6FE99F9F">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Runner" Type="Self.Runner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Email" />
+      </Principal>
+      <Dependent Role="Runner">
+        <PropertyRef Name="Email" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Runner__Email__76969D2E">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Runner" Type="Self.Runner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Email" />
+      </Principal>
+      <Dependent Role="Runner">
+        <PropertyRef Name="Email" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Runner__Email__7D439ABD">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Runner" Type="Self.Runner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Email" />
+      </Principal>
+      <Dependent Role="Runner">
+        <PropertyRef Name="Email" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Runner__Gender__04E4BC85">
+    <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+    <End Role="Runner" Type="Self.Runner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="Gender" />
+      </Principal>
+      <Dependent Role="Runner">
+        <PropertyRef Name="Gender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Runner__Gender__0B91BA14">
+    <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+    <End Role="Runner" Type="Self.Runner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="Gender" />
+      </Principal>
+      <Dependent Role="Runner">
+        <PropertyRef Name="Gender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Runner__Gender__123EB7A3">
+    <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+    <End Role="Runner" Type="Self.Runner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="Gender" />
+      </Principal>
+      <Dependent Role="Runner">
+        <PropertyRef Name="Gender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Runner__Gender__18EBB532">
+    <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+    <End Role="Runner" Type="Self.Runner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="Gender" />
+      </Principal>
+      <Dependent Role="Runner">
+        <PropertyRef Name="Gender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Runner__Gender__282DF8C2">
+    <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+    <End Role="Runner" Type="Self.Runner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="Gender" />
+      </Principal>
+      <Dependent Role="Runner">
+        <PropertyRef Name="Gender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Runner__Gender__412EB0B6">
+    <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+    <End Role="Runner" Type="Self.Runner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="Gender" />
+      </Principal>
+      <Dependent Role="Runner">
+        <PropertyRef Name="Gender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Runner__Gender__5CD6CB2B">
+    <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+    <End Role="Runner" Type="Self.Runner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="Gender" />
+      </Principal>
+      <Dependent Role="Runner">
+        <PropertyRef Name="Gender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Runner__Gender__6383C8BA">
+    <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+    <End Role="Runner" Type="Self.Runner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="Gender" />
+      </Principal>
+      <Dependent Role="Runner">
+        <PropertyRef Name="Gender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Runner__Gender__6A30C649">
+    <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+    <End Role="Runner" Type="Self.Runner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="Gender" />
+      </Principal>
+      <Dependent Role="Runner">
+        <PropertyRef Name="Gender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Runner__Gender__70DDC3D8">
+    <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+    <End Role="Runner" Type="Self.Runner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="Gender" />
+      </Principal>
+      <Dependent Role="Runner">
+        <PropertyRef Name="Gender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Runner__Gender__778AC167">
+    <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+    <End Role="Runner" Type="Self.Runner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="Gender" />
+      </Principal>
+      <Dependent Role="Runner">
+        <PropertyRef Name="Gender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Runner__Gender__7E37BEF6">
+    <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+    <End Role="Runner" Type="Self.Runner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="Gender" />
+      </Principal>
+      <Dependent Role="Runner">
+        <PropertyRef Name="Gender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Staff__PositionI__534D60F1">
+    <End Role="Position" Type="Self.Position" Multiplicity="1" />
+    <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Position">
+        <PropertyRef Name="PositionId" />
+      </Principal>
+      <Dependent Role="Staff">
+        <PropertyRef Name="PositionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Timesheet__Staff__5629CD9C">
+    <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+    <End Role="Timesheet" Type="Self.Timesheet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="StaffId" />
+      </Principal>
+      <Dependent Role="Timesheet">
+        <PropertyRef Name="StaffId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__User__RoleId__02FC7413">
+    <End Role="Role" Type="Self.Role" Multiplicity="1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__User__RoleId__09A971A2">
+    <End Role="Role" Type="Self.Role" Multiplicity="1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__User__RoleId__10566F31">
+    <End Role="Role" Type="Self.Role" Multiplicity="1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__User__RoleId__17036CC0">
+    <End Role="Role" Type="Self.Role" Multiplicity="1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__User__RoleId__2BFE89A6">
+    <End Role="Role" Type="Self.Role" Multiplicity="1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__User__RoleId__3F466844">
+    <End Role="Role" Type="Self.Role" Multiplicity="1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__User__RoleId__5AEE82B9">
+    <End Role="Role" Type="Self.Role" Multiplicity="1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__User__RoleId__619B8048">
+    <End Role="Role" Type="Self.Role" Multiplicity="1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__User__RoleId__68487DD7">
+    <End Role="Role" Type="Self.Role" Multiplicity="1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__User__RoleId__6EF57B66">
+    <End Role="Role" Type="Self.Role" Multiplicity="1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__User__RoleId__75A278F5">
+    <End Role="Role" Type="Self.Role" Multiplicity="1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__User__RoleId__7C4F7684">
+    <End Role="Role" Type="Self.Role" Multiplicity="1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Volunteer__Count__01142BA1">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryCode" />
+      </Principal>
+      <Dependent Role="Volunteer">
+        <PropertyRef Name="CountryCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Volunteer__Count__07C12930">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryCode" />
+      </Principal>
+      <Dependent Role="Volunteer">
+        <PropertyRef Name="CountryCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Volunteer__Count__0E6E26BF">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryCode" />
+      </Principal>
+      <Dependent Role="Volunteer">
+        <PropertyRef Name="CountryCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Volunteer__Count__151B244E">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryCode" />
+      </Principal>
+      <Dependent Role="Volunteer">
+        <PropertyRef Name="CountryCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Volunteer__Count__1BC821DD">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryCode" />
+      </Principal>
+      <Dependent Role="Volunteer">
+        <PropertyRef Name="CountryCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Volunteer__Count__2CF2ADDF">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryCode" />
+      </Principal>
+      <Dependent Role="Volunteer">
+        <PropertyRef Name="CountryCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Volunteer__Count__440B1D61">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryCode" />
+      </Principal>
+      <Dependent Role="Volunteer">
+        <PropertyRef Name="CountryCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Volunteer__Count__5FB337D6">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryCode" />
+      </Principal>
+      <Dependent Role="Volunteer">
+        <PropertyRef Name="CountryCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Volunteer__Count__66603565">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryCode" />
+      </Principal>
+      <Dependent Role="Volunteer">
+        <PropertyRef Name="CountryCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Volunteer__Count__6D0D32F4">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryCode" />
+      </Principal>
+      <Dependent Role="Volunteer">
+        <PropertyRef Name="CountryCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Volunteer__Count__73BA3083">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryCode" />
+      </Principal>
+      <Dependent Role="Volunteer">
+        <PropertyRef Name="CountryCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Volunteer__Count__7A672E12">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryCode" />
+      </Principal>
+      <Dependent Role="Volunteer">
+        <PropertyRef Name="CountryCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Volunteer__Gende__00200768">
+    <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+    <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="Gender" />
+      </Principal>
+      <Dependent Role="Volunteer">
+        <PropertyRef Name="Gender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Volunteer__Gende__06CD04F7">
+    <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+    <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="Gender" />
+      </Principal>
+      <Dependent Role="Volunteer">
+        <PropertyRef Name="Gender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Volunteer__Gende__0D7A0286">
+    <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+    <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="Gender" />
+      </Principal>
+      <Dependent Role="Volunteer">
+        <PropertyRef Name="Gender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Volunteer__Gende__14270015">
+    <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+    <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="Gender" />
+      </Principal>
+      <Dependent Role="Volunteer">
+        <PropertyRef Name="Gender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Volunteer__Gende__1AD3FDA4">
+    <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+    <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="Gender" />
+      </Principal>
+      <Dependent Role="Volunteer">
+        <PropertyRef Name="Gender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Volunteer__Gende__2DE6D218">
+    <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+    <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="Gender" />
+      </Principal>
+      <Dependent Role="Volunteer">
+        <PropertyRef Name="Gender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Volunteer__Gende__4316F928">
+    <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+    <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="Gender" />
+      </Principal>
+      <Dependent Role="Volunteer">
+        <PropertyRef Name="Gender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Volunteer__Gende__5EBF139D">
+    <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+    <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="Gender" />
+      </Principal>
+      <Dependent Role="Volunteer">
+        <PropertyRef Name="Gender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Volunteer__Gende__656C112C">
+    <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+    <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="Gender" />
+      </Principal>
+      <Dependent Role="Volunteer">
+        <PropertyRef Name="Gender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Volunteer__Gende__6C190EBB">
+    <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+    <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="Gender" />
+      </Principal>
+      <Dependent Role="Volunteer">
+        <PropertyRef Name="Gender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Volunteer__Gende__72C60C4A">
+    <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+    <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="Gender" />
+      </Principal>
+      <Dependent Role="Volunteer">
+        <PropertyRef Name="Gender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Volunteer__Gende__797309D9">
+    <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+    <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="Gender" />
+      </Principal>
+      <Dependent Role="Volunteer">
+        <PropertyRef Name="Gender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Staff_Position">
+    <End Role="Position" Type="Self.Position" Multiplicity="1" />
+    <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Position">
+        <PropertyRef Name="PositionId" />
+      </Principal>
+      <Dependent Role="Staff">
+        <PropertyRef Name="PositionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Timesheet_Staff">
+    <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+    <End Role="Timesheet" Type="Self.Timesheet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="StaffId" />
+      </Principal>
+      <Dependent Role="Timesheet">
+        <PropertyRef Name="StaffId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище ws2016ModelContainer">
+    <EntitySet Name="Charity" EntityType="Self.Charity" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Event" EntityType="Self.Event" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EventType" EntityType="Self.EventType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Gender" EntityType="Self.Gender" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Marathon" EntityType="Self.Marathon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Position" EntityType="Self.Position" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RaceKitOption" EntityType="Self.RaceKitOption" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Registration" EntityType="Self.Registration" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RegistrationEvent" EntityType="Self.RegistrationEvent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RegistrationStatus" EntityType="Self.RegistrationStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Runner" EntityType="Self.Runner" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sponsorship" EntityType="Self.Sponsorship" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Staff" EntityType="Self.Staff" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Timesheet" EntityType="Self.Timesheet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Volunteer" EntityType="Self.Volunteer" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Event__EventType__1DB06A4F" Association="Self.FK__Event__EventType__1DB06A4F">
+      <End Role="EventType" EntitySet="EventType" />
+      <End Role="Event" EntitySet="Event" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Event__MarathonI__1EA48E88" Association="Self.FK__Event__MarathonI__1EA48E88">
+      <End Role="Marathon" EntitySet="Marathon" />
+      <End Role="Event" EntitySet="Event" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Marathon__Countr__1F98B2C1" Association="Self.FK__Marathon__Countr__1F98B2C1">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Marathon" EntitySet="Marathon" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Registrat__Chari__208CD6FA" Association="Self.FK__Registrat__Chari__208CD6FA">
+      <End Role="Charity" EntitySet="Charity" />
+      <End Role="Registration" EntitySet="Registration" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Registrat__RaceK__2180FB33" Association="Self.FK__Registrat__RaceK__2180FB33">
+      <End Role="RaceKitOption" EntitySet="RaceKitOption" />
+      <End Role="Registration" EntitySet="Registration" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Registrat__Regis__22751F6C" Association="Self.FK__Registrat__Regis__22751F6C">
+      <End Role="RegistrationStatus" EntitySet="RegistrationStatus" />
+      <End Role="Registration" EntitySet="Registration" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Runner__CountryC__05D8E0BE" Association="Self.FK__Runner__CountryC__05D8E0BE">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Runner" EntitySet="Runner" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Runner__CountryC__0C85DE4D" Association="Self.FK__Runner__CountryC__0C85DE4D">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Runner" EntitySet="Runner" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Runner__CountryC__1332DBDC" Association="Self.FK__Runner__CountryC__1332DBDC">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Runner" EntitySet="Runner" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Runner__CountryC__19DFD96B" Association="Self.FK__Runner__CountryC__19DFD96B">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Runner" EntitySet="Runner" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Runner__CountryC__2645B050" Association="Self.FK__Runner__CountryC__2645B050">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Runner" EntitySet="Runner" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Runner__CountryC__4222D4EF" Association="Self.FK__Runner__CountryC__4222D4EF">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Runner" EntitySet="Runner" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Runner__CountryC__5DCAEF64" Association="Self.FK__Runner__CountryC__5DCAEF64">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Runner" EntitySet="Runner" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Runner__CountryC__6477ECF3" Association="Self.FK__Runner__CountryC__6477ECF3">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Runner" EntitySet="Runner" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Runner__CountryC__6B24EA82" Association="Self.FK__Runner__CountryC__6B24EA82">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Runner" EntitySet="Runner" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Runner__CountryC__71D1E811" Association="Self.FK__Runner__CountryC__71D1E811">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Runner" EntitySet="Runner" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Runner__CountryC__787EE5A0" Association="Self.FK__Runner__CountryC__787EE5A0">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Runner" EntitySet="Runner" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Runner__CountryC__7F2BE32F" Association="Self.FK__Runner__CountryC__7F2BE32F">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Runner" EntitySet="Runner" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Runner__Email__03F0984C" Association="Self.FK__Runner__Email__03F0984C">
+      <End Role="User" EntitySet="User" />
+      <End Role="Runner" EntitySet="Runner" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Runner__Email__0A9D95DB" Association="Self.FK__Runner__Email__0A9D95DB">
+      <End Role="User" EntitySet="User" />
+      <End Role="Runner" EntitySet="Runner" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Runner__Email__114A936A" Association="Self.FK__Runner__Email__114A936A">
+      <End Role="User" EntitySet="User" />
+      <End Role="Runner" EntitySet="Runner" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Runner__Email__17F790F9" Association="Self.FK__Runner__Email__17F790F9">
+      <End Role="User" EntitySet="User" />
+      <End Role="Runner" EntitySet="Runner" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Runner__Email__2739D489" Association="Self.FK__Runner__Email__2739D489">
+      <End Role="User" EntitySet="User" />
+      <End Role="Runner" EntitySet="Runner" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Runner__Email__403A8C7D" Association="Self.FK__Runner__Email__403A8C7D">
+      <End Role="User" EntitySet="User" />
+      <End Role="Runner" EntitySet="Runner" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Runner__Email__5BE2A6F2" Association="Self.FK__Runner__Email__5BE2A6F2">
+      <End Role="User" EntitySet="User" />
+      <End Role="Runner" EntitySet="Runner" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Runner__Email__628FA481" Association="Self.FK__Runner__Email__628FA481">
+      <End Role="User" EntitySet="User" />
+      <End Role="Runner" EntitySet="Runner" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Runner__Email__693CA210" Association="Self.FK__Runner__Email__693CA210">
+      <End Role="User" EntitySet="User" />
+      <End Role="Runner" EntitySet="Runner" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Runner__Email__6FE99F9F" Association="Self.FK__Runner__Email__6FE99F9F">
+      <End Role="User" EntitySet="User" />
+      <End Role="Runner" EntitySet="Runner" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Runner__Email__76969D2E" Association="Self.FK__Runner__Email__76969D2E">
+      <End Role="User" EntitySet="User" />
+      <End Role="Runner" EntitySet="Runner" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Runner__Email__7D439ABD" Association="Self.FK__Runner__Email__7D439ABD">
+      <End Role="User" EntitySet="User" />
+      <End Role="Runner" EntitySet="Runner" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Runner__Gender__04E4BC85" Association="Self.FK__Runner__Gender__04E4BC85">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="Runner" EntitySet="Runner" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Runner__Gender__0B91BA14" Association="Self.FK__Runner__Gender__0B91BA14">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="Runner" EntitySet="Runner" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Runner__Gender__123EB7A3" Association="Self.FK__Runner__Gender__123EB7A3">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="Runner" EntitySet="Runner" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Runner__Gender__18EBB532" Association="Self.FK__Runner__Gender__18EBB532">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="Runner" EntitySet="Runner" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Runner__Gender__282DF8C2" Association="Self.FK__Runner__Gender__282DF8C2">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="Runner" EntitySet="Runner" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Runner__Gender__412EB0B6" Association="Self.FK__Runner__Gender__412EB0B6">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="Runner" EntitySet="Runner" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Runner__Gender__5CD6CB2B" Association="Self.FK__Runner__Gender__5CD6CB2B">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="Runner" EntitySet="Runner" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Runner__Gender__6383C8BA" Association="Self.FK__Runner__Gender__6383C8BA">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="Runner" EntitySet="Runner" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Runner__Gender__6A30C649" Association="Self.FK__Runner__Gender__6A30C649">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="Runner" EntitySet="Runner" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Runner__Gender__70DDC3D8" Association="Self.FK__Runner__Gender__70DDC3D8">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="Runner" EntitySet="Runner" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Runner__Gender__778AC167" Association="Self.FK__Runner__Gender__778AC167">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="Runner" EntitySet="Runner" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Runner__Gender__7E37BEF6" Association="Self.FK__Runner__Gender__7E37BEF6">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="Runner" EntitySet="Runner" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Staff__PositionI__534D60F1" Association="Self.FK__Staff__PositionI__534D60F1">
+      <End Role="Position" EntitySet="Position" />
+      <End Role="Staff" EntitySet="Staff" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Timesheet__Staff__5629CD9C" Association="Self.FK__Timesheet__Staff__5629CD9C">
+      <End Role="Staff" EntitySet="Staff" />
+      <End Role="Timesheet" EntitySet="Timesheet" />
+    </AssociationSet>
+    <AssociationSet Name="FK__User__RoleId__02FC7413" Association="Self.FK__User__RoleId__02FC7413">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK__User__RoleId__09A971A2" Association="Self.FK__User__RoleId__09A971A2">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK__User__RoleId__10566F31" Association="Self.FK__User__RoleId__10566F31">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK__User__RoleId__17036CC0" Association="Self.FK__User__RoleId__17036CC0">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK__User__RoleId__2BFE89A6" Association="Self.FK__User__RoleId__2BFE89A6">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK__User__RoleId__3F466844" Association="Self.FK__User__RoleId__3F466844">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK__User__RoleId__5AEE82B9" Association="Self.FK__User__RoleId__5AEE82B9">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK__User__RoleId__619B8048" Association="Self.FK__User__RoleId__619B8048">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK__User__RoleId__68487DD7" Association="Self.FK__User__RoleId__68487DD7">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK__User__RoleId__6EF57B66" Association="Self.FK__User__RoleId__6EF57B66">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK__User__RoleId__75A278F5" Association="Self.FK__User__RoleId__75A278F5">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK__User__RoleId__7C4F7684" Association="Self.FK__User__RoleId__7C4F7684">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Volunteer__Count__01142BA1" Association="Self.FK__Volunteer__Count__01142BA1">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Volunteer" EntitySet="Volunteer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Volunteer__Count__07C12930" Association="Self.FK__Volunteer__Count__07C12930">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Volunteer" EntitySet="Volunteer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Volunteer__Count__0E6E26BF" Association="Self.FK__Volunteer__Count__0E6E26BF">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Volunteer" EntitySet="Volunteer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Volunteer__Count__151B244E" Association="Self.FK__Volunteer__Count__151B244E">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Volunteer" EntitySet="Volunteer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Volunteer__Count__1BC821DD" Association="Self.FK__Volunteer__Count__1BC821DD">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Volunteer" EntitySet="Volunteer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Volunteer__Count__2CF2ADDF" Association="Self.FK__Volunteer__Count__2CF2ADDF">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Volunteer" EntitySet="Volunteer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Volunteer__Count__440B1D61" Association="Self.FK__Volunteer__Count__440B1D61">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Volunteer" EntitySet="Volunteer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Volunteer__Count__5FB337D6" Association="Self.FK__Volunteer__Count__5FB337D6">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Volunteer" EntitySet="Volunteer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Volunteer__Count__66603565" Association="Self.FK__Volunteer__Count__66603565">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Volunteer" EntitySet="Volunteer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Volunteer__Count__6D0D32F4" Association="Self.FK__Volunteer__Count__6D0D32F4">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Volunteer" EntitySet="Volunteer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Volunteer__Count__73BA3083" Association="Self.FK__Volunteer__Count__73BA3083">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Volunteer" EntitySet="Volunteer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Volunteer__Count__7A672E12" Association="Self.FK__Volunteer__Count__7A672E12">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Volunteer" EntitySet="Volunteer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Volunteer__Gende__00200768" Association="Self.FK__Volunteer__Gende__00200768">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="Volunteer" EntitySet="Volunteer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Volunteer__Gende__06CD04F7" Association="Self.FK__Volunteer__Gende__06CD04F7">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="Volunteer" EntitySet="Volunteer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Volunteer__Gende__0D7A0286" Association="Self.FK__Volunteer__Gende__0D7A0286">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="Volunteer" EntitySet="Volunteer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Volunteer__Gende__14270015" Association="Self.FK__Volunteer__Gende__14270015">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="Volunteer" EntitySet="Volunteer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Volunteer__Gende__1AD3FDA4" Association="Self.FK__Volunteer__Gende__1AD3FDA4">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="Volunteer" EntitySet="Volunteer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Volunteer__Gende__2DE6D218" Association="Self.FK__Volunteer__Gende__2DE6D218">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="Volunteer" EntitySet="Volunteer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Volunteer__Gende__4316F928" Association="Self.FK__Volunteer__Gende__4316F928">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="Volunteer" EntitySet="Volunteer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Volunteer__Gende__5EBF139D" Association="Self.FK__Volunteer__Gende__5EBF139D">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="Volunteer" EntitySet="Volunteer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Volunteer__Gende__656C112C" Association="Self.FK__Volunteer__Gende__656C112C">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="Volunteer" EntitySet="Volunteer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Volunteer__Gende__6C190EBB" Association="Self.FK__Volunteer__Gende__6C190EBB">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="Volunteer" EntitySet="Volunteer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Volunteer__Gende__72C60C4A" Association="Self.FK__Volunteer__Gende__72C60C4A">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="Volunteer" EntitySet="Volunteer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Volunteer__Gende__797309D9" Association="Self.FK__Volunteer__Gende__797309D9">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="Volunteer" EntitySet="Volunteer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Staff_Position" Association="Self.FK_Staff_Position">
+      <End Role="Position" EntitySet="Position" />
+      <End Role="Staff" EntitySet="Staff" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Timesheet_Staff" Association="Self.FK_Timesheet_Staff">
+      <End Role="Staff" EntitySet="Staff" />
+      <End Role="Timesheet" EntitySet="Timesheet" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

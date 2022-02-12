@@ -21,5 +21,6 @@ namespace WpfApp3
         public Nullable<decimal> PayAmount { get; set; }
     
         public virtual Staff Staff { get; set; }
+        public virtual Staff Staff1 { get; set; }
     }
 }

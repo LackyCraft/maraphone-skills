@@ -22,5 +22,9 @@ namespace WpfApp3
         public decimal Cost { get; set; }
         public int CharityId { get; set; }
         public decimal SponsorshipTarget { get; set; }
+    
+        public virtual Charity Charity { get; set; }
+        public virtual RaceKitOption RaceKitOption { get; set; }
+        public virtual RegistrationStatus RegistrationStatus { get; set; }
     }
 }

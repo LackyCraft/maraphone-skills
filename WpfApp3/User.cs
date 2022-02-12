@@ -18,6 +18,17 @@ namespace WpfApp3
         public User()
         {
             this.Runner = new HashSet<Runner>();
+            this.Runner1 = new HashSet<Runner>();
+            this.Runner2 = new HashSet<Runner>();
+            this.Runner3 = new HashSet<Runner>();
+            this.Runner4 = new HashSet<Runner>();
+            this.Runner5 = new HashSet<Runner>();
+            this.Runner6 = new HashSet<Runner>();
+            this.Runner7 = new HashSet<Runner>();
+            this.Runner8 = new HashSet<Runner>();
+            this.Runner9 = new HashSet<Runner>();
+            this.Runner10 = new HashSet<Runner>();
+            this.Runner11 = new HashSet<Runner>();
         }
     
         public string Email { get; set; }
@@ -27,7 +38,40 @@ namespace WpfApp3
         public string RoleId { get; set; }
     
         public virtual Role Role { get; set; }
+        public virtual Role Role1 { get; set; }
+        public virtual Role Role2 { get; set; }
+        public virtual Role Role3 { get; set; }
+        public virtual Role Role4 { get; set; }
+        public virtual Role Role5 { get; set; }
+        public virtual Role Role6 { get; set; }
+        public virtual Role Role7 { get; set; }
+        public virtual Role Role8 { get; set; }
+        public virtual Role Role9 { get; set; }
+        public virtual Role Role10 { get; set; }
+        public virtual Role Role11 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Runner> Runner { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Runner> Runner1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Runner> Runner2 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Runner> Runner3 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Runner> Runner4 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Runner> Runner5 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Runner> Runner6 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Runner> Runner7 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Runner> Runner8 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Runner> Runner9 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Runner> Runner10 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Runner> Runner11 { get; set; }
     }
 }

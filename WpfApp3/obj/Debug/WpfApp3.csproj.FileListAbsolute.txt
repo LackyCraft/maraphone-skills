@@ -98,3 +98,7 @@ C:\Users\ExamWSR\Desktop\maraphone-skills\WpfApp3\obj\Debug\Info.g.cs
 C:\Users\ExamWSR\Desktop\maraphone-skills\WpfApp3\obj\Debug\Info.baml
 C:\Users\ExamWSR\Desktop\maraphone-skills\WpfApp3\obj\Debug\InfoWorldSkills.g.cs
 C:\Users\ExamWSR\Desktop\maraphone-skills\WpfApp3\obj\Debug\InfoWorldSkills.baml
+C:\Users\ExamWSR\Desktop\maraphone-skills\WpfApp3\obj\Debug\Window1.g.cs
+C:\Users\ExamWSR\Desktop\maraphone-skills\WpfApp3\obj\Debug\Window1.baml
+C:\Users\ExamWSR\Desktop\maraphone-skills\WpfApp3\obj\Debug\OldResult.g.cs
+C:\Users\ExamWSR\Desktop\maraphone-skills\WpfApp3\obj\Debug\OldResult.baml

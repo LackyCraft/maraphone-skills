@@ -18,6 +18,7 @@ namespace WpfApp3
         public Position()
         {
             this.Staff = new HashSet<Staff>();
+            this.Staff1 = new HashSet<Staff>();
         }
     
         public int PositionId { get; set; }
@@ -28,5 +29,7 @@ namespace WpfApp3
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Staff> Staff { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Staff> Staff1 { get; set; }
     }
 }

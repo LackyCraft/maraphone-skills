@@ -21,5 +21,8 @@ namespace WpfApp3
         public Nullable<System.DateTime> StartDateTime { get; set; }
         public Nullable<decimal> Cost { get; set; }
         public Nullable<short> MaxParticipants { get; set; }
+    
+        public virtual EventType EventType { get; set; }
+        public virtual Marathon Marathon { get; set; }
     }
 }
