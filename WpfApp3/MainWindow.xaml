@@ -52,7 +52,7 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <TextBlock Text="MARAPHONE SKILLS 2022"  Grid.Row="0" Foreground="White" TextAlignment="Center" Margin="0,20,0,0" FontWeight="Bold" FontSize="36" VerticalAlignment="Center"/>
+            <TextBlock Text="MARATHON SKILLS 2022"  Grid.Row="0" Foreground="White" TextAlignment="Center" Margin="0,20,0,0" FontWeight="Bold" FontSize="36" VerticalAlignment="Center"/>
             <TextBlock  Grid.Row="1" Foreground="{StaticResource Grey}" TextAlignment="Center" Margin="0,15,0,0" FontSize="16" FontStyle="Italic">Москва, Россия<LineBreak></LineBreak>среда 11 июня</TextBlock>
         </Grid>
 
