@@ -28,7 +28,7 @@ namespace WpfApp3
 
             //Заменить потом на имя через users
 
-            Runner.ItemsSource = ws2016Entities3.GetContext().User.ToList();
+            Runner.ItemsSource = ws2016Entities.GetContext().Runner.ToList();
         }
 
         private void payBoxTextChanged(object sender, TextChangedEventArgs e)

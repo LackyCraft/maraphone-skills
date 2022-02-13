@@ -18,7 +18,6 @@ namespace WpfApp3
         public Staff()
         {
             this.Timesheet = new HashSet<Timesheet>();
-            this.Timesheet1 = new HashSet<Timesheet>();
         }
     
         public int StaffId { get; set; }
@@ -31,10 +30,7 @@ namespace WpfApp3
         public string Comments { get; set; }
     
         public virtual Position Position { get; set; }
-        public virtual Position Position1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Timesheet> Timesheet { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Timesheet> Timesheet1 { get; set; }
     }
 }

@@ -21,28 +21,6 @@ namespace WpfApp3
         public string Gender { get; set; }
     
         public virtual Country Country { get; set; }
-        public virtual Country Country1 { get; set; }
-        public virtual Country Country2 { get; set; }
-        public virtual Country Country3 { get; set; }
-        public virtual Country Country4 { get; set; }
-        public virtual Country Country5 { get; set; }
-        public virtual Country Country6 { get; set; }
-        public virtual Country Country7 { get; set; }
-        public virtual Country Country8 { get; set; }
-        public virtual Country Country9 { get; set; }
-        public virtual Country Country10 { get; set; }
-        public virtual Country Country11 { get; set; }
         public virtual Gender Gender1 { get; set; }
-        public virtual Gender Gender2 { get; set; }
-        public virtual Gender Gender3 { get; set; }
-        public virtual Gender Gender4 { get; set; }
-        public virtual Gender Gender5 { get; set; }
-        public virtual Gender Gender6 { get; set; }
-        public virtual Gender Gender7 { get; set; }
-        public virtual Gender Gender8 { get; set; }
-        public virtual Gender Gender9 { get; set; }
-        public virtual Gender Gender10 { get; set; }
-        public virtual Gender Gender11 { get; set; }
-        public virtual Gender Gender12 { get; set; }
     }
 }

@@ -8,10 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("model2.context.tt")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("model2.tt")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/map/marathon-skills-2016-interactive-map.mp4")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("model1.context.tt")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("model1.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/map/marathon-skills-2016-interactive-map.mp4")]
 
 

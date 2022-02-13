@@ -23,7 +23,7 @@ namespace WpfApp3
         public OldResult()
         {
             InitializeComponent();
-            dataGridOldResults.ItemsSource = ws2016Entities3.GetContext().Registration.ToList();
+            //dataGridOldResults.ItemsSource = ws2016Entities3.GetContext().Registration.ToList();
         }
         private void buttonBack(object sender, RoutedEventArgs e)
         {

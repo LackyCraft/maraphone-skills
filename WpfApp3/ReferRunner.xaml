@@ -103,7 +103,22 @@
 
                     <StackPanel Grid.Column="1">
                         <TextBox x:Name="textName" Margin="5,5,0,0"/>
-                        <ComboBox x:Name="Runner"  Margin="5,5,0,0" DisplayMemberPath="FirstName"/>
+                        <ComboBox x:Name="Runner"  Margin="5,5,0,0">
+                            <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock>
+                                            <TextBlock.Text>
+                                                <MultiBinding StringFormat="{}{0} - {1} - {2} ( {3} )">
+                                                    <Binding Path="User.FirstName"/>
+                                                    <Binding Path="User.LastName"/>
+                                                    <Binding Path="Country.CountryName"/>
+                                                    <Binding Path="CountryCode"/>
+                                                </MultiBinding>
+                                            </TextBlock.Text>
+                                        </TextBlock>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
                         <TextBox x:Name="textCard" Margin="5,5,0,0"/>
                         <TextBox x:Name="textCardNumber" Margin="5,5,0,0"/>
                         <TextBox x:Name="textPeriod"  Margin="5,5,0,0"/>
