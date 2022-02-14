@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="Хранилище ws2016ModelContainer" CdmEntityContainer="ws2016Entities">
+  <EntityContainerMapping StorageEntityContainer="Хранилище ws2016ModelContainer" CdmEntityContainer="ws2016Entities4">
     <EntitySetMapping Name="Charity">
       <EntityTypeMapping TypeName="ws2016Model.Charity">
         <MappingFragment StoreEntitySet="Charity">

@@ -28,7 +28,7 @@ namespace WpfApp3
 
             //Заменить потом на имя через users
 
-            Runner.ItemsSource = ws2016Entities.GetContext().Runner.ToList();
+            Runner.ItemsSource = ws2016Entities4.GetContext().Runner.ToList();
         }
 
         private void payBoxTextChanged(object sender, TextChangedEventArgs e)
@@ -122,8 +122,9 @@ namespace WpfApp3
             if (ErrorMessage.Text == "")
             {
                 Application.Current.Resources["Price"] = payTextBlock.Text; 
-                Application.Current.Resources["PriceRunner"] = Runner.SelectionBoxItemStringFormat;
-                this.NavigationService.Navigate(new Uri("Benevolence.xaml?parameter=", UriKind.Relative));
+                Application.Current.Resources["PriceRunner"] = Runner.SelectedItem;
+                this.NavigationService.Navigate(new Uri("Benevolence.xaml?parameter=", UriKind.Relative),textRunner.Text);
+                //this.NavigationService.Navigate(new Benevolence(ws2016Entities4.GetContext().Runner.ToList()));
             }
             
         }

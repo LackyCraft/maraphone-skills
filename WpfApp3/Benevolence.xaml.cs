@@ -20,13 +20,13 @@ namespace WpfApp3
     /// </summary>
     public partial class Benevolence : Page
     {
-
         public Benevolence()
         {
             InitializeComponent();
             price.Text = Application.Current.Resources["Price"].ToString();
+
             //priceRunner.Text = Application.Current.Resources["PriceRunner"].ToString();
-           // priceRunner.Text = Application.Current.Resources["PriceRunner"].ToString();
+            //label11.Content = string.Format("") Application.Current.Resources["PriceRunner"];
         }
 
         private void buttonBack(object sender, RoutedEventArgs e)

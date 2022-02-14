@@ -13,19 +13,18 @@ namespace WpfApp3
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ws2016Entities : DbContext
+    public partial class ws2016Entities4 : DbContext
     {
-        private static ws2016Entities _context;
-
-        public ws2016Entities()
-            : base("name=ws2016Entities")
+        private static ws2016Entities4 _context;
+        public ws2016Entities4()
+            : base("name=ws2016Entities4")
         {
         }
 
-        public static ws2016Entities GetContext()
+        public static ws2016Entities4 GetContext()
         {
             if (_context == null)
-                _context = new ws2016Entities();
+                _context = new ws2016Entities4();
             return _context;
         }
 

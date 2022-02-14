@@ -36,6 +36,8 @@ namespace WpfApp3
             }
             if (sender == oldResult)
                 frame.NavigationService.Navigate(new Uri("OldResult.xaml", UriKind.Relative));
+            if(sender == ListCompany)
+                frame.NavigationService.Navigate(new Uri("company.xaml", UriKind.Relative));
         }
 
         private void InfoWorldSkills_Click(object sender, RoutedEventArgs e)

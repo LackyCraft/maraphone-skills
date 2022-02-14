@@ -88,6 +88,9 @@
     <Compile Include="Charity.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="company.xaml.cs">
+      <DependentUpon>company.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Country.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -170,6 +173,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="company.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -245,6 +252,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Image\company\" />
     <Folder Include="Pages\" />
   </ItemGroup>
   <ItemGroup>
@@ -263,6 +271,20 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="arise-logo.png" />
+    <Resource Include="aves-do-brazil-logo.png" />
+    <Resource Include="clara-santos-oliveira-institute-logo.png" />
+    <Resource Include="conquer-cancer-brazil.png" />
+    <Resource Include="diabetes-brazil-logo.png" />
+    <Resource Include="heart-health-sao-paulo-logo.png" />
+    <Resource Include="human-rights-centre-logo.png" />
+    <Resource Include="oxfam-international-logo.png" />
+    <Resource Include="querstadtein-logo.png" />
+    <Resource Include="save-the-children-fund-logo.png" />
+    <Resource Include="stay-pumped-logo.png" />
+    <Resource Include="the-red-cross-logo.png" />
+    <Resource Include="upbeat-logo.png" />
+    <Resource Include="wwsm-rescue-logo.png" />
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>

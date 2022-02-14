@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="3ac9f46f0afc4516bd948bcc99c332a2" Name="Diagram1">
+      <Diagram DiagramId="0f05870ee6144fbfba2ff2f018e4d70c" Name="Diagram1">
         <EntityTypeShape EntityType="ws2016Model.Charity" Width="1.5" PointX="8.75" PointY="0.875" IsExpanded="true" />
         <EntityTypeShape EntityType="ws2016Model.Country" Width="1.5" PointX="0.75" PointY="3.125" IsExpanded="true" />
         <EntityTypeShape EntityType="ws2016Model.Event" Width="1.5" PointX="8.75" PointY="3.875" IsExpanded="true" />
@@ -23,14 +23,14 @@
         <EntityTypeShape EntityType="ws2016Model.Timesheet" Width="1.5" PointX="8.25" PointY="7.5" IsExpanded="true" />
         <EntityTypeShape EntityType="ws2016Model.User" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
         <EntityTypeShape EntityType="ws2016Model.Volunteer" Width="1.5" PointX="6" PointY="2.875" IsExpanded="true" />
-        <AssociationConnector Association="ws2016Model.FK__Runner__CountryC__5535A963" ManuallyRouted="false" />
-        <AssociationConnector Association="ws2016Model.FK__Volunteer__Count__571DF1D5" ManuallyRouted="false" />
-        <AssociationConnector Association="ws2016Model.FK__Runner__Gender__5441852A" ManuallyRouted="false" />
-        <AssociationConnector Association="ws2016Model.FK__Volunteer__Gende__5629CD9C" ManuallyRouted="false" />
-        <AssociationConnector Association="ws2016Model.FK__Staff__PositionI__6477ECF3" ManuallyRouted="false" />
-        <AssociationConnector Association="ws2016Model.FK__User__RoleId__52593CB8" ManuallyRouted="false" />
-        <AssociationConnector Association="ws2016Model.FK__Runner__Email__534D60F1" ManuallyRouted="false" />
-        <AssociationConnector Association="ws2016Model.FK__Timesheet__Staff__6754599E" ManuallyRouted="false" />
+        <AssociationConnector Association="ws2016Model.FK__Runner__CountryC__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="ws2016Model.FK__Volunteer__Count__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="ws2016Model.FK__Runner__Gender__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="ws2016Model.FK__Volunteer__Gende__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="ws2016Model.FK__Staff__PositionI__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="ws2016Model.FK__User__RoleId__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="ws2016Model.FK__Runner__Email__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="ws2016Model.FK__Timesheet__Staff__48CFD27E" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
