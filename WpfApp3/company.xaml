@@ -31,11 +31,10 @@
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
-                                    <Image Height="80" Source="{Binding CharityLogo}"/>
+                                    <Image Height="80" Width="80" Source="{Binding CharityLogo}"/>
                                     <TextBlock Background="White">
                                             <Run/><Run Text="{Binding CharityName}" FontWeight="Bold"/>
-                                            <Run Text="&#x0a;"/>
-                                            <Run/><Run Text="{Binding CharityDescription}"/>
+                                            <Run Text="&#x0a;"/><Run Text="{Binding CharityDescription}"/>
                                     </TextBlock>
                                 </StackPanel>
                             </DataTemplate>
