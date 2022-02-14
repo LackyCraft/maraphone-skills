@@ -72,7 +72,7 @@
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
                         <Button Content="-" Background="{StaticResource LightGrey}" HorizontalAlignment="Right" Height="29" VerticalAlignment="Top" Width="83" Click="buttonMinus"/>
-                        <TextBox  Text="0" TextChanged="payBoxTextChanged" x:Name="payBox" TextAlignment="Center" Grid.Column="1" Background="White" HorizontalAlignment="Center" Height="29" VerticalAlignment="Top" Width="83" />
+                        <TextBox Text="0" TextChanged="payBoxTextChanged" x:Name="payBox" TextAlignment="Center" Grid.Column="1" Background="White" HorizontalAlignment="Center" Height="29" VerticalAlignment="Top" Width="83" />
                         <Button Click="buttonPlus" Grid.Column="2" Content="+" Background="{StaticResource LightGrey}" HorizontalAlignment="Left" Height="29" VerticalAlignment="Top" Width="83"/>
                     </Grid>
 
@@ -103,10 +103,10 @@
 
                     <StackPanel Grid.Column="1">
                         <TextBox x:Name="textName" Margin="5,5,0,0"/>
-                        <ComboBox x:Name="Runner"  Margin="5,5,0,0">
-                            <ComboBox.ItemTemplate>
-                                    <DataTemplate>
-                                        <TextBlock>
+                        <ComboBox x:Name="Runner"  Margin="5,5,0,0" >
+                            <ComboBox.ItemTemplate >
+                                <DataTemplate>
+                                    <TextBlock>
                                             <TextBlock.Text>
                                                 <MultiBinding StringFormat="{}{0} - {1} - {2} ( {3} )">
                                                     <Binding Path="User.FirstName"/>

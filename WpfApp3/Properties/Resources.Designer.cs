@@ -59,5 +59,23 @@ namespace WpfApp3.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на .
+        /// </summary>
+        internal static string Price {
+            get {
+                return ResourceManager.GetString("Price", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на .
+        /// </summary>
+        internal static string PriceRunner {
+            get {
+                return ResourceManager.GetString("PriceRunner", resourceCulture);
+            }
+        }
     }
 }

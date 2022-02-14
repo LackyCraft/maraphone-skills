@@ -136,3 +136,5 @@ C:\Users\Даниил\Desktop\maraphone-skills\WpfApp3\obj\Debug\WpfApp3.Propert
 C:\Users\Даниил\Desktop\maraphone-skills\WpfApp3\obj\Debug\WpfApp3.csproj.GenerateResource.cache
 C:\Users\Даниил\Desktop\maraphone-skills\WpfApp3\obj\Debug\WpfApp3.csproj.CoreCompileInputs.cache
 C:\Users\Даниил\Desktop\maraphone-skills\WpfApp3\obj\Debug\WpfApp3.csproj.CopyComplete
+C:\Users\Даниил\Desktop\maraphone-skills\WpfApp3\obj\Debug\Benevolence.g.cs
+C:\Users\Даниил\Desktop\maraphone-skills\WpfApp3\obj\Debug\Benevolence.baml

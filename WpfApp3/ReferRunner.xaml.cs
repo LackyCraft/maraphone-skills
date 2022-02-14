@@ -64,9 +64,10 @@ namespace WpfApp3
             intRes -= 10;
             payBox.Text = intRes.ToString();
         }
-        
+
         private void buttonAdd(object sender, RoutedEventArgs e)
         {
+
             ErrorMessage.Text = "";
             textName.Background = Brushes.White;
             textCard.Background = Brushes.White;
@@ -112,11 +113,19 @@ namespace WpfApp3
                 textCodeCVC.Background = Brushes.Red;
                 ErrorMessage.Text += "CVC код должен состоять из трех цифр\n";
             }
+
+            if (payTextBlock.Text == "$0")
+            {
+                payTextBlock.Background = Brushes.Red;
+                ErrorMessage.Text += "Нельзя пожертвовать 0 доларов\n";
+            }
             if (ErrorMessage.Text == "")
             {
-                this.NavigationService.Navigate(new Uri("InfoWorldSkills.xaml", UriKind.Relative));
+                Application.Current.Resources["Price"] = payTextBlock.Text; 
+                Application.Current.Resources["PriceRunner"] = Runner.SelectionBoxItemStringFormat;
+                this.NavigationService.Navigate(new Uri("Benevolence.xaml?parameter=", UriKind.Relative));
             }
-
+            
         }
 
         private void buttonCancel(object sender, RoutedEventArgs e)
