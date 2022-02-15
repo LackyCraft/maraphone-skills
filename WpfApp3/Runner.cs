@@ -23,5 +23,7 @@ namespace WpfApp3
         public virtual Country Country { get; set; }
         public virtual Gender Gender1 { get; set; }
         public virtual User User { get; set; }
+        public virtual Runner Runner1 { get; set; }
+        public virtual Runner Runner2 { get; set; }
     }
 }

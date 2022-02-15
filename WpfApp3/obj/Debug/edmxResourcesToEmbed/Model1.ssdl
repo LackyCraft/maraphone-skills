@@ -67,7 +67,7 @@
       <PropertyRef Name="RaceKitOptionId" />
     </Key>
     <Property Name="RaceKitOptionId" Type="nchar" MaxLength="1" Nullable="false" />
-    <Property Name="RaceKitOption" Type="nvarchar" MaxLength="80" Nullable="false" />
+    <Property Name="RaceKitOption" Type="nchar" MaxLength="1" Nullable="false" />
     <Property Name="Cost" Type="decimal" Precision="10" Scale="2" Nullable="false" />
   </EntityType>
   <EntityType Name="Registration">
@@ -78,7 +78,7 @@
     <Property Name="RunnerId" Type="int" Nullable="false" />
     <Property Name="RegistrationDateTime" Type="datetime" Nullable="false" />
     <Property Name="RaceKitOptionId" Type="nchar" MaxLength="1" Nullable="false" />
-    <Property Name="RegistrationStatusId" Type="tinyint" Nullable="false" />
+    <Property Name="RegistrationStatusId" Type="int" Nullable="false" />
     <Property Name="Cost" Type="decimal" Precision="10" Scale="2" Nullable="false" />
     <Property Name="CharityId" Type="int" Nullable="false" />
     <Property Name="SponsorshipTarget" Type="decimal" Precision="10" Scale="2" Nullable="false" />
@@ -97,7 +97,7 @@
     <Key>
       <PropertyRef Name="RegistrationStatusId" />
     </Key>
-    <Property Name="RegistrationStatusId" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RegistrationStatusId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="RegistrationStatus" Type="nvarchar" MaxLength="80" Nullable="false" />
   </EntityType>
   <EntityType Name="Role">
@@ -138,6 +138,16 @@
     <Property Name="Gender" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="PositionId" Type="int" Nullable="false" />
     <Property Name="Comments" Type="varchar" MaxLength="2000" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <EntityType Name="Timesheet">
     <Key>
@@ -265,6 +275,42 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_RaceKitOption_RaceKitOption">
+    <End Role="RaceKitOption" Type="Self.RaceKitOption" Multiplicity="1" />
+    <End Role="RaceKitOption1" Type="Self.RaceKitOption" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="RaceKitOption">
+        <PropertyRef Name="RaceKitOptionId" />
+      </Principal>
+      <Dependent Role="RaceKitOption1">
+        <PropertyRef Name="RaceKitOptionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RegistrationStatus_RegistrationStatus">
+    <End Role="RegistrationStatus" Type="Self.RegistrationStatus" Multiplicity="1" />
+    <End Role="RegistrationStatus1" Type="Self.RegistrationStatus" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="RegistrationStatus">
+        <PropertyRef Name="RegistrationStatusId" />
+      </Principal>
+      <Dependent Role="RegistrationStatus1">
+        <PropertyRef Name="RegistrationStatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Runner_Runner">
+    <End Role="Runner" Type="Self.Runner" Multiplicity="1" />
+    <End Role="Runner1" Type="Self.Runner" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Runner">
+        <PropertyRef Name="RunnerId" />
+      </Principal>
+      <Dependent Role="Runner1">
+        <PropertyRef Name="RunnerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="Хранилище ws2016ModelContainer">
     <EntitySet Name="Charity" EntityType="Self.Charity" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
@@ -281,6 +327,7 @@
     <EntitySet Name="Runner" EntityType="Self.Runner" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Sponsorship" EntityType="Self.Sponsorship" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Staff" EntityType="Self.Staff" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Timesheet" EntityType="Self.Timesheet" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Volunteer" EntityType="Self.Volunteer" Schema="dbo" store:Type="Tables" />
@@ -315,6 +362,18 @@
     <AssociationSet Name="FK__Volunteer__Gende__4BAC3F29" Association="Self.FK__Volunteer__Gende__4BAC3F29">
       <End Role="Gender" EntitySet="Gender" />
       <End Role="Volunteer" EntitySet="Volunteer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RaceKitOption_RaceKitOption" Association="Self.FK_RaceKitOption_RaceKitOption">
+      <End Role="RaceKitOption" EntitySet="RaceKitOption" />
+      <End Role="RaceKitOption1" EntitySet="RaceKitOption" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RegistrationStatus_RegistrationStatus" Association="Self.FK_RegistrationStatus_RegistrationStatus">
+      <End Role="RegistrationStatus" EntitySet="RegistrationStatus" />
+      <End Role="RegistrationStatus1" EntitySet="RegistrationStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Runner_Runner" Association="Self.FK_Runner_Runner">
+      <End Role="Runner" EntitySet="Runner" />
+      <End Role="Runner1" EntitySet="Runner" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

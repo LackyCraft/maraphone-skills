@@ -17,5 +17,8 @@ namespace WpfApp3
         public string RaceKitOptionId { get; set; }
         public string RaceKitOption1 { get; set; }
         public decimal Cost { get; set; }
+    
+        public virtual RaceKitOption RaceKitOption11 { get; set; }
+        public virtual RaceKitOption RaceKitOption2 { get; set; }
     }
 }

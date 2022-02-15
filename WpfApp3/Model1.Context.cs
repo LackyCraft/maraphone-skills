@@ -15,7 +15,9 @@ namespace WpfApp3
     
     public partial class ws2016Entities4 : DbContext
     {
+
         private static ws2016Entities4 _context;
+
         public ws2016Entities4()
             : base("name=ws2016Entities4")
         {
@@ -48,6 +50,7 @@ namespace WpfApp3
         public virtual DbSet<Runner> Runner { get; set; }
         public virtual DbSet<Sponsorship> Sponsorship { get; set; }
         public virtual DbSet<Staff> Staff { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Timesheet> Timesheet { get; set; }
         public virtual DbSet<User> User { get; set; }
         public virtual DbSet<Volunteer> Volunteer { get; set; }

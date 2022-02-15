@@ -18,7 +18,7 @@ namespace WpfApp3
         public int RunnerId { get; set; }
         public System.DateTime RegistrationDateTime { get; set; }
         public string RaceKitOptionId { get; set; }
-        public byte RegistrationStatusId { get; set; }
+        public int RegistrationStatusId { get; set; }
         public decimal Cost { get; set; }
         public int CharityId { get; set; }
         public decimal SponsorshipTarget { get; set; }

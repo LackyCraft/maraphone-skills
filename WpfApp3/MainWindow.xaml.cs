@@ -79,6 +79,8 @@ namespace WpfApp5
                 frame.NavigationService.Navigate(new Uri("ReferRunner.xaml", UriKind.Relative));
        if (sender == Info)
                 frame.NavigationService.Navigate(new Uri("Info.xaml", UriKind.Relative));
+       if (sender == Auth)
+                frame.NavigationService.Navigate(new Uri("Auth.xaml", UriKind.Relative));
         }
     }
 }
