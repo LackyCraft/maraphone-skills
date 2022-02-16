@@ -154,6 +154,21 @@
     <Compile Include="Role.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="RolePage\Coordinaor\Charty\RemoteRunner.xaml.cs">
+      <DependentUpon>RemoteRunner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RolePage\Coordinaor\Charty\RemoteSponser.xaml.cs">
+      <DependentUpon>RemoteSponser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RolePage\MenuAdministratorPage.xaml.cs">
+      <DependentUpon>MenuAdministratorPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RolePage\MenuCoordinatorPage.xaml.cs">
+      <DependentUpon>MenuCoordinatorPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RolePage\MenuRunnerPage.xaml.cs">
+      <DependentUpon>MenuRunnerPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Runner.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -215,6 +230,26 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="RolePage\Coordinaor\Charty\RemoteRunner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RolePage\Coordinaor\Charty\RemoteSponser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RolePage\MenuAdministratorPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RolePage\MenuCoordinatorPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RolePage\MenuRunnerPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Runner.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -263,6 +298,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\" />
+    <Folder Include="RolePage\Admin\" />
+    <Folder Include="RolePage\Coordinaor\Sponser\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">

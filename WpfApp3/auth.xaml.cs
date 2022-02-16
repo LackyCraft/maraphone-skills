@@ -24,6 +24,11 @@ namespace WpfApp3
         public auth()
         {
             InitializeComponent();
+            if (!(Application.Current.Resources["Role"] is null || Application.Current.Resources["Email"].ToString() is null))
+            {
+                MessageBox.Show("Вы уже вошли под учетной записью: " + Application.Current.Resources["Email"].ToString());
+                this.Content = null;
+            }
         }
         private void buttonBack(object sender, RoutedEventArgs e)
         {
@@ -40,17 +45,34 @@ namespace WpfApp3
 
             if (authInfo.Count > 0)
             {
-                MessageBox.Show("Email: " + authInfo[0].Email.ToString() + "\n" + authInfo[0].Password.ToString());
-                //foreach (var item in authInfo)
-                //{
-                //    MessageBox.Show("Email: "+ item.Email.ToString() +""+ item.Password.ToString());
-                //}
+                // For test  //
+                MessageBox.Show("Email: " + authInfo[0].Email.ToString() + "\n" + authInfo[0].Password.ToString()+"\n"+ authInfo[0].RoleId.ToString());
+
+                Application.Current.Resources["Email"] = authInfo[0].Email.ToString();
+                Application.Current.Resources["Role"] = authInfo[0].RoleId.ToString();
+                try
+                {
+                    
+                    if(authInfo[0].RoleId.ToString() == "R")
+                        this.NavigationService.Navigate(new Uri("RolePage/MenuRunnerPage.xaml", UriKind.Relative));
+                    if (authInfo[0].RoleId.ToString() == "C")
+                        this.NavigationService.Navigate(new Uri("RolePage/MenuCoordinatorPage.xaml", UriKind.Relative));
+                    if (authInfo[0].RoleId.ToString() == "A")
+                        this.NavigationService.Navigate(new Uri("RolePage/MenuAdministratorPage.xaml", UriKind.Relative));
+                }
+                catch
+                {
+                    MessageBox.Show("Warning: 0\nПроизошла не предвидиная ошибка");
+                }
             }
             else
             {
-                MessageBox.Show("Errors");
+                MessageBox.Show("Warning: 301\nНеправильный логин или пароль");
             }
 
         }
+
+
+
     }
 }

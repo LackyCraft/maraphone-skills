@@ -13,16 +13,21 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfApp3
+namespace WpfApp3.RolePage
 {
     /// <summary>
-    /// Логика взаимодействия для Page1.xaml
+    /// Логика взаимодействия для AdminPage.xaml
     /// </summary>
-    public partial class Page1 : Page
+    public partial class AdminPage : Page
     {
-        public Page1()
+        public AdminPage()
         {
             InitializeComponent();
+            if (Application.Current.Resources["Role"].ToString() != "A")
+            {
+                this.Content = null;
+                MessageBox.Show("403 Forbidden \n Попытка перейти на страницу несоответствующей вашей роли");
+            }
         }
         private void buttonBack(object sender, RoutedEventArgs e)
         {
@@ -32,10 +37,6 @@ namespace WpfApp3
         private void ScrolPage(object sender, RoutedEventArgs e)
         {
 
-            //NavigationService nav;
-            //nav = NavigationService.GetNavigationService(this);
-            if (sender == canRun)
-                this.NavigationService.Navigate(new Uri("auth.xaml", UriKind.Relative));
         }
     }
 }

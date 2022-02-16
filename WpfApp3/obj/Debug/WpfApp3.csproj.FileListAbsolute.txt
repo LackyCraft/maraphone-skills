@@ -178,3 +178,11 @@ C:\Users\ExamWSR\Desktop\maraphone-skills\maraphone-skills\WpfApp3\obj\Debug\com
 C:\Users\ExamWSR\Desktop\maraphone-skills\maraphone-skills\WpfApp3\obj\Debug\company.baml
 C:\Users\ExamWSR\Desktop\maraphone-skills\maraphone-skills\WpfApp3\obj\Debug\auth.g.cs
 C:\Users\ExamWSR\Desktop\maraphone-skills\maraphone-skills\WpfApp3\obj\Debug\auth.baml
+C:\Users\ExamWSR\Desktop\maraphone-skills\maraphone-skills\WpfApp3\obj\Debug\RolePage\MenuRunnerPage.g.cs
+C:\Users\ExamWSR\Desktop\maraphone-skills\maraphone-skills\WpfApp3\obj\Debug\RolePage\MenuRunnerPage.baml
+C:\Users\ExamWSR\Desktop\maraphone-skills\maraphone-skills\WpfApp3\obj\Debug\RolePage\MenuCoordinatorPage.g.cs
+C:\Users\ExamWSR\Desktop\maraphone-skills\maraphone-skills\WpfApp3\obj\Debug\RolePage\MenuAdministratorPage.g.cs
+C:\Users\ExamWSR\Desktop\maraphone-skills\maraphone-skills\WpfApp3\obj\Debug\RolePage\MenuCoordinatorPage.baml
+C:\Users\ExamWSR\Desktop\maraphone-skills\maraphone-skills\WpfApp3\obj\Debug\RolePage\MenuAdministratorPage.baml
+C:\Users\ExamWSR\Desktop\maraphone-skills\maraphone-skills\WpfApp3\obj\Debug\RolePage\Coordinaor\Charty\RemoteRunner.g.cs
+C:\Users\ExamWSR\Desktop\maraphone-skills\maraphone-skills\WpfApp3\obj\Debug\RolePage\Coordinaor\Charty\RemoteSponser.g.cs

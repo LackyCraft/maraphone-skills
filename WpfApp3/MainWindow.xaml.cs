@@ -36,6 +36,21 @@ namespace WpfApp5
             }
         }
 
+        public string ButtonAuth
+        {
+            get
+            {
+                if (Application.Current.Resources["Email"] is null)
+                {
+                    return "Login";
+                }
+                else
+                {
+                    return "LogOut";
+                }
+                //return string.Format("{0} дн {1} ч {2} мин {3} с до начала марофона!", ts.Days, ts.Hours, ts.Minutes, ts.Seconds);
+            }
+        }
 
         public MainWindow()
         {
@@ -49,18 +64,27 @@ namespace WpfApp5
 
         private void Windows_Loaded(object sender, RoutedEventArgs e)
         {
+            
 
             Timer tmr = new Timer();
 
             tmr.Interval = 1000;
             tmr.Elapsed += editTimerText;
+            tmr.Elapsed += buttonAuthEdit;
 
             tmr.Start();
+
+            
         }
 
         private void editTimerText(object sender, ElapsedEventArgs e)
         {
             PropertyChange("Time");
+        }
+
+        private void buttonAuthEdit(object sender, ElapsedEventArgs e)
+        {
+            PropertyChange("ButtonAuth");
         }
 
         private void PropertyChange(string name)
@@ -71,16 +95,25 @@ namespace WpfApp5
 
         private void ScrolPage(object sender, RoutedEventArgs e)
         {
+
             //NavigationService nav;
             //nav = NavigationService.GetNavigationService(this);
-       if(sender == runnerMain)
+            if (sender == runnerMain)
                 frame.NavigationService.Navigate(new Uri("Runner.xaml", UriKind.Relative));
        if (sender == ReferRunner)
                 frame.NavigationService.Navigate(new Uri("ReferRunner.xaml", UriKind.Relative));
        if (sender == Info)
                 frame.NavigationService.Navigate(new Uri("Info.xaml", UriKind.Relative));
-       if (sender == Auth)
+       if (sender == Auth && Auth.Content.ToString() == "Login")
                 frame.NavigationService.Navigate(new Uri("Auth.xaml", UriKind.Relative));
+       if (sender == Auth && Auth.Content.ToString() == "LogOut")
+            {
+                Application.Current.Resources["Email"] = null;
+                Application.Current.Resources["Role"] = null;
+                //frame.NavigationService.Navigate(new Uri("MainWindow.xaml", UriKind.Relative));
+                frame.Content = null;
+            }
+                
         }
     }
 }
