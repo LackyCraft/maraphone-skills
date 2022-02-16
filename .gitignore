@@ -1,0 +1,6 @@
+#Visual Studio files
+App.config
+*.ilk
+*.log
+*.lib
+
