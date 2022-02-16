@@ -1,5 +1,5 @@
 #Visual Studio files
-App.config
+*App.config
 *.ilk
 *.log
 *.lib
