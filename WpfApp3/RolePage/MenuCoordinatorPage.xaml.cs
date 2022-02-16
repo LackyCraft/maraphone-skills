@@ -23,7 +23,7 @@ namespace WpfApp3.RolePage
         public CoordinatorPage()
         {
             InitializeComponent();
-            if (Application.Current.Resources["Role"].ToString() != "C")
+            if (Application.Current.Resources["Role"].ToString() != "C" || Application.Current.Resources["Role"].ToString() is null)
             {
                 this.Content = null;
                 MessageBox.Show("403 Forbidden \n Попытка перейти на страницу несоответствующей вашей роли");

@@ -23,7 +23,7 @@ namespace WpfApp3.RolePage
         public RunnerPage()
         {
             InitializeComponent();
-            if (Application.Current.Resources["Role"].ToString() != "R")
+            if (Application.Current.Resources["Role"].ToString() != "R" || Application.Current.Resources["Role"].ToString() is null)
             {
                 this.Content = null;
                 MessageBox.Show("403 Forbidden \n Попытка перейти на страницу несоответствующей вашей роли");

@@ -146,5 +146,10 @@ namespace WpfApp3
             textPeriod.Background = Brushes.White;
             textCodeCVC.Background = Brushes.White;
         }
+
+        private void Runner_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            MessageBox.Show(Runner.SelectedValue.ToString());
+        }
     }
 }

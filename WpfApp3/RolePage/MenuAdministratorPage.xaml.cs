@@ -23,10 +23,18 @@ namespace WpfApp3.RolePage
         public AdminPage()
         {
             InitializeComponent();
-            if (Application.Current.Resources["Role"].ToString() != "A")
+            try
             {
+                if (Application.Current.Resources["Role"].ToString() != "A")
+                {
+                    this.Content = null;
+                    MessageBox.Show("403 Forbidden \n Попытка перейти на страницу несоответствующей вашей роли");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("403 Forbidden \n Access denied");
                 this.Content = null;
-                MessageBox.Show("403 Forbidden \n Попытка перейти на страницу несоответствующей вашей роли");
             }
         }
         private void buttonBack(object sender, RoutedEventArgs e)

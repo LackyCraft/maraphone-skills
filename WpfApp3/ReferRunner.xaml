@@ -103,7 +103,7 @@
 
                     <StackPanel Grid.Column="1">
                         <TextBox x:Name="textName" Margin="5,5,0,0"/>
-                        <ComboBox x:Name="Runner"  Margin="5,5,0,0" >
+                        <ComboBox x:Name="Runner"  Margin="5,5,0,0" SelectionChanged="Runner_SelectionChanged">
                             <ComboBox.ItemTemplate >
                                 <DataTemplate>
                                     <TextBlock>
