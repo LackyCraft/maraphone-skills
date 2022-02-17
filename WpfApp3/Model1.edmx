@@ -848,7 +848,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ws2016Entities5" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="ws2016Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Charity" EntityType="Self.Charity" />
           <EntitySet Name="Country" EntityType="Self.Country" />
           <EntitySet Name="Event" EntityType="Self.Event" />
@@ -937,7 +937,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище ws2016ModelContainer" CdmEntityContainer="ws2016Entities5">
+        <EntityContainerMapping StorageEntityContainer="Хранилище ws2016ModelContainer" CdmEntityContainer="ws2016Entities">
           <EntitySetMapping Name="Charity">
             <EntityTypeMapping TypeName="ws2016Model.Charity">
               <MappingFragment StoreEntitySet="Charity">
