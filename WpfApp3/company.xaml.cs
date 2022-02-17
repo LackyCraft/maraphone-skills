@@ -23,7 +23,7 @@ namespace WpfApp3
         public company()
         {
             InitializeComponent();
-            ListCompany.ItemsSource = ws2016Entities4.GetContext().Charity.ToList();
+            ListCompany.ItemsSource = ws2016Entities5.GetContext().Charity.ToList();
         }
         private void buttonBack(object sender, RoutedEventArgs e)
         {

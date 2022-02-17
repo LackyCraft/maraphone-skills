@@ -14,10 +14,16 @@ namespace WpfApp3
     
     public partial class RegistrationStatus
     {
-        public int RegistrationStatusId { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public RegistrationStatus()
+        {
+            this.Registration = new HashSet<Registration>();
+        }
+    
+        public byte RegistrationStatusId { get; set; }
         public string RegistrationStatus1 { get; set; }
     
-        public virtual RegistrationStatus RegistrationStatus11 { get; set; }
-        public virtual RegistrationStatus RegistrationStatus2 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Registration> Registration { get; set; }
     }
 }

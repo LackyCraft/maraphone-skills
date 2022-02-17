@@ -14,23 +14,13 @@ namespace WpfApp3
     
     public partial class Staff
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Staff()
-        {
-            this.Timesheet = new HashSet<Timesheet>();
-        }
-    
-        public int StaffId { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Email { get; set; }
-        public System.DateTime DateOfDBirth { get; set; }
+        public int Staffid { get; set; }
+        public string Firstname { get; set; }
+        public string Lastname { get; set; }
+        public System.DateTime DateOfBirth { get; set; }
         public string Gender { get; set; }
-        public int PositionId { get; set; }
+        public short Positionid { get; set; }
+        public string Email_Address { get; set; }
         public string Comments { get; set; }
-    
-        public virtual Position Position { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Timesheet> Timesheet { get; set; }
     }
 }

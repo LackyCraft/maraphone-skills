@@ -36,6 +36,8 @@ namespace WpfApp3
             //nav = NavigationService.GetNavigationService(this);
             if (sender == canRun)
                 this.NavigationService.Navigate(new Uri("auth.xaml", UriKind.Relative));
+            if(sender == NewRunner)
+                this.NavigationService.Navigate(new Uri("Registratiob.xaml", UriKind.Relative));
         }
     }
 }

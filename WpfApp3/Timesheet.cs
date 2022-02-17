@@ -14,12 +14,10 @@ namespace WpfApp3
     
     public partial class Timesheet
     {
-        public int TimesheetId { get; set; }
-        public int StaffId { get; set; }
+        public int Timesheetid { get; set; }
+        public int Staffid { get; set; }
         public Nullable<System.DateTime> StartDateTime { get; set; }
-        public Nullable<System.DateTime> EndDateTime { get; set; }
-        public Nullable<decimal> PayAmount { get; set; }
-    
-        public virtual Staff Staff { get; set; }
+        public Nullable<System.DateTime> End_Date_Time { get; set; }
+        public Nullable<decimal> PaymentAmount { get; set; }
     }
 }

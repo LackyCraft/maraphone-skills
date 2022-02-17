@@ -47,14 +47,14 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <StackPanel Grid.Column="0">
-                        <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="Марафон:" VerticalAlignment="Top" FontWeight="Bold" Margin="0,15,6,0"/>
+                        <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="Статус:" VerticalAlignment="Top" FontWeight="Bold" Margin="0,15,6,0"/>
                         <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="Дистанция:" VerticalAlignment="Top" FontWeight="Bold" Margin="0,17,6,0"/>
                         <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="Сортировать:" VerticalAlignment="Top" FontWeight="Bold" Margin="0,17,6,0"/>
                     </StackPanel>
                     <StackPanel Grid.Column="1">
-                        <TextBox TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" Margin="6"/>
-                        <TextBox TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" Margin="6"/>
-                        <TextBox TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" Margin="6"/>
+                        <ComboBox VerticalAlignment="Top" FontWeight="Bold" Margin="6,11,0,0"/>
+                        <ComboBox VerticalAlignment="Top" FontWeight="Bold" Margin="6,9,0,0"/>
+                        <ComboBox VerticalAlignment="Top" FontWeight="Bold" Margin="6,9,0,0"/>
                     </StackPanel>
                 </Grid>
 

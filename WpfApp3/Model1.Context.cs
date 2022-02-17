@@ -13,20 +13,20 @@ namespace WpfApp3
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ws2016Entities4 : DbContext
+    public partial class ws2016Entities5 : DbContext
     {
 
-        private static ws2016Entities4 _context;
+        private static ws2016Entities5 _context;
 
-        public ws2016Entities4()
-            : base("name=ws2016Entities4")
+        public ws2016Entities5()
+            : base("name=ws2016Entities5")
         {
         }
 
-        public static ws2016Entities4 GetContext()
+        public static ws2016Entities5 GetContext()
         {
             if (_context == null)
-                _context = new ws2016Entities4();
+                _context = new ws2016Entities5();
             return _context;
         }
 
@@ -41,7 +41,7 @@ namespace WpfApp3
         public virtual DbSet<EventType> EventType { get; set; }
         public virtual DbSet<Gender> Gender { get; set; }
         public virtual DbSet<Marathon> Marathon { get; set; }
-        public virtual DbSet<Position> Position { get; set; }
+        public virtual DbSet<Positions> Positions { get; set; }
         public virtual DbSet<RaceKitOption> RaceKitOption { get; set; }
         public virtual DbSet<Registration> Registration { get; set; }
         public virtual DbSet<RegistrationEvent> RegistrationEvent { get; set; }
@@ -50,7 +50,6 @@ namespace WpfApp3
         public virtual DbSet<Runner> Runner { get; set; }
         public virtual DbSet<Sponsorship> Sponsorship { get; set; }
         public virtual DbSet<Staff> Staff { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Timesheet> Timesheet { get; set; }
         public virtual DbSet<User> User { get; set; }
         public virtual DbSet<Volunteer> Volunteer { get; set; }

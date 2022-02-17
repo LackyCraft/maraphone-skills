@@ -41,7 +41,7 @@ namespace WpfApp3
             string pass = Pass.Password.ToString();
             //MessageBox.Show(login+"\n"+pass);
             //List<string> people = new List<string>();
-            var authInfo = ws2016Entities4.GetContext().User.Where(i => i.Email == login && i.Password == pass).ToList();
+            var authInfo = ws2016Entities5.GetContext().User.Where(i => i.Email == login && i.Password == pass).ToList();
 
             if (authInfo.Count > 0)
             {

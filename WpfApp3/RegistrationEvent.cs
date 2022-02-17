@@ -19,5 +19,8 @@ namespace WpfApp3
         public string EventId { get; set; }
         public Nullable<short> BibNumber { get; set; }
         public Nullable<int> RaceTime { get; set; }
+    
+        public virtual Event Event { get; set; }
+        public virtual Registration Registration { get; set; }
     }
 }

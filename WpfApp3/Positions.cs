@@ -12,12 +12,12 @@ namespace WpfApp3
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagrams
+    public partial class Positions
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public short Positionid { get; set; }
+        public string Position_Name { get; set; }
+        public string Position_Description { get; set; }
+        public string Pay_Period { get; set; }
+        public decimal Pay_Rate { get; set; }
     }
 }

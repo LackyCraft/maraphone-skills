@@ -28,7 +28,7 @@ namespace WpfApp3
 
             //Заменить потом на имя через users
 
-            Runner.ItemsSource = ws2016Entities4.GetContext().Runner.ToList();
+            Runner.ItemsSource = ws2016Entities5.GetContext().Runner.ToList();
         }
 
         private void payBoxTextChanged(object sender, TextChangedEventArgs e)
@@ -147,9 +147,5 @@ namespace WpfApp3
             textCodeCVC.Background = Brushes.White;
         }
 
-        private void Runner_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            MessageBox.Show(Runner.SelectedValue.ToString());
-        }
     }
 }
