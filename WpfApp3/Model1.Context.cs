@@ -30,6 +30,11 @@ namespace WpfApp3
             return _context;
         }
 
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            throw new UnintentionalCodeFirstException();
+        }
+    
         public virtual DbSet<Charity> Charity { get; set; }
         public virtual DbSet<Country> Country { get; set; }
         public virtual DbSet<Event> Event { get; set; }

@@ -186,6 +186,7 @@
     <Property Name="FirstName" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
     <Property Name="LastName" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
     <Property Name="RoleId" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Patch" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Role" Relationship="Self.FK__User__RoleId__3F466844" FromRole="User" ToRole="Role" />
     <NavigationProperty Name="Runner" Relationship="Self.Runner_FK" FromRole="User" ToRole="Runner" />
   </EntityType>
@@ -393,7 +394,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="ws2016Entities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Charity" EntityType="Self.Charity" />
     <EntitySet Name="Country" EntityType="Self.Country" />
     <EntitySet Name="Event" EntityType="Self.Event" />

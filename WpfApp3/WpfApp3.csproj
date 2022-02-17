@@ -133,9 +133,6 @@
     <Compile Include="OldResult.xaml.cs">
       <DependentUpon>OldResult.xaml</DependentUpon>
     </Compile>
-    <Compile Include=".xaml.cs">
-      <DependentUpon>Registration.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Positions.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -147,6 +144,9 @@
     </Compile>
     <Compile Include="Registration.cs">
       <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Registration.xaml.cs">
+      <DependentUpon>Registration.xaml</DependentUpon>
     </Compile>
     <Compile Include="RegistrationEvent.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -331,7 +331,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
-    <Resource Include="Image\user.png" />
+    <Resource Include="Image\User\runner-default.jpg" />
     <Resource Include="Image\company\arise-logo.png" />
     <Resource Include="Image\company\aves-do-brazil-logo.png" />
     <Resource Include="Image\company\clara-santos-oliveira-institute.png" />

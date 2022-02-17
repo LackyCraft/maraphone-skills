@@ -163,6 +163,7 @@
           <Property Name="FirstName" Type="nvarchar" MaxLength="80" />
           <Property Name="LastName" Type="nvarchar" MaxLength="80" />
           <Property Name="RoleId" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="Patch" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="Volunteer">
           <Key>
@@ -641,6 +642,7 @@
           <Property Name="FirstName" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
           <Property Name="LastName" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
           <Property Name="RoleId" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Patch" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Role" Relationship="Self.FK__User__RoleId__3F466844" FromRole="User" ToRole="Role" />
           <NavigationProperty Name="Runner" Relationship="Self.Runner_FK" FromRole="User" ToRole="Runner" />
         </EntityType>
@@ -848,7 +850,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ws2016Entities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Charity" EntityType="Self.Charity" />
           <EntitySet Name="Country" EntityType="Self.Country" />
           <EntitySet Name="Event" EntityType="Self.Event" />
@@ -937,7 +939,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище ws2016ModelContainer" CdmEntityContainer="ws2016Entities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище ws2016ModelContainer" CdmEntityContainer="Entities">
           <EntitySetMapping Name="Charity">
             <EntityTypeMapping TypeName="ws2016Model.Charity">
               <MappingFragment StoreEntitySet="Charity">
@@ -1111,6 +1113,7 @@
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
                 <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="Patch" ColumnName="Patch" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

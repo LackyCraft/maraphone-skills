@@ -158,6 +158,7 @@
     <Property Name="FirstName" Type="nvarchar" MaxLength="80" />
     <Property Name="LastName" Type="nvarchar" MaxLength="80" />
     <Property Name="RoleId" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="Patch" Type="varchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="Volunteer">
     <Key>

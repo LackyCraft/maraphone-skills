@@ -240,5 +240,5 @@ C:\Users\ExamWSR\Desktop\maraphone-skills\maraphone-skills\WpfApp3\obj\Debug\Rol
 C:\Users\ExamWSR\Desktop\maraphone-skills\maraphone-skills\WpfApp3\obj\Debug\RolePage\Coordinaor\Charty\RemoteSponser.baml
 C:\Users\ExamWSR\Desktop\maraphone-skills\maraphone-skills\WpfApp3\obj\Debug\Registratiob.g.cs
 C:\Users\ExamWSR\Desktop\maraphone-skills\maraphone-skills\WpfApp3\obj\Debug\Registratiob.baml
-C:\Users\Даниил\Desktop\maraphone-skills\maraphone-skills\WpfApp3\obj\Debug\Registratiob.g.cs
-C:\Users\Даниил\Desktop\maraphone-skills\maraphone-skills\WpfApp3\obj\Debug\Registratiob.baml
+C:\Users\Даниил\Desktop\maraphone-skills\maraphone-skills\WpfApp3\obj\Debug\Registration.g.cs
+C:\Users\Даниил\Desktop\maraphone-skills\maraphone-skills\WpfApp3\obj\Debug\Registration.baml
