@@ -142,16 +142,22 @@
     <Compile Include="ReferRunner.xaml.cs">
       <DependentUpon>ReferRunner.xaml</DependentUpon>
     </Compile>
+    <Compile Include="RegistertationRunnerInMaraphon.xaml.cs">
+      <DependentUpon>RegistertationRunnerInMaraphon.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Registration.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Registration.xaml.cs">
-      <DependentUpon>Registration.xaml</DependentUpon>
+    <Compile Include="RegistrationRunner.xaml.cs">
+      <DependentUpon>RegistrationRunner.xaml</DependentUpon>
     </Compile>
     <Compile Include="RegistrationEvent.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="RegistrationStatus.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RemoteUsers.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Role.cs">
@@ -226,7 +232,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Registration.xaml">
+    <Page Include="RegistertationRunnerInMaraphon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RegistrationRunner.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -321,6 +331,98 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Image\country\flag\flag_andorra.png" />
+    <Resource Include="Image\country\flag\flag_argentina.png" />
+    <Resource Include="Image\country\flag\flag_australia.png" />
+    <Resource Include="Image\country\flag\flag_austria.png" />
+    <Resource Include="Image\country\flag\flag_belgium.png" />
+    <Resource Include="Image\country\flag\flag_botswana.png" />
+    <Resource Include="Image\country\flag\flag_brazil.png" />
+    <Resource Include="Image\country\flag\flag_bulgaria.png" />
+    <Resource Include="Image\country\flag\flag_cameroon.png" />
+    <Resource Include="Image\country\flag\flag_canada.png" />
+    <Resource Include="Image\country\flag\flag_central_african_republic.png" />
+    <Resource Include="Image\country\flag\flag_chile.png" />
+    <Resource Include="Image\country\flag\flag_china.png" />
+    <Resource Include="Image\country\flag\flag_chinese_taipei.png" />
+    <Resource Include="Image\country\flag\flag_colombia.png" />
+    <Resource Include="Image\country\flag\flag_croatia.png" />
+    <Resource Include="Image\country\flag\flag_czech_republic.png" />
+    <Resource Include="Image\country\flag\flag_denmark.png" />
+    <Resource Include="Image\country\flag\flag_dominican_republic.png" />
+    <Resource Include="Image\country\flag\flag_ecuador.png" />
+    <Resource Include="Image\country\flag\flag_egypt.png" />
+    <Resource Include="Image\country\flag\flag_el_salvador.png" />
+    <Resource Include="Image\country\flag\flag_equatorial_guinea.png" />
+    <Resource Include="Image\country\flag\flag_estonia.png" />
+    <Resource Include="Image\country\flag\flag_finland.png" />
+    <Resource Include="Image\country\flag\flag_france.png" />
+    <Resource Include="Image\country\flag\flag_germany.png" />
+    <Resource Include="Image\country\flag\flag_greece.png" />
+    <Resource Include="Image\country\flag\flag_guatemala.png" />
+    <Resource Include="Image\country\flag\flag_guinea-bissau.png" />
+    <Resource Include="Image\country\flag\flag_guinea.png" />
+    <Resource Include="Image\country\flag\flag_honduras.png" />
+    <Resource Include="Image\country\flag\flag_hong_kong.png" />
+    <Resource Include="Image\country\flag\flag_hungary.png" />
+    <Resource Include="Image\country\flag\flag_india.png" />
+    <Resource Include="Image\country\flag\flag_indonesia.png" />
+    <Resource Include="Image\country\flag\flag_ireland.png" />
+    <Resource Include="Image\country\flag\flag_israel.png" />
+    <Resource Include="Image\country\flag\flag_italy.png" />
+    <Resource Include="Image\country\flag\flag_ivory_coast.png" />
+    <Resource Include="Image\country\flag\flag_jamaica.png" />
+    <Resource Include="Image\country\flag\flag_japan.png" />
+    <Resource Include="Image\country\flag\flag_jordan.png" />
+    <Resource Include="Image\country\flag\flag_kenya.png" />
+    <Resource Include="Image\country\flag\flag_latvia.png" />
+    <Resource Include="Image\country\flag\flag_liechtenstein.png" />
+    <Resource Include="Image\country\flag\flag_lithuania.png" />
+    <Resource Include="Image\country\flag\flag_luxembourg.png" />
+    <Resource Include="Image\country\flag\flag_macau.png" />
+    <Resource Include="Image\country\flag\flag_macedonia.png" />
+    <Resource Include="Image\country\flag\flag_madagascar.png" />
+    <Resource Include="Image\country\flag\flag_malaysia.png" />
+    <Resource Include="Image\country\flag\flag_mali.png" />
+    <Resource Include="Image\country\flag\flag_malta.png" />
+    <Resource Include="Image\country\flag\flag_mauritius.png" />
+    <Resource Include="Image\country\flag\flag_mexico.png" />
+    <Resource Include="Image\country\flag\flag_moldova.png" />
+    <Resource Include="Image\country\flag\flag_monaco.png" />
+    <Resource Include="Image\country\flag\flag_montenegro.png" />
+    <Resource Include="Image\country\flag\flag_netherlands.png" />
+    <Resource Include="Image\country\flag\flag_new_zealand.png" />
+    <Resource Include="Image\country\flag\flag_nicaragua.png" />
+    <Resource Include="Image\country\flag\flag_niger.png" />
+    <Resource Include="Image\country\flag\flag_norway.png" />
+    <Resource Include="Image\country\flag\flag_panama.png" />
+    <Resource Include="Image\country\flag\flag_paraguay.png" />
+    <Resource Include="Image\country\flag\flag_peru.png" />
+    <Resource Include="Image\country\flag\flag_philippines.png" />
+    <Resource Include="Image\country\flag\flag_poland.png" />
+    <Resource Include="Image\country\flag\flag_portugal.png" />
+    <Resource Include="Image\country\flag\flag_puerto_rico.png" />
+    <Resource Include="Image\country\flag\flag_qatar.png" />
+    <Resource Include="Image\country\flag\flag_romania.png" />
+    <Resource Include="Image\country\flag\flag_russia.png" />
+    <Resource Include="Image\country\flag\flag_saudi_arabia.png" />
+    <Resource Include="Image\country\flag\flag_senegal.png" />
+    <Resource Include="Image\country\flag\flag_singapore.png" />
+    <Resource Include="Image\country\flag\flag_slovakia.png" />
+    <Resource Include="Image\country\flag\flag_south_africa.png" />
+    <Resource Include="Image\country\flag\flag_south_korea.png" />
+    <Resource Include="Image\country\flag\flag_spain.png" />
+    <Resource Include="Image\country\flag\flag_sweden.png" />
+    <Resource Include="Image\country\flag\flag_switzerland.png" />
+    <Resource Include="Image\country\flag\flag_thailand.png" />
+    <Resource Include="Image\country\flag\flag_turkey.png" />
+    <Resource Include="Image\country\flag\flag_united_arab_emirates.png" />
+    <Resource Include="Image\country\flag\flag_united_kingdom.png" />
+    <Resource Include="Image\country\flag\flag_uruguay.png" />
+    <Resource Include="Image\country\flag\flag_usa.png" />
+    <Resource Include="Image\country\flag\flag_vatican.png" />
+    <Resource Include="Image\country\flag\flag_venezuela.png" />
+    <Resource Include="Image\country\flag\flag_vietnam.png" />
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>

@@ -4,25 +4,26 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="462f81e2e13b4eae98ce695db9519a09" Name="Diagram1">
+      <Diagram DiagramId="7696a39207904d3aa556a7c2f7a48c25" Name="Diagram1">
         <EntityTypeShape EntityType="ws2016Model.Charity" Width="1.5" PointX="3" PointY="16.375" IsExpanded="true" />
         <EntityTypeShape EntityType="ws2016Model.Country" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ws2016Model.Event" Width="1.5" PointX="5.25" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ws2016Model.Event" Width="1.5" PointX="7.25" PointY="7.625" IsExpanded="true" />
         <EntityTypeShape EntityType="ws2016Model.EventType" Width="1.5" PointX="3" PointY="25.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ws2016Model.Gender" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
         <EntityTypeShape EntityType="ws2016Model.Marathon" Width="1.5" PointX="3" PointY="6.375" IsExpanded="true" />
         <EntityTypeShape EntityType="ws2016Model.Positions" Width="1.5" PointX="9.75" PointY="1.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ws2016Model.RaceKitOption" Width="1.5" PointX="3" PointY="19.125" IsExpanded="true" />
         <EntityTypeShape EntityType="ws2016Model.Registration" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ws2016Model.RegistrationEvent" Width="1.5" PointX="7.5" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ws2016Model.RegistrationEvent" Width="1.5" PointX="7.875" PointY="2.875" IsExpanded="true" />
         <EntityTypeShape EntityType="ws2016Model.RegistrationStatus" Width="1.5" PointX="3" PointY="22.625" IsExpanded="true" />
         <EntityTypeShape EntityType="ws2016Model.Role" Width="1.5" PointX="1.5" PointY="13.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ws2016Model.Runner" Width="1.5" PointX="3" PointY="2.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="ws2016Model.Sponsorship" Width="1.5" PointX="7.5" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ws2016Model.Sponsorship" Width="1.5" PointX="6" PointY="5.25" IsExpanded="true" />
         <EntityTypeShape EntityType="ws2016Model.Staff" Width="1.5" PointX="9.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ws2016Model.Timesheet" Width="1.5" PointX="5.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ws2016Model.Timesheet" Width="1.5" PointX="6.25" PointY="11.625" IsExpanded="true" />
         <EntityTypeShape EntityType="ws2016Model.User" Width="1.5" PointX="0.75" PointY="10.25" IsExpanded="true" />
         <EntityTypeShape EntityType="ws2016Model.Volunteer" Width="1.5" PointX="3" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ws2016Model.RemoteUsers" Width="1.5" PointX="11.125" PointY="8.75" IsExpanded="true" />
         <AssociationConnector Association="ws2016Model.Registration_FK_1" ManuallyRouted="false" />
         <AssociationConnector Association="ws2016Model.FK__Volunteer__Count__440B1D61" ManuallyRouted="false" />
         <AssociationConnector Association="ws2016Model.Marathon_FK" ManuallyRouted="false" />

@@ -202,6 +202,16 @@
     <NavigationProperty Name="Country" Relationship="Self.FK__Volunteer__Count__440B1D61" FromRole="Volunteer" ToRole="Country" />
     <NavigationProperty Name="Gender1" Relationship="Self.FK__Volunteer__Gende__4316F928" FromRole="Volunteer" ToRole="Gender" />
   </EntityType>
+  <EntityType Name="RemoteUsers">
+    <Key>
+      <PropertyRef Name="Email" />
+      <PropertyRef Name="RegistrationStatus" />
+    </Key>
+    <Property Name="FirstName" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RegistrationStatus" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
   <Association Name="Registration_FK_1">
     <End Role="Charity" Type="Self.Charity" Multiplicity="1" />
     <End Role="Registration" Type="Self.Registration" Multiplicity="*" />
@@ -394,7 +404,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="ws2016Entities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Charity" EntityType="Self.Charity" />
     <EntitySet Name="Country" EntityType="Self.Country" />
     <EntitySet Name="Event" EntityType="Self.Event" />
@@ -413,6 +423,7 @@
     <EntitySet Name="Timesheet" EntityType="Self.Timesheet" />
     <EntitySet Name="User" EntityType="Self.User" />
     <EntitySet Name="Volunteer" EntityType="Self.Volunteer" />
+    <EntitySet Name="RemoteUsers" EntityType="Self.RemoteUsers" />
     <AssociationSet Name="Registration_FK_1" Association="Self.Registration_FK_1">
       <End Role="Charity" EntitySet="Charity" />
       <End Role="Registration" EntitySet="Registration" />

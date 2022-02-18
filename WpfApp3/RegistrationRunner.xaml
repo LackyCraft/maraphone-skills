@@ -62,10 +62,14 @@
                 <PasswordBox Margin="4" Height="25" x:Name="DoublePass"/>
                 <TextBox Margin="4" x:Name="FirstName"/>
                 <TextBox Margin="4" x:Name="LastName"/>
-                <TextBox Margin="4" x:Name="Male"/>
+                <ComboBox Margin="4" x:Name="boxGender" 
+                          DisplayMemberPath="Gender1" 
+                          SelectionChanged="Gender_SelectionChanged" 
+                          SelectedValue="{Binding Gender1}"/>
+
 
                 <StackPanel Orientation="Horizontal" Height="25">
-                    <Button Content="Регистрация" Width="90" Click="btnRegister"/>
+                    <Button Content="Регистрация" Width="90" Click="btnRegister" x:Name="Register"/>
                     <Button Content="Отмена" Width="70" Margin="10,0,0,0" Click="buttonBack"/>
                 </StackPanel>
             </StackPanel>
@@ -88,7 +92,7 @@
 
                 <TextBlock Text="Дата рождения:" Margin="0,10,0,0" Grid.Row="1" Grid.Column="0" Height="20" VerticalAlignment="Top" TextAlignment="Right" />
                 <TextBlock Text="Страна:" Margin="0,35,0,0" Grid.Row="1" Grid.Column="0" Height="20" VerticalAlignment="Top" TextAlignment="Right" />
-                <TextBox HorizontalContentAlignment="Right" Margin="5,35,5,21" VerticalAlignment="Top" Grid.Row="1" Grid.Column="1" Height="20" x:Name="Countrty"/>
+                <ComboBox HorizontalContentAlignment="Right" Margin="5,35,5,21" VerticalAlignment="Top" Grid.Row="1" Grid.Column="1" Height="20" x:Name="comboBoxCountrty" DisplayMemberPath="CountryName" SelectionChanged="Countrty_SelectionChanged"/>
                 <DatePicker HorizontalContentAlignment="Right" VerticalAlignment="Top" Margin="5" Grid.Row="1" Grid.Column="1" Height="25" x:Name="DataOfBrith"/>
 
             </Grid>

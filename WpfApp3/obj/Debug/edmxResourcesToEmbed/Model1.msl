@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="Хранилище ws2016ModelContainer" CdmEntityContainer="Entities">
+  <EntityContainerMapping StorageEntityContainer="Хранилище ws2016ModelContainer" CdmEntityContainer="ws2016Entities">
     <EntitySetMapping Name="Charity">
       <EntityTypeMapping TypeName="ws2016Model.Charity">
         <MappingFragment StoreEntitySet="Charity">
@@ -186,6 +186,16 @@
           <ScalarProperty Name="LastName" ColumnName="LastName" />
           <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
           <ScalarProperty Name="Gender" ColumnName="Gender" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RemoteUsers">
+      <EntityTypeMapping TypeName="ws2016Model.RemoteUsers">
+        <MappingFragment StoreEntitySet="RemoteUsers">
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="RegistrationStatus" ColumnName="RegistrationStatus" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

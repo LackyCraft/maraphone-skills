@@ -117,7 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Country" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CountryCode" xml:space="preserve">
+    <value />
+  </data>
   <data name="Email" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Gender" xml:space="preserve">
+    <value />
+  </data>
+  <data name="idRunner" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PhotoPatch" xml:space="preserve">
     <value />
   </data>
   <data name="Price" xml:space="preserve">

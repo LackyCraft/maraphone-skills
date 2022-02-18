@@ -170,6 +170,18 @@
     <Property Name="CountryCode" Type="nchar" MaxLength="3" Nullable="false" />
     <Property Name="Gender" Type="nvarchar" MaxLength="10" Nullable="false" />
   </EntityType>
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "ws2016.dbo.RemoteUsers" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+  <EntityType Name="RemoteUsers">
+    <Key>
+      <PropertyRef Name="Email" />
+      <PropertyRef Name="RegistrationStatus" />
+    </Key>
+    <Property Name="FirstName" Type="nvarchar" MaxLength="80" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="80" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="RegistrationStatus" Type="nvarchar" MaxLength="80" Nullable="false" />
+  </EntityType>
   <Association Name="Event_FK">
     <End Role="Marathon" Type="Self.Marathon" Multiplicity="1" />
     <End Role="Event" Type="Self.Event" Multiplicity="*" />
@@ -381,6 +393,14 @@
     <EntitySet Name="Timesheet" EntityType="Self.Timesheet" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Volunteer" EntityType="Self.Volunteer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RemoteUsers" EntityType="Self.RemoteUsers" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [RemoteUsers].[FirstName] AS [FirstName], 
+    [RemoteUsers].[LastName] AS [LastName], 
+    [RemoteUsers].[Email] AS [Email], 
+    [RemoteUsers].[RegistrationStatus] AS [RegistrationStatus]
+    FROM [dbo].[RemoteUsers] AS [RemoteUsers]</DefiningQuery>
+    </EntitySet>
     <AssociationSet Name="Event_FK" Association="Self.Event_FK">
       <End Role="Marathon" EntitySet="Marathon" />
       <End Role="Event" EntitySet="Event" />

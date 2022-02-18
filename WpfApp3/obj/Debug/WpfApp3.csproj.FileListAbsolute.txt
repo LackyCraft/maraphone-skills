@@ -238,7 +238,9 @@ C:\Users\Даниил\Desktop\maraphone-skills\maraphone-skills\WpfApp3\obj\Debu
 C:\Users\Даниил\Desktop\maraphone-skills\maraphone-skills\WpfApp3\obj\Debug\WpfApp3.csproj.CopyComplete
 C:\Users\ExamWSR\Desktop\maraphone-skills\maraphone-skills\WpfApp3\obj\Debug\RolePage\Coordinaor\Charty\RemoteRunner.baml
 C:\Users\ExamWSR\Desktop\maraphone-skills\maraphone-skills\WpfApp3\obj\Debug\RolePage\Coordinaor\Charty\RemoteSponser.baml
-C:\Users\ExamWSR\Desktop\maraphone-skills\maraphone-skills\WpfApp3\obj\Debug\Registratiob.g.cs
-C:\Users\ExamWSR\Desktop\maraphone-skills\maraphone-skills\WpfApp3\obj\Debug\Registratiob.baml
 C:\Users\Даниил\Desktop\maraphone-skills\maraphone-skills\WpfApp3\obj\Debug\Registration.g.cs
 C:\Users\Даниил\Desktop\maraphone-skills\maraphone-skills\WpfApp3\obj\Debug\Registration.baml
+C:\Users\ExamWSR\Desktop\maraphone-skills\maraphone-skills\WpfApp3\obj\Debug\RegistrationRunner.g.cs
+C:\Users\ExamWSR\Desktop\maraphone-skills\maraphone-skills\WpfApp3\obj\Debug\RegistertationRunnerInMaraphon.g.cs
+C:\Users\ExamWSR\Desktop\maraphone-skills\maraphone-skills\WpfApp3\obj\Debug\RegistertationRunnerInMaraphon.baml
+C:\Users\ExamWSR\Desktop\maraphone-skills\maraphone-skills\WpfApp3\obj\Debug\RegistrationRunner.baml
