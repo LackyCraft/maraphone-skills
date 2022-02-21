@@ -50,11 +50,23 @@ namespace WpfApp3
 
                 Application.Current.Resources["Email"] = authInfo[0].Email.ToString();
                 Application.Current.Resources["Role"] = authInfo[0].RoleId.ToString();
+                Application.Current.Resources["FirstName"] = authInfo[0].FirstName.ToString();
+                Application.Current.Resources["LastName"] = authInfo[0].LastName.ToString();
+                Application.Current.Resources["PhotoPatch"] = authInfo[0].Patch.ToString();
                 try
                 {
-                    
-                    if(authInfo[0].RoleId.ToString() == "R")
+
+                    if (authInfo[0].RoleId.ToString() == "R")
+                    {
+                        var runnerInfo = ws2016Entities5.GetContext().Runner.Where(i => i.Email == login.ToString()).ToList();
+                        Application.Current.Resources["idRunner"] = runnerInfo[0].RunnerId.ToString();
+                        Application.Current.Resources["CountryCode"] = runnerInfo[0].CountryCode.ToString();
+                        Application.Current.Resources["Country"] = runnerInfo[0].Country.ToString();
+                        Application.Current.Resources["Gender"] = runnerInfo[0].Gender.ToString();
+                        Application.Current.Resources["DateOfBirth"] = runnerInfo[0].DateOfBirth.ToString();
+
                         this.NavigationService.Navigate(new Uri("RolePage/MenuRunnerPage.xaml", UriKind.Relative));
+                    }
                     if (authInfo[0].RoleId.ToString() == "C")
                         this.NavigationService.Navigate(new Uri("RolePage/MenuCoordinatorPage.xaml", UriKind.Relative));
                     if (authInfo[0].RoleId.ToString() == "A")

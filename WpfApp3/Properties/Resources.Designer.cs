@@ -81,6 +81,15 @@ namespace WpfApp3.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на .
         /// </summary>
+        internal static string DateOfBirth {
+            get {
+                return ResourceManager.GetString("DateOfBirth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на .
+        /// </summary>
         internal static string Email {
             get {
                 return ResourceManager.GetString("Email", resourceCulture);

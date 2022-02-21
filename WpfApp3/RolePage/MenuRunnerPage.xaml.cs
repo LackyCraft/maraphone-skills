@@ -36,7 +36,8 @@ namespace WpfApp3.RolePage
 
         private void ScrolPage(object sender, RoutedEventArgs e)
         {
-
+            if(sender == editRunner)
+                this.NavigationService.Navigate(new Uri("RolePage/Runner/editRunner.xaml", UriKind.Relative));
         }
     }
 }

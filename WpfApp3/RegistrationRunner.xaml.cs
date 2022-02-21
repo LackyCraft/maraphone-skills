@@ -81,6 +81,13 @@ namespace WpfApp3
                     ws2016Entities5.GetContext().User.Add(NewUser);
                     ws2016Entities5.GetContext().SaveChanges();
 
+                    Application.Current.Resources["LastName"] = NewUser.LastName;
+                    Application.Current.Resources["FirstName"] = NewUser.FirstName;
+                    Application.Current.Resources["Role"] = "R";
+                    Application.Current.Resources["PhotoPatch"] = NewUser.Patch;
+                    Application.Current.Resources["Email"] = NewUser.Email;
+
+
                     //this.Content = null;
 
                     string dates = DataOfBrith.Text;
@@ -99,6 +106,10 @@ namespace WpfApp3
                     };
                     ws2016Entities5.GetContext().Runner.Add(NewRunner);
                     ws2016Entities5.GetContext().SaveChanges();
+
+                    Application.Current.Resources["idRunner"] = NewRunner.RunnerId;
+                    Application.Current.Resources["Gender"] = NewRunner.Gender;
+                    Application.Current.Resources["CountryCode"] = NewRunner.CountryCode;
 
                     MessageBox.Show("Вы были зарегистрированы на марафон!");
                     ScrolPage(sender,e);
@@ -145,12 +156,13 @@ namespace WpfApp3
 
         private void Countrty_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            MessageBox.Show(comboBoxCountrty.SelectedValue.ToString());
             try
             {
 
             
             string selectCountry = (comboBoxCountrty.SelectedItem as Country).CountryName.ToString();
-            MessageBox.Show(selectCountry);
+            //MessageBox.Show(selectCountry);
 
             var codeGender = ws2016Entities5.GetContext().Country.Where(i => i.CountryName == selectCountry).ToList();
 

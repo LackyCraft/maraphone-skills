@@ -21,7 +21,7 @@ namespace WpfApp3.RolePage.Coordinaor.Charty
     public partial class RemoteRunner : Page
     {
 
-        List<Runner> materialList = new List<Runner>();
+        //List<runner> materialList = new List<runner>();
         List<string> listSort = new List<string>() { "Сортировка", "Наименование по возрастанию", "Наименование по убыванию", "Остаток по возрастанию", "Остаток по убыванию",
                                                      "Стоимость по возрастанию", "Стоимость по убыванию"};
         List<string> listFilter = new List<string>() { "Фильтрация", "Краска", "Резина", "Силикон" };

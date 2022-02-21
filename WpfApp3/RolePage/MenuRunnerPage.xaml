@@ -38,7 +38,7 @@
                 </Grid.ColumnDefinitions>
                 <TextBlock Text="Меню бегуна" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" />
                 <Button Content="Регистрация на марафон" Margin="20" Grid.Row="1" Grid.Column="0" Click="ScrolPage" x:Name="infoWorldSkills"/>
-                <Button Content="Редактирование профиля" Margin="20" Grid.Row="2" Grid.Column="0" Click="ScrolPage" x:Name="oldResult"/>
+                <Button Content="Редактирование профиля" Margin="20" Grid.Row="2" Grid.Column="0" Click="ScrolPage" x:Name="editRunner"/>
                 <Button Content="Контакты" Margin="20" Grid.Row="3" Grid.Column="0"/>
                 <Button Content="Мои результаты" Margin="20" Grid.Row="1" Grid.Column="1"/>
                 <Button Content="Мой спонсор" Margin="20" Grid.Row="2" Grid.Column="2" Click="ScrolPage" x:Name="ListCompany"/>

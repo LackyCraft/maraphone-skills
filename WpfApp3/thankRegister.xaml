@@ -1,0 +1,48 @@
+﻿<Page x:Class="WpfApp3.thankRegister"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp3"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="thankRegister">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*" />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Rectangle Grid.Row="0" Fill="{StaticResource DarkGrey}" />
+        <Rectangle Grid.Row="2" Fill="White" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.2*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="MARATHON SKILLS 2022"  Grid.Column="1" Foreground="White" TextAlignment="Left" FontWeight="Bold" FontSize="36" Margin="0,15,0,0"/>
+            <Button Click="buttonBack" Content="Назад" Grid.Column="0" Background="{StaticResource Grey}"  Height="30" VerticalAlignment="Top" Margin="5,19,5,0"/>
+        </Grid>
+
+        <Grid Grid.Row="1" x:Name="Column1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.6*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="4*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.7*"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="Спасибо за вашу регистрацию в качестве бегуна" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Foreground="{StaticResource DarkGrey}" TextAlignment="Center" VerticalAlignment="Center" Margin="0,15,0,0" FontSize="23"/>
+            <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Foreground="{StaticResource DarkGrey}" TextAlignment="Center" Margin="50,15,50,0" FontSize="18">Спасибо за вашу регистрацию в качестве бегуна в Maraphon Skills 2022!
+            <LineBreak></LineBreak>С вами свяжутся по поводу оплаты
+            </TextBlock>
+        </Grid>
+    </Grid>
+</Page>

@@ -49,15 +49,15 @@
             <TextBlock Text="Варианты комплектов" VerticalAlignment="Center" Foreground="{StaticResource Grey}" Grid.Row="2" Grid.Column="1" FontWeight="Bold" FontSize="18" TextAlignment="Center"/>
 
             <StackPanel HorizontalAlignment="Center" Grid.Row="3" Grid.Column="0">
-                <CheckBox Content="42 km Полный марафон ($145)" x:Uid=""/>
-                <CheckBox Content="21 km Полумарафон ($75)"/>
-                <CheckBox Content="5 km Малая дистанция ($20)"/>
+                <CheckBox Content="42 km Полный марафон ($145)" x:Name="chekBox42km" Checked="ChekBoxCheckedWayMaraohin"/>
+                <CheckBox Content="21 km Полумарафон ($75)" x:Name="chekBox21km" Checked="ChekBoxCheckedWayMaraohin"/>
+                <CheckBox Content="5 km Малая дистанция ($20)" x:Name="chekBox5km" Checked="ChekBoxCheckedWayMaraohin"/>
             </StackPanel>
 
             <StackPanel HorizontalAlignment="Center" Grid.Row="3" Grid.Column="1">
-                <RadioButton Content="Вариант A ($0): Номер бегуна + RFID браслет."/>
-                <RadioButton Content="Вариант B ($20): Вариант А + бейсболка + бутылка воды."/>
-                <RadioButton Content="Вариант C ($45): Вариант B + футболка + сувенирный буклет."/>
+                <RadioButton Content="Вариант A ($0): Номер бегуна + RFID браслет." x:Name="typeA" Checked="ChekBoxCheckedWayMaraohin"/>
+                <RadioButton Content="Вариант B ($20): Вариант А + бейсболка + бутылка воды." x:Name="typeB" Checked="ChekBoxCheckedWayMaraohin"/>
+                <RadioButton Content="Вариант C ($45): Вариант B + футболка + сувенирный буклет." x:Name="typeC" Checked="ChekBoxCheckedWayMaraohin"/>
             </StackPanel>
 
             <TextBlock Text="Детали спонсорства" VerticalAlignment="Center" Foreground="{StaticResource Grey}" Grid.Row="4" Grid.Column="0" FontWeight="Bold" FontSize="18" TextAlignment="Center"/>
@@ -73,9 +73,11 @@
                 <TextBlock x:Name="textBlock" HorizontalAlignment="Right" TextWrapping="Wrap" Text="Взнос: " VerticalAlignment="Top"/>
                 <TextBlock x:Name="Price" Margin="0,22,0,0" HorizontalAlignment="Right" TextWrapping="Wrap" Text="Сумма взноса: " VerticalAlignment="Top"/>
 
-                <ComboBox Grid.Column="1" Margin="5,0,0,0" HorizontalAlignment="Left" Height="18"  VerticalAlignment="Top" Width="87"/>
-                <TextBox Grid.Column="1" Margin="5,20,0,0" HorizontalAlignment="Left" Height="18"  VerticalAlignment="Top" Width="87" IsEnabled="false" Text="0$" TextAlignment="Center" FontWeight="Bold" FontSize="12"/>
-                <Button x:Name="InfoCharty"  Grid.Column="1" Margin="100,0,0,0" HorizontalAlignment="Left" Height="18"  VerticalAlignment="Top" Width="20" Content="i"/>
+                <ComboBox Grid.Column="1" SelectionChanged="ComboBoxCharty_SelectionChanged" Margin="5,0,0,0" HorizontalAlignment="Left" Height="18"  VerticalAlignment="Top" Width="87" x:Name="comboBoxCharty" DisplayMemberPath="CharityName" SelectedValuePath="CharityId"/>
+                <TextBox x:Name="priceInCharty" TextChanged="TextBox_TextChanged"  Grid.Column="1" Margin="5,20,0,0" HorizontalAlignment="Left" Height="18"  VerticalAlignment="Top" Width="87" Text="0" TextAlignment="Center" FontWeight="Bold" FontSize="12"/>
+                <Button x:Name="InfoCharty"  Grid.Column="1" Margin="100,0,0,0" HorizontalAlignment="Left" Height="18"  VerticalAlignment="Top" Width="20" Content="i" Click="infoCharity"/>
+                
+                <Button Click="ScrolPage" x:Name="nextRegister"  Grid.Column="1"  HorizontalAlignment="Left" Height="22"  VerticalAlignment="Bottom" Width="92" Content="Регистрация"/>
 
 
             </Grid>
