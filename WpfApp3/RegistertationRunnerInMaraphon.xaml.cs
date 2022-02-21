@@ -37,41 +37,33 @@ namespace WpfApp3
         private void ComboBoxCharty_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //id - comboBoxCharty.SelectedValue.ToString();
+            
         }
 
-        private void ChekBoxCheckedWayMaraohin(object sender, RoutedEventArgs e)
+        private void ChekBoxCheckedWayMarafon(object sender, RoutedEventArgs e)
         {
-            if (sender == typeB && typeB.IsChecked == true)
+            price = 0;
+            if (typeB.IsChecked == true)
                 price += 20;
-            else if (sender == typeB)
-                price -= 20;
-            if (sender == typeC && typeC.IsChecked == true)
+            if (typeC.IsChecked == true)
                 price += 45;
-            else if(sender == typeC)
-                price -= 45;
-            if (sender == chekBox42km && chekBox42km.IsChecked == true)
+            if (chekBox42km.IsChecked == true)
                 price += 145;
-            else if (sender == chekBox42km)
-                price -= 145;
-            if (sender == chekBox21km && chekBox21km.IsChecked == true)
+            if (chekBox21km.IsChecked == true)
                 price += 75;
-            else if (sender == chekBox21km)
-                price -= 75;
-            if (sender == chekBox5km && chekBox5km.IsChecked == true)
+            if (chekBox5km.IsChecked == true)
                 price += 20;
-            else if (sender == chekBox5km)
-                price -= 20;
-            payTextBlock.Text = "$" + price.ToString();
+            payTextBlock.Text = "$" + (price + int.Parse(priceInCharty.Text)).ToString();
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {           
+        {    
              payTextBlock.Text = "$" + (price + int.Parse(priceInCharty.Text)).ToString();
         }
 
         private void infoCharity(object sender, RoutedEventArgs e)
         {
-            
+            new InfoCharity(comboBoxCharty.SelectedItem as Charity);
         }
 
         private void ScrolPage(object sender, RoutedEventArgs e)
@@ -103,6 +95,5 @@ namespace WpfApp3
             }
 
         }
-
     }
 }

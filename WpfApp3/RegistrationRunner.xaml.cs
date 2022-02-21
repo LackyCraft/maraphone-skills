@@ -156,14 +156,14 @@ namespace WpfApp3
 
         private void Countrty_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            MessageBox.Show(comboBoxCountrty.SelectedValue.ToString());
+            //MessageBox.Show(comboBoxCountrty.SelectedValue.ToString());
             try
             {
 
             
             string selectCountry = (comboBoxCountrty.SelectedItem as Country).CountryName.ToString();
-            //MessageBox.Show(selectCountry);
-
+                //MessageBox.Show(selectCountry);
+                
             var codeGender = ws2016Entities5.GetContext().Country.Where(i => i.CountryName == selectCountry).ToList();
 
             stringCodeCountry = codeGender[0].CountryCode.ToString();

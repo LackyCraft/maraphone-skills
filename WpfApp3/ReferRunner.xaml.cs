@@ -28,7 +28,7 @@ namespace WpfApp3
 
             //Заменить потом на имя через users
 
-            Runner.ItemsSource = ws2016Entities5.GetContext().Runner.ToList();
+            runner.ItemsSource = ws2016Entities5.GetContext().Runner.ToList();
         }
 
         private void payBoxTextChanged(object sender, TextChangedEventArgs e)
@@ -72,11 +72,11 @@ namespace WpfApp3
             textName.Background = Brushes.White;
             textCard.Background = Brushes.White;
             textCardNumber.Background = Brushes.White;
-            Runner.Background = Brushes.White;
+            runner.Background = Brushes.White;
             textPeriod.Background = Brushes.White;
             textCodeCVC.Background = Brushes.White;
 
-            if (Runner.Text == "")
+            if (runner.Text == "")
             {
                 ErrorMessage.Text += "Выберите бегуна\n";
             }
@@ -122,7 +122,7 @@ namespace WpfApp3
             if (ErrorMessage.Text == "")
             {
                 Application.Current.Resources["Price"] = payTextBlock.Text; 
-                Application.Current.Resources["PriceRunner"] = Runner.SelectedItem;
+                Application.Current.Resources["PriceRunner"] = runner.SelectedItem;
                 this.NavigationService.Navigate(new Uri("Benevolence.xaml?parameter=", UriKind.Relative),textRunner.Text);
                 //this.NavigationService.Navigate(new Benevolence(ws2016Entities4.GetContext().Runner.ToList()));
             }
@@ -136,16 +136,20 @@ namespace WpfApp3
             textName.Text = "";
             textCard.Text = "";
             textCardNumber.Text = "";
-            Runner.Text = "";
+            runner.Text = "";
             textPeriod.Text = "";
             textCodeCVC.Text = "";
             textName.Background = Brushes.White;
             textCard.Background = Brushes.White;
             textCardNumber.Background = Brushes.White;
-            Runner.Background = Brushes.White;
+            runner.Background = Brushes.White;
             textPeriod.Background = Brushes.White;
             textCodeCVC.Background = Brushes.White;
         }
 
+        private void Runner_Selected(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

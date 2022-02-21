@@ -49,15 +49,15 @@
             <TextBlock Text="Варианты комплектов" VerticalAlignment="Center" Foreground="{StaticResource Grey}" Grid.Row="2" Grid.Column="1" FontWeight="Bold" FontSize="18" TextAlignment="Center"/>
 
             <StackPanel HorizontalAlignment="Center" Grid.Row="3" Grid.Column="0">
-                <CheckBox Content="42 km Полный марафон ($145)" x:Name="chekBox42km" Checked="ChekBoxCheckedWayMaraohin"/>
-                <CheckBox Content="21 km Полумарафон ($75)" x:Name="chekBox21km" Checked="ChekBoxCheckedWayMaraohin"/>
-                <CheckBox Content="5 km Малая дистанция ($20)" x:Name="chekBox5km" Checked="ChekBoxCheckedWayMaraohin"/>
+                <CheckBox Content="42 km Полный марафон ($145)" x:Name="chekBox42km" Click="ChekBoxCheckedWayMarafon" />
+                <CheckBox Content="21 km Полумарафон ($75)" x:Name="chekBox21km" Click="ChekBoxCheckedWayMarafon"/>
+                <CheckBox Content="5 km Малая дистанция ($20)" x:Name="chekBox5km" Click="ChekBoxCheckedWayMarafon"/>
             </StackPanel>
 
             <StackPanel HorizontalAlignment="Center" Grid.Row="3" Grid.Column="1">
-                <RadioButton Content="Вариант A ($0): Номер бегуна + RFID браслет." x:Name="typeA" Checked="ChekBoxCheckedWayMaraohin"/>
-                <RadioButton Content="Вариант B ($20): Вариант А + бейсболка + бутылка воды." x:Name="typeB" Checked="ChekBoxCheckedWayMaraohin"/>
-                <RadioButton Content="Вариант C ($45): Вариант B + футболка + сувенирный буклет." x:Name="typeC" Checked="ChekBoxCheckedWayMaraohin"/>
+                <RadioButton Content="Вариант A ($0): Номер бегуна + RFID браслет." x:Name="typeA" Checked="ChekBoxCheckedWayMarafon"/>
+                <RadioButton Content="Вариант B ($20): Вариант А + бейсболка + бутылка воды." x:Name="typeB" Checked="ChekBoxCheckedWayMarafon"/>
+                <RadioButton Content="Вариант C ($45): Вариант B + футболка + сувенирный буклет." x:Name="typeC" Checked="ChekBoxCheckedWayMarafon"/>
             </StackPanel>
 
             <TextBlock Text="Детали спонсорства" VerticalAlignment="Center" Foreground="{StaticResource Grey}" Grid.Row="4" Grid.Column="0" FontWeight="Bold" FontSize="18" TextAlignment="Center"/>
