@@ -12,10 +12,9 @@ namespace WpfApp3
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-
+    
     public partial class ws2016Entities5 : DbContext
     {
-
         private static ws2016Entities5 _context;
 
         public ws2016Entities5()
@@ -54,5 +53,6 @@ namespace WpfApp3
         public virtual DbSet<User> User { get; set; }
         public virtual DbSet<Volunteer> Volunteer { get; set; }
         public virtual DbSet<RemoteUsers> RemoteUsers { get; set; }
+        public virtual DbSet<RunnerResult> RunnerResult { get; set; }
     }
 }

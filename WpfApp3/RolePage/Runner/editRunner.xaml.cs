@@ -62,6 +62,11 @@ namespace WpfApp3.RolePage.Runner
 
         private void Register_Click(object sender, RoutedEventArgs e)
         {
+            string errorMessage = "";
+            DateTime d1 = DateTime.Now.AddYears(-1);
+            if (DataOfBrith.SelectedDate <= d1)
+                errorMessage += "\n Дата рождения должна быть меньше" + d1;
+
             var EditUser = ws2016Entities5.GetContext().User.Find(Email.Text.ToString());
             var EditRunner = ws2016Entities5.GetContext().Runner.Find(int.Parse(Application.Current.Resources["idRunner"].ToString()));
 

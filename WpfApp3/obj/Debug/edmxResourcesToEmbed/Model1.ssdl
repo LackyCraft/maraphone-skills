@@ -7,7 +7,7 @@
     <Property Name="CharityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="CharityName" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="CharityDescription" Type="nvarchar" MaxLength="2000" />
-    <Property Name="CharityLogo" Type="nvarchar" MaxLength="50" />
+    <Property Name="CharityLogo" Type="nvarchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="Country">
     <Key>
@@ -181,6 +181,20 @@
     <Property Name="LastName" Type="nvarchar" MaxLength="80" />
     <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="RegistrationStatus" Type="nvarchar" MaxLength="80" Nullable="false" />
+  </EntityType>
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "ws2016.dbo.RunnerResult" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+  <EntityType Name="RunnerResult">
+    <Key>
+      <PropertyRef Name="RunnerId" />
+      <PropertyRef Name="MarathonName" />
+      <PropertyRef Name="EventTypeName" />
+    </Key>
+    <Property Name="RunnerId" Type="int" Nullable="false" />
+    <Property Name="MarathonName" Type="nvarchar" MaxLength="80" Nullable="false" />
+    <Property Name="EventTypeName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="RaceTime" Type="int" />
+    <Property Name="place" Type="bigint" />
   </EntityType>
   <Association Name="Event_FK">
     <End Role="Marathon" Type="Self.Marathon" Multiplicity="1" />
@@ -400,6 +414,15 @@
     [RemoteUsers].[Email] AS [Email], 
     [RemoteUsers].[RegistrationStatus] AS [RegistrationStatus]
     FROM [dbo].[RemoteUsers] AS [RemoteUsers]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="RunnerResult" EntityType="Self.RunnerResult" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [RunnerResult].[RunnerId] AS [RunnerId], 
+    [RunnerResult].[MarathonName] AS [MarathonName], 
+    [RunnerResult].[EventTypeName] AS [EventTypeName], 
+    [RunnerResult].[RaceTime] AS [RaceTime], 
+    [RunnerResult].[place] AS [place]
+    FROM [dbo].[RunnerResult] AS [RunnerResult]</DefiningQuery>
     </EntitySet>
     <AssociationSet Name="Event_FK" Association="Self.Event_FK">
       <End Role="Marathon" EntitySet="Marathon" />

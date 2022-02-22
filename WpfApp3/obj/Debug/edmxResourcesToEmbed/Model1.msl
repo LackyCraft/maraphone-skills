@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="Хранилище ws2016ModelContainer" CdmEntityContainer="ws2016Entities">
+  <EntityContainerMapping StorageEntityContainer="Хранилище ws2016ModelContainer" CdmEntityContainer="ws2016Entities5">
     <EntitySetMapping Name="Charity">
       <EntityTypeMapping TypeName="ws2016Model.Charity">
         <MappingFragment StoreEntitySet="Charity">
@@ -196,6 +196,17 @@
           <ScalarProperty Name="LastName" ColumnName="LastName" />
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="RegistrationStatus" ColumnName="RegistrationStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RunnerResult">
+      <EntityTypeMapping TypeName="ws2016Model.RunnerResult">
+        <MappingFragment StoreEntitySet="RunnerResult">
+          <ScalarProperty Name="RunnerId" ColumnName="RunnerId" />
+          <ScalarProperty Name="MarathonName" ColumnName="MarathonName" />
+          <ScalarProperty Name="EventTypeName" ColumnName="EventTypeName" />
+          <ScalarProperty Name="RaceTime" ColumnName="RaceTime" />
+          <ScalarProperty Name="place" ColumnName="place" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

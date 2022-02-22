@@ -62,8 +62,9 @@ namespace WpfApp3
                 textBoxFotoName.Text = "Image/User/runner-default.jpg";
             }if (stringCodeCountry.Length <= 0)
                 errorMessage += "\n Выберите вашу страну";
-            if(DataOfBrith is null)
-                errorMessage += "\n Заполните дату";
+            DateTime d1 = DateTime.Now.AddYears(-1);
+            if (DataOfBrith.SelectedDate > d1 || DataOfBrith.SelectedDate is null)
+                errorMessage += "\n Дата рождения должна быть меньше " + d1;
 
             if (errorMessage == "")
             {
@@ -176,9 +177,6 @@ namespace WpfApp3
 
         private void ScrolPage(object sender, RoutedEventArgs e)
         {
-
-            //NavigationService nav;
-            //nav = NavigationService.GetNavigationService(this);
             if (sender == Register)
                 this.NavigationService.Navigate(new Uri("RegistertationRunnerInMaraphon.xaml", UriKind.Relative));
         }

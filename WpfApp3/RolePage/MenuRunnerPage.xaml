@@ -40,7 +40,7 @@
                 <Button Content="Регистрация на марафон" Margin="20" Grid.Row="1" Grid.Column="0" Click="ScrolPage" x:Name="infoWorldSkills"/>
                 <Button Content="Редактирование профиля" Margin="20" Grid.Row="2" Grid.Column="0" Click="ScrolPage" x:Name="editRunner"/>
                 <Button Content="Контакты" Margin="20" Grid.Row="3" Grid.Column="0"/>
-                <Button Content="Мои результаты" Margin="20" Grid.Row="1" Grid.Column="1"/>
+                <Button Content="Мои результаты" Margin="20" Grid.Row="1" Grid.Column="1" x:Name="MyResult" Click="ScrolPage"/>
                 <Button Content="Мой спонсор" Margin="20" Grid.Row="2" Grid.Column="2" Click="ScrolPage" x:Name="ListCompany"/>
             </Grid>
         </Grid>

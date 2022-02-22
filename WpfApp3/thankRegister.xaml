@@ -43,6 +43,7 @@
             <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Foreground="{StaticResource DarkGrey}" TextAlignment="Center" Margin="50,15,50,0" FontSize="18">Спасибо за вашу регистрацию в качестве бегуна в Maraphon Skills 2022!
             <LineBreak></LineBreak>С вами свяжутся по поводу оплаты
             </TextBlock>
+            <Button Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" Height="30" Width="50" VerticalAlignment="Top" Content="OK" Click="ScrolPage" x:Name="clickOK"/>
         </Grid>
     </Grid>
 </Page>

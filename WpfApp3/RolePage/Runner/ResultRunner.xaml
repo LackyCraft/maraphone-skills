@@ -1,0 +1,55 @@
+﻿<Page x:Class="WpfApp3.ResultRunner"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp3"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ResultRunner">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*" />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Rectangle Grid.Row="0" Fill="{StaticResource DarkGrey}" />
+        <Rectangle Grid.Row="2" Fill="White" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.2*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="MARATHON SKILLS 2022"  Grid.Column="1" Foreground="White" TextAlignment="Left" FontWeight="Bold" FontSize="36" Margin="0,15,0,0"/>
+            <Button Click="buttonBack" Content="Назад" Grid.Column="0" Background="{StaticResource Grey}"  Height="30" VerticalAlignment="Top" Margin="5,19,5,0"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.3*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="0.3*"/>
+                <RowDefinition Height="3.5*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="1">
+                <TextBlock TextWrapping="Wrap" Text="Это - список всех ваших прошлых результатов гонки для Maraphon Skills. Общее место сранвивает всех бегунов
+. Место по категориии compares runners in the same gender and age categories" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="40,0,40,0"/>
+
+            </Grid>
+
+            <DataGrid x:Name="dataGridOldResults" Grid.Row="3" AutoGenerateColumns="False" IsEnabled="False" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Width="800">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="200"  Header="Марафон" Binding="{Binding Path=MarathonName}"/>
+                    <DataGridTextColumn Width="200"  Header="Дистанция" Binding="{Binding Path=EventTypeName}"/>
+                    <DataGridTextColumn Width="200"  Header="Время (мин)" Binding="{Binding Path=RaceTime}"/>
+                    <DataGridTextColumn Width="200"  Header="Общее место" Binding="{Binding Path=place}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <TextBlock Text="Информация марофонах предыдущих гонок"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Height="18" FontWeight="Bold" FontSize="14" TextAlignment="Center"/>
+        </Grid>
+    </Grid>
+
+
+</Page>

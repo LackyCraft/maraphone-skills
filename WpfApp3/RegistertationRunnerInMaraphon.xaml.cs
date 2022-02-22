@@ -63,7 +63,9 @@ namespace WpfApp3
 
         private void infoCharity(object sender, RoutedEventArgs e)
         {
-            new InfoCharity(comboBoxCharty.SelectedItem as Charity);
+            MessageBox.Show("1");
+            InfoCharity infoCharity = new InfoCharity(comboBoxCharty.SelectedItem as Charity);
+            infoCharity.Show();
         }
 
         private void ScrolPage(object sender, RoutedEventArgs e)

@@ -112,9 +112,6 @@
     <Compile Include="InfoCharity.xaml.cs">
       <DependentUpon>InfoCharity.xaml</DependentUpon>
     </Compile>
-    <Compile Include="InfoCharty.xaml.cs">
-      <DependentUpon>InfoCharty.xaml</DependentUpon>
-    </Compile>
     <Compile Include="InfoWorldSkills.xaml.cs">
       <DependentUpon>InfoWorldSkills.xaml</DependentUpon>
     </Compile>
@@ -154,11 +151,11 @@
     <Compile Include="Registration.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="RegistrationRunner.xaml.cs">
-      <DependentUpon>RegistrationRunner.xaml</DependentUpon>
-    </Compile>
     <Compile Include="RegistrationEvent.cs">
       <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrationRunner.xaml.cs">
+      <DependentUpon>RegistrationRunner.xaml</DependentUpon>
     </Compile>
     <Compile Include="RegistrationStatus.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -168,6 +165,9 @@
     </Compile>
     <Compile Include="Role.cs">
       <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RolePage\Runner\ResultRunner.xaml.cs">
+      <DependentUpon>ResultRunner.xaml</DependentUpon>
     </Compile>
     <Compile Include="RolePage\Coordinaor\Charty\RemoteRunner.xaml.cs">
       <DependentUpon>RemoteRunner.xaml</DependentUpon>
@@ -188,6 +188,9 @@
       <DependentUpon>editRunner.xaml</DependentUpon>
     </Compile>
     <Compile Include="Runner.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RunnerResult.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Sponsorship.cs">
@@ -224,10 +227,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="InfoCharty.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -261,6 +260,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ReferRunner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RolePage\Runner\ResultRunner.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -359,6 +362,16 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
     <Resource Include="Image\country\flag\flag_andorra.png" />
     <Resource Include="Image\country\flag\flag_argentina.png" />
     <Resource Include="Image\country\flag\flag_australia.png" />
@@ -451,16 +464,6 @@
     <Resource Include="Image\country\flag\flag_vatican.png" />
     <Resource Include="Image\country\flag\flag_venezuela.png" />
     <Resource Include="Image\country\flag\flag_vietnam.png" />
-    <Content Include="Model1.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Model1.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
-    </Content>
     <Resource Include="Image\User\runner-default.jpg" />
     <Resource Include="Image\company\arise-logo.png" />
     <Resource Include="Image\company\aves-do-brazil-logo.png" />

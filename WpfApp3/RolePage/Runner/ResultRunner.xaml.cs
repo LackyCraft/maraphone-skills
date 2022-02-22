@@ -16,22 +16,19 @@ using System.Windows.Shapes;
 namespace WpfApp3
 {
     /// <summary>
-    /// Логика взаимодействия для thankRegister.xaml
+    /// Логика взаимодействия для ResultRunner.xaml
     /// </summary>
-    public partial class thankRegister : Page
+    public partial class ResultRunner : Page
     {
-        public thankRegister()
+        public ResultRunner()
         {
             InitializeComponent();
+            int idUserRunner = int.Parse(Application.Current.Resources["idRunner"].ToString());
+            dataGridOldResults.ItemsSource = ws2016Entities5.GetContext().RunnerResult.Where(i => i.RunnerId == idUserRunner).ToList();
         }
         private void buttonBack(object sender, RoutedEventArgs e)
         {
             this.Content = null;
-        }
-        private void ScrolPage(object sender, RoutedEventArgs e)
-        {
-            if (sender == clickOK)
-                this.NavigationService.Navigate(new Uri("RolePage/MenuRunnerPage.xaml", UriKind.Relative));
         }
     }
 }

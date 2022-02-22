@@ -12,7 +12,7 @@
           <Property Name="CharityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CharityName" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="CharityDescription" Type="nvarchar" MaxLength="2000" />
-          <Property Name="CharityLogo" Type="nvarchar" MaxLength="50" />
+          <Property Name="CharityLogo" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="Country">
           <Key>
@@ -186,6 +186,20 @@
           <Property Name="LastName" Type="nvarchar" MaxLength="80" />
           <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="RegistrationStatus" Type="nvarchar" MaxLength="80" Nullable="false" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "ws2016.dbo.RunnerResult" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="RunnerResult">
+          <Key>
+            <PropertyRef Name="RunnerId" />
+            <PropertyRef Name="MarathonName" />
+            <PropertyRef Name="EventTypeName" />
+          </Key>
+          <Property Name="RunnerId" Type="int" Nullable="false" />
+          <Property Name="MarathonName" Type="nvarchar" MaxLength="80" Nullable="false" />
+          <Property Name="EventTypeName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="RaceTime" Type="int" />
+          <Property Name="place" Type="bigint" />
         </EntityType>
         <Association Name="Event_FK">
           <End Role="Marathon" Type="Self.Marathon" Multiplicity="1" />
@@ -406,6 +420,15 @@
     [RemoteUsers].[RegistrationStatus] AS [RegistrationStatus]
     FROM [dbo].[RemoteUsers] AS [RemoteUsers]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="RunnerResult" EntityType="Self.RunnerResult" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [RunnerResult].[RunnerId] AS [RunnerId], 
+    [RunnerResult].[MarathonName] AS [MarathonName], 
+    [RunnerResult].[EventTypeName] AS [EventTypeName], 
+    [RunnerResult].[RaceTime] AS [RaceTime], 
+    [RunnerResult].[place] AS [place]
+    FROM [dbo].[RunnerResult] AS [RunnerResult]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="Event_FK" Association="Self.Event_FK">
             <End Role="Marathon" EntitySet="Marathon" />
             <End Role="Event" EntitySet="Event" />
@@ -483,7 +506,7 @@
           <Property Name="CharityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="CharityName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="CharityDescription" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
-          <Property Name="CharityLogo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CharityLogo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Registration" Relationship="Self.Registration_FK_1" FromRole="Charity" ToRole="Registration" />
         </EntityType>
         <EntityType Name="Country">
@@ -688,6 +711,18 @@
           <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="RegistrationStatus" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
+        <EntityType Name="RunnerResult">
+          <Key>
+            <PropertyRef Name="RunnerId" />
+            <PropertyRef Name="MarathonName" />
+            <PropertyRef Name="EventTypeName" />
+          </Key>
+          <Property Name="RunnerId" Type="Int32" Nullable="false" />
+          <Property Name="MarathonName" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EventTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RaceTime" Type="Int32" />
+          <Property Name="place" Type="Int64" />
+        </EntityType>
         <Association Name="Registration_FK_1">
           <End Role="Charity" Type="Self.Charity" Multiplicity="1" />
           <End Role="Registration" Type="Self.Registration" Multiplicity="*" />
@@ -880,7 +915,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ws2016Entities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="ws2016Entities5" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Charity" EntityType="Self.Charity" />
           <EntitySet Name="Country" EntityType="Self.Country" />
           <EntitySet Name="Event" EntityType="Self.Event" />
@@ -900,6 +935,7 @@
           <EntitySet Name="User" EntityType="Self.User" />
           <EntitySet Name="Volunteer" EntityType="Self.Volunteer" />
           <EntitySet Name="RemoteUsers" EntityType="Self.RemoteUsers" />
+          <EntitySet Name="RunnerResult" EntityType="Self.RunnerResult" />
           <AssociationSet Name="Registration_FK_1" Association="Self.Registration_FK_1">
             <End Role="Charity" EntitySet="Charity" />
             <End Role="Registration" EntitySet="Registration" />
@@ -970,7 +1006,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище ws2016ModelContainer" CdmEntityContainer="ws2016Entities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище ws2016ModelContainer" CdmEntityContainer="ws2016Entities5">
           <EntitySetMapping Name="Charity">
             <EntityTypeMapping TypeName="ws2016Model.Charity">
               <MappingFragment StoreEntitySet="Charity">
@@ -1166,6 +1202,17 @@
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="RegistrationStatus" ColumnName="RegistrationStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RunnerResult">
+            <EntityTypeMapping TypeName="ws2016Model.RunnerResult">
+              <MappingFragment StoreEntitySet="RunnerResult">
+                <ScalarProperty Name="RunnerId" ColumnName="RunnerId" />
+                <ScalarProperty Name="MarathonName" ColumnName="MarathonName" />
+                <ScalarProperty Name="EventTypeName" ColumnName="EventTypeName" />
+                <ScalarProperty Name="RaceTime" ColumnName="RaceTime" />
+                <ScalarProperty Name="place" ColumnName="place" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

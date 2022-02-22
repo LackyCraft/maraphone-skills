@@ -7,7 +7,7 @@
     <Property Name="CharityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="CharityName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="CharityDescription" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
-    <Property Name="CharityLogo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CharityLogo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Registration" Relationship="Self.Registration_FK_1" FromRole="Charity" ToRole="Registration" />
   </EntityType>
   <EntityType Name="Country">
@@ -212,6 +212,18 @@
     <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="RegistrationStatus" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
   </EntityType>
+  <EntityType Name="RunnerResult">
+    <Key>
+      <PropertyRef Name="RunnerId" />
+      <PropertyRef Name="MarathonName" />
+      <PropertyRef Name="EventTypeName" />
+    </Key>
+    <Property Name="RunnerId" Type="Int32" Nullable="false" />
+    <Property Name="MarathonName" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EventTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RaceTime" Type="Int32" />
+    <Property Name="place" Type="Int64" />
+  </EntityType>
   <Association Name="Registration_FK_1">
     <End Role="Charity" Type="Self.Charity" Multiplicity="1" />
     <End Role="Registration" Type="Self.Registration" Multiplicity="*" />
@@ -404,7 +416,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="ws2016Entities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="ws2016Entities5" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Charity" EntityType="Self.Charity" />
     <EntitySet Name="Country" EntityType="Self.Country" />
     <EntitySet Name="Event" EntityType="Self.Event" />
@@ -424,6 +436,7 @@
     <EntitySet Name="User" EntityType="Self.User" />
     <EntitySet Name="Volunteer" EntityType="Self.Volunteer" />
     <EntitySet Name="RemoteUsers" EntityType="Self.RemoteUsers" />
+    <EntitySet Name="RunnerResult" EntityType="Self.RunnerResult" />
     <AssociationSet Name="Registration_FK_1" Association="Self.Registration_FK_1">
       <End Role="Charity" EntitySet="Charity" />
       <End Role="Registration" EntitySet="Registration" />

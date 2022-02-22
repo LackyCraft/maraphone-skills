@@ -38,6 +38,9 @@ namespace WpfApp3.RolePage
         {
             if(sender == editRunner)
                 this.NavigationService.Navigate(new Uri("RolePage/Runner/editRunner.xaml", UriKind.Relative));
+            if (sender == MyResult)
+                this.NavigationService.Navigate(new Uri("RolePage/Runner/ResultRunner.xaml", UriKind.Relative));
+            
         }
     }
 }
