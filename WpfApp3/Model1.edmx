@@ -176,6 +176,28 @@
           <Property Name="Gender" Type="nvarchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "ws2016.dbo.AllResult" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="AllResult">
+          <Key>
+            <PropertyRef Name="RunnerId" />
+            <PropertyRef Name="Gender" />
+            <PropertyRef Name="MarathonId" />
+            <PropertyRef Name="MarathonName" />
+            <PropertyRef Name="EventTypeId" />
+            <PropertyRef Name="EventTypeName" />
+            <PropertyRef Name="CountryName" />
+          </Key>
+          <Property Name="RunnerId" Type="int" Nullable="false" />
+          <Property Name="NameRunner" Type="nvarchar" MaxLength="161" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="MarathonId" Type="tinyint" Nullable="false" />
+          <Property Name="MarathonName" Type="nvarchar" MaxLength="80" Nullable="false" />
+          <Property Name="EventTypeId" Type="nchar" MaxLength="2" Nullable="false" />
+          <Property Name="EventTypeName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="RaceTime" Type="int" />
+          <Property Name="CountryName" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
 предупреждение 6002: В таблице или представлении "ws2016.dbo.RemoteUsers" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
         <EntityType Name="RemoteUsers">
           <Key>
@@ -412,6 +434,19 @@
           <EntitySet Name="Timesheet" EntityType="Self.Timesheet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Volunteer" EntityType="Self.Volunteer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AllResult" EntityType="Self.AllResult" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [AllResult].[RunnerId] AS [RunnerId], 
+    [AllResult].[NameRunner] AS [NameRunner], 
+    [AllResult].[Gender] AS [Gender], 
+    [AllResult].[MarathonId] AS [MarathonId], 
+    [AllResult].[MarathonName] AS [MarathonName], 
+    [AllResult].[EventTypeId] AS [EventTypeId], 
+    [AllResult].[EventTypeName] AS [EventTypeName], 
+    [AllResult].[RaceTime] AS [RaceTime], 
+    [AllResult].[CountryName] AS [CountryName]
+    FROM [dbo].[AllResult] AS [AllResult]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="RemoteUsers" EntityType="Self.RemoteUsers" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [RemoteUsers].[FirstName] AS [FirstName], 
@@ -701,6 +736,26 @@
           <NavigationProperty Name="Country" Relationship="Self.FK__Volunteer__Count__440B1D61" FromRole="Volunteer" ToRole="Country" />
           <NavigationProperty Name="Gender1" Relationship="Self.FK__Volunteer__Gende__4316F928" FromRole="Volunteer" ToRole="Gender" />
         </EntityType>
+        <EntityType Name="AllResult">
+          <Key>
+            <PropertyRef Name="RunnerId" />
+            <PropertyRef Name="Gender" />
+            <PropertyRef Name="MarathonId" />
+            <PropertyRef Name="MarathonName" />
+            <PropertyRef Name="EventTypeId" />
+            <PropertyRef Name="EventTypeName" />
+            <PropertyRef Name="CountryName" />
+          </Key>
+          <Property Name="RunnerId" Type="Int32" Nullable="false" />
+          <Property Name="NameRunner" Type="String" MaxLength="161" FixedLength="false" Unicode="true" />
+          <Property Name="Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MarathonId" Type="Byte" Nullable="false" />
+          <Property Name="MarathonName" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EventTypeId" Type="String" MaxLength="2" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="EventTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RaceTime" Type="Int32" />
+          <Property Name="CountryName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
         <EntityType Name="RemoteUsers">
           <Key>
             <PropertyRef Name="Email" />
@@ -934,6 +989,7 @@
           <EntitySet Name="Timesheet" EntityType="Self.Timesheet" />
           <EntitySet Name="User" EntityType="Self.User" />
           <EntitySet Name="Volunteer" EntityType="Self.Volunteer" />
+          <EntitySet Name="AllResult" EntityType="Self.AllResult" />
           <EntitySet Name="RemoteUsers" EntityType="Self.RemoteUsers" />
           <EntitySet Name="RunnerResult" EntityType="Self.RunnerResult" />
           <AssociationSet Name="Registration_FK_1" Association="Self.Registration_FK_1">
@@ -1192,6 +1248,21 @@
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
                 <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
                 <ScalarProperty Name="Gender" ColumnName="Gender" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AllResult">
+            <EntityTypeMapping TypeName="ws2016Model.AllResult">
+              <MappingFragment StoreEntitySet="AllResult">
+                <ScalarProperty Name="RunnerId" ColumnName="RunnerId" />
+                <ScalarProperty Name="NameRunner" ColumnName="NameRunner" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="MarathonId" ColumnName="MarathonId" />
+                <ScalarProperty Name="MarathonName" ColumnName="MarathonName" />
+                <ScalarProperty Name="EventTypeId" ColumnName="EventTypeId" />
+                <ScalarProperty Name="EventTypeName" ColumnName="EventTypeName" />
+                <ScalarProperty Name="RaceTime" ColumnName="RaceTime" />
+                <ScalarProperty Name="CountryName" ColumnName="CountryName" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

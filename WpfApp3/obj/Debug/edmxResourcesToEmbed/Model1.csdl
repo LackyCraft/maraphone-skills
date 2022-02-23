@@ -202,6 +202,26 @@
     <NavigationProperty Name="Country" Relationship="Self.FK__Volunteer__Count__440B1D61" FromRole="Volunteer" ToRole="Country" />
     <NavigationProperty Name="Gender1" Relationship="Self.FK__Volunteer__Gende__4316F928" FromRole="Volunteer" ToRole="Gender" />
   </EntityType>
+  <EntityType Name="AllResult">
+    <Key>
+      <PropertyRef Name="RunnerId" />
+      <PropertyRef Name="Gender" />
+      <PropertyRef Name="MarathonId" />
+      <PropertyRef Name="MarathonName" />
+      <PropertyRef Name="EventTypeId" />
+      <PropertyRef Name="EventTypeName" />
+      <PropertyRef Name="CountryName" />
+    </Key>
+    <Property Name="RunnerId" Type="Int32" Nullable="false" />
+    <Property Name="NameRunner" Type="String" MaxLength="161" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MarathonId" Type="Byte" Nullable="false" />
+    <Property Name="MarathonName" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EventTypeId" Type="String" MaxLength="2" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="EventTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RaceTime" Type="Int32" />
+    <Property Name="CountryName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
   <EntityType Name="RemoteUsers">
     <Key>
       <PropertyRef Name="Email" />
@@ -435,6 +455,7 @@
     <EntitySet Name="Timesheet" EntityType="Self.Timesheet" />
     <EntitySet Name="User" EntityType="Self.User" />
     <EntitySet Name="Volunteer" EntityType="Self.Volunteer" />
+    <EntitySet Name="AllResult" EntityType="Self.AllResult" />
     <EntitySet Name="RemoteUsers" EntityType="Self.RemoteUsers" />
     <EntitySet Name="RunnerResult" EntityType="Self.RunnerResult" />
     <AssociationSet Name="Registration_FK_1" Association="Self.Registration_FK_1">

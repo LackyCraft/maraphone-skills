@@ -37,16 +37,16 @@
 . Место по категориии compares runners in the same gender and age categories" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="40,0,40,0"/>
 
             </Grid>
-
-            <DataGrid x:Name="dataGridOldResults" Grid.Row="3" AutoGenerateColumns="False" IsEnabled="False" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Width="800">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Width="200"  Header="Марафон" Binding="{Binding Path=MarathonName}"/>
-                    <DataGridTextColumn Width="200"  Header="Дистанция" Binding="{Binding Path=EventTypeName}"/>
-                    <DataGridTextColumn Width="200"  Header="Время (мин)" Binding="{Binding Path=RaceTime}"/>
-                    <DataGridTextColumn Width="200"  Header="Общее место" Binding="{Binding Path=place}"/>
-                </DataGrid.Columns>
-            </DataGrid>
-
+            <ScrollViewer Grid.Row="3" >
+                <DataGrid ScrollViewer.CanContentScroll="True"  ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto"  Background="White" x:Name="dataGridOldResults" Grid.Row="3"  AutoGenerateColumns="False" IsEnabled="False" HorizontalAlignment="Center" HorizontalContentAlignment="Center"  BorderBrush="White">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Width="*"  Header="Марафон" Binding="{Binding Path=MarathonName}"/>
+                        <DataGridTextColumn Width="*"  Header="Дистанция" Binding="{Binding Path=EventTypeName}"/>
+                        <DataGridTextColumn Width="0.4*"  Header="Время (мин)" Binding="{Binding Path=RaceTime}"/>
+                        <DataGridTextColumn Width="0.4*"  Header="Общее место" Binding="{Binding Path=place}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </ScrollViewer>
             <TextBlock Text="Информация марофонах предыдущих гонок"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Height="18" FontWeight="Bold" FontSize="14" TextAlignment="Center"/>
         </Grid>
     </Grid>

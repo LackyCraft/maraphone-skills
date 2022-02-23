@@ -30,13 +30,16 @@ namespace WpfApp3.RolePage.Runner
             Email.Text = Application.Current.Resources["Email"].ToString();
             LastName.Text = Application.Current.Resources["LastName"].ToString();
             FirstName.Text = Application.Current.Resources["FirstName"].ToString();
-            fotoRunner.Source = new BitmapImage(new Uri(Application.Current.Resources["PhotoPatch"].ToString()));
+            if (Application.Current.Resources["PhotoPatch"].ToString() != "null")
+            {
+                fotoRunner.Source = new BitmapImage(new Uri(Application.Current.Resources["PhotoPatch"].ToString()));
+                textBoxFotoName.Text = Application.Current.Resources["PhotoPatch"].ToString();
+            }
             comboBoxCountrty.ItemsSource = ws2016Entities5.GetContext().Country.ToList();
             comboBoxCountrty.SelectedValue = Application.Current.Resources["CountryCode"].ToString();
             boxGender.ItemsSource = ws2016Entities5.GetContext().Gender.ToList();
             boxGender.SelectedValue = Application.Current.Resources["Gender"].ToString();
             DataOfBrith.Text = Application.Current.Resources["DateOfBirth"].ToString();
-            textBoxFotoName.Text = Application.Current.Resources["PhotoPatch"].ToString();
         }
 
         private void buttonBack(object sender, RoutedEventArgs e)
@@ -63,32 +66,55 @@ namespace WpfApp3.RolePage.Runner
         private void Register_Click(object sender, RoutedEventArgs e)
         {
             string errorMessage = "";
-            DateTime d1 = DateTime.Now.AddYears(-1);
-            if (DataOfBrith.SelectedDate <= d1)
-                errorMessage += "\n Дата рождения должна быть меньше" + d1;
 
-            var EditUser = ws2016Entities5.GetContext().User.Find(Email.Text.ToString());
-            var EditRunner = ws2016Entities5.GetContext().Runner.Find(int.Parse(Application.Current.Resources["idRunner"].ToString()));
+            string cond = @"(\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*)";
 
-            string dates = DataOfBrith.Text;
-            DateTime bhirder = DataOfBrith.SelectedDate.Value.Date;
+            if (!Regex.IsMatch(Email.Text, cond))
+                errorMessage += "\n Email Введен не корректно";
+            if (FirstName.Text.Length <= 0)
+                errorMessage += "\n Поле имя не заполнено";
+            if (LastName.Text.Length <= 0)
+                errorMessage += "\n Поле фамилия не заполнено ";
 
-            if (EditUser != null && EditRunner!=null)
+            if (textBoxFotoName.Text == "Выберите фотографию")
             {
-                EditUser.FirstName = FirstName.Text;
-                EditUser.LastName = LastName.Text;
-                EditUser.Patch = textBoxFotoName.Text;
-                ws2016Entities5.GetContext().SaveChanges();
+                errorMessage += "\n Выберите фотографию или оставьте фото по умолчанию";
+            }
+            if (comboBoxCountrty.SelectedValue.ToString().Length <= 0)
+                errorMessage += "\n Выберите вашу страну";
+            DateTime d1 = DateTime.Now.AddYears(-1);
+            if (DataOfBrith.SelectedDate > d1 || DataOfBrith.SelectedDate is null)
+                errorMessage += "\n Дата рождения должна быть меньше " + d1;
 
-                EditRunner.Gender = boxGender.Text;
-                EditRunner.DateOfBirth = bhirder;
-                EditRunner.CountryCode = comboBoxCountrty.SelectedValue.ToString();
-                ws2016Entities5.GetContext().SaveChanges();
-                MessageBox.Show("Изменения были сохранены");
+            if (errorMessage.Length > 2)
+            {
+                MessageBox.Show(errorMessage);
             }
             else
             {
-                MessageBox.Show("Warning 0:\n Произошла непредвиденная ошибка.\n Не удалось распознать информацию о пользователе");
+                var EditUser = ws2016Entities5.GetContext().User.Find(Email.Text.ToString());
+                var EditRunner = ws2016Entities5.GetContext().Runner.Find(int.Parse(Application.Current.Resources["idRunner"].ToString()));
+
+                string dates = DataOfBrith.Text;
+                DateTime bhirder = DataOfBrith.SelectedDate.Value.Date;
+
+                if (EditUser != null && EditRunner != null)
+                {
+                    EditUser.FirstName = FirstName.Text;
+                    EditUser.LastName = LastName.Text;
+                    EditUser.Patch = textBoxFotoName.Text;
+                    ws2016Entities5.GetContext().SaveChanges();
+
+                    EditRunner.Gender = boxGender.Text;
+                    EditRunner.DateOfBirth = bhirder;
+                    EditRunner.CountryCode = comboBoxCountrty.SelectedValue.ToString();
+                    ws2016Entities5.GetContext().SaveChanges();
+                    MessageBox.Show("Изменения были сохранены");
+                }
+                else
+                {
+                    MessageBox.Show("Warning 0:\n Произошла непредвиденная ошибка.\n Не удалось распознать информацию о пользователе");
+                }
             }
         }
     }

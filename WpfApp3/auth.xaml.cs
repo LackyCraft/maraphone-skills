@@ -52,7 +52,10 @@ namespace WpfApp3
                 Application.Current.Resources["Role"] = authInfo[0].RoleId.ToString();
                 Application.Current.Resources["FirstName"] = authInfo[0].FirstName.ToString();
                 Application.Current.Resources["LastName"] = authInfo[0].LastName.ToString();
-                Application.Current.Resources["PhotoPatch"] = authInfo[0].Patch.ToString();
+                if(authInfo[0].Patch is null)
+                    Application.Current.Resources["PhotoPatch"] = "null";
+                else
+                    Application.Current.Resources["PhotoPatch"] = authInfo[0].Patch.ToString();
                 try
                 {
 

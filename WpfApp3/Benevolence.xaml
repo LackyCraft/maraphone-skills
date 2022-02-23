@@ -35,7 +35,6 @@
                 <TextBlock  Grid.Row="0" Foreground="{StaticResource DarkGrey}" TextAlignment="Center" Margin="50,15,50,0" FontSize="18">Спасибо за вашу спонсорскую поддержку!
             <LineBreak></LineBreak>Спасибо за поддержку бегуна в Marathon Skills 2022!
             <LineBreak></LineBreak>Ваше пожертвование пойдет в его благотворительную организацию</TextBlock>
-                <Button Content="Login" Grid.Row="2" Height="40" Width="100" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </Grid>
         </Grid>
     </Grid>

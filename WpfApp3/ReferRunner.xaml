@@ -51,7 +51,7 @@
                 </Grid.ColumnDefinitions>
 
                 <TextBlock Text="Информация о Спонсоре" Foreground="{StaticResource Grey}" Grid.Row="0" FontWeight="Bold" FontSize="18" TextAlignment="Center"/>
-                <TextBlock Text="Благотворительность" Foreground="{StaticResource Grey}" Grid.Row="0" Grid.Column="1" FontWeight="Bold" FontSize="18" TextAlignment="Center"/>
+                <TextBlock Text="Благотворительный фонд" Foreground="{StaticResource Grey}" Grid.Row="0" Grid.Column="1" FontWeight="Bold" FontSize="18" TextAlignment="Center"/>
 
                 <Grid Grid.Row="1" Grid.Column="1" Margin="0,5,0,0">
                     <Grid.RowDefinitions>
@@ -61,8 +61,15 @@
                         <RowDefinition Height="29*"/>
                         <RowDefinition Height="41*"/>
                     </Grid.RowDefinitions>
-                    <TextBlock  Foreground="{StaticResource DarkGrey}" Text="" TextAlignment="Center" Margin="0,6,0,0" FontSize="18" x:Name="fond"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <TextBlock  Foreground="{StaticResource DarkGrey}" Text="Благотворительный фонд" VerticalAlignment="Center" FontSize="18" x:Name="fond" />
+                        <Button x:Name="InfoCharty"  Margin="5,0,0,0" Height="18"  VerticalAlignment="Center" Width="20" Click="infoCharity">
+                            <Image Source="Image\icon\map-icon-information.png"/>
+                        </Button>
+                    </StackPanel>
+
                     <TextBlock Text="Сумма пожертвования" Foreground="{StaticResource Grey}" Grid.Row="1" FontWeight="Bold" FontSize="18" TextAlignment="Center"/>
+
                     <TextBlock Text="$0" x:Name="payTextBlock" Foreground="{StaticResource Grey}" Grid.Row="2" FontSize="90" TextAlignment="Center"/>
 
                     <Grid  Grid.Row="3">
@@ -107,18 +114,18 @@
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
                                     <TextBlock>
-                                            <TextBlock.Text>
-                                                <MultiBinding StringFormat="{}{0} - {1} - {2} ( {3} )">
-                                                    <Binding Path="User.FirstName"/>
-                                                    <Binding Path="User.LastName"/>
-                                                    <Binding Path="Country.CountryName"/>
-                                                    <Binding Path="CountryCode"/>
-                                                </MultiBinding>
-                                            </TextBlock.Text>
-                                        </TextBlock>
-                                    </DataTemplate>
-                                </ComboBox.ItemTemplate>
-                            </ComboBox>
+                                        <TextBlock.Text>
+                                            <MultiBinding StringFormat="{}{0} - {1} - {2} ( {3} )">
+                                                <Binding Path="Runner.User.FirstName"/>
+                                                <Binding Path="Runner.User.LastName"/>
+                                                <Binding Path="Runner.Country.CountryName"/>
+                                                <Binding Path="Runner.CountryCode"/>
+                                            </MultiBinding>
+                                        </TextBlock.Text>
+                                    </TextBlock>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
                         <TextBox x:Name="textCard" Margin="5,5,0,0"/>
                         <TextBox x:Name="textCardNumber" Margin="5,5,0,0"/>
                         <TextBox x:Name="textPeriod"  Margin="5,5,0,0"/>

@@ -82,6 +82,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AllResult.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="auth.xaml.cs">
       <DependentUpon>auth.xaml</DependentUpon>
     </Compile>
@@ -342,6 +345,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Image\User\" />
     <Folder Include="Pages\" />
     <Folder Include="RolePage\Admin\" />
     <Folder Include="RolePage\Coordinaor\Sponser\" />
@@ -372,6 +376,12 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Image\icon\map-icon-drinks.png" />
+    <Resource Include="Image\icon\map-icon-energy-bars.png" />
+    <Resource Include="Image\icon\map-icon-information.png" />
+    <Resource Include="Image\icon\map-icon-medical.png" />
+    <Resource Include="Image\icon\map-icon-start.png" />
+    <Resource Include="Image\icon\map-icon-toilets.png" />
     <Resource Include="Image\country\flag\flag_andorra.png" />
     <Resource Include="Image\country\flag\flag_argentina.png" />
     <Resource Include="Image\country\flag\flag_australia.png" />
@@ -464,7 +474,7 @@
     <Resource Include="Image\country\flag\flag_vatican.png" />
     <Resource Include="Image\country\flag\flag_venezuela.png" />
     <Resource Include="Image\country\flag\flag_vietnam.png" />
-    <Resource Include="Image\User\runner-default.jpg" />
+    <Resource Include="RolePage\Runner\runner-default.jpg" />
     <Resource Include="Image\company\arise-logo.png" />
     <Resource Include="Image\company\aves-do-brazil-logo.png" />
     <Resource Include="Image\company\clara-santos-oliveira-institute.png" />

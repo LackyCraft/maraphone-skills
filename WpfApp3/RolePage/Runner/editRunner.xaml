@@ -83,7 +83,7 @@
                     <TextBox Height="25" HorizontalContentAlignment="Right" VerticalAlignment="Top" Margin="5" IsEnabled="False" Text="Выберите фотографию" x:Name="textBoxFotoName"/>
                     <Button Content="Выбрать" Height="25" Width="100" HorizontalContentAlignment="Center" HorizontalAlignment="Right" Click="selectedFoto"/>
                 </StackPanel>
-                <Image  x:Name="fotoRunner" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center"/>
+                <Image  x:Name="fotoRunner" Source="runner-default.jpg" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center"/>
 
                 <TextBlock Text="Введите пароль:" Margin="0,10,0,0" Grid.Row="1" Grid.Column="0" Height="20" VerticalAlignment="Top" TextAlignment="Right" />
                 <TextBlock Text="Повторите пароль:" Margin="0,35,0,0" Grid.Row="1" Grid.Column="0" Height="20" VerticalAlignment="Top" TextAlignment="Right" />

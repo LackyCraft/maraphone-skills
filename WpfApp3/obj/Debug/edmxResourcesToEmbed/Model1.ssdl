@@ -171,6 +171,28 @@
     <Property Name="Gender" Type="nvarchar" MaxLength="10" Nullable="false" />
   </EntityType>
   <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "ws2016.dbo.AllResult" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+  <EntityType Name="AllResult">
+    <Key>
+      <PropertyRef Name="RunnerId" />
+      <PropertyRef Name="Gender" />
+      <PropertyRef Name="MarathonId" />
+      <PropertyRef Name="MarathonName" />
+      <PropertyRef Name="EventTypeId" />
+      <PropertyRef Name="EventTypeName" />
+      <PropertyRef Name="CountryName" />
+    </Key>
+    <Property Name="RunnerId" Type="int" Nullable="false" />
+    <Property Name="NameRunner" Type="nvarchar" MaxLength="161" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="MarathonId" Type="tinyint" Nullable="false" />
+    <Property Name="MarathonName" Type="nvarchar" MaxLength="80" Nullable="false" />
+    <Property Name="EventTypeId" Type="nchar" MaxLength="2" Nullable="false" />
+    <Property Name="EventTypeName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="RaceTime" Type="int" />
+    <Property Name="CountryName" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <!--Ошибки, обнаруженные при создании:
 предупреждение 6002: В таблице или представлении "ws2016.dbo.RemoteUsers" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
   <EntityType Name="RemoteUsers">
     <Key>
@@ -407,6 +429,19 @@
     <EntitySet Name="Timesheet" EntityType="Self.Timesheet" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Volunteer" EntityType="Self.Volunteer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AllResult" EntityType="Self.AllResult" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [AllResult].[RunnerId] AS [RunnerId], 
+    [AllResult].[NameRunner] AS [NameRunner], 
+    [AllResult].[Gender] AS [Gender], 
+    [AllResult].[MarathonId] AS [MarathonId], 
+    [AllResult].[MarathonName] AS [MarathonName], 
+    [AllResult].[EventTypeId] AS [EventTypeId], 
+    [AllResult].[EventTypeName] AS [EventTypeName], 
+    [AllResult].[RaceTime] AS [RaceTime], 
+    [AllResult].[CountryName] AS [CountryName]
+    FROM [dbo].[AllResult] AS [AllResult]</DefiningQuery>
+    </EntitySet>
     <EntitySet Name="RemoteUsers" EntityType="Self.RemoteUsers" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 
     [RemoteUsers].[FirstName] AS [FirstName], 

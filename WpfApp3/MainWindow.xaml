@@ -63,7 +63,7 @@
             <Button x:Name="Auth"  Grid.Column="1" Content="{Binding ButtonAuth, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" Height="40" VerticalAlignment="Center" Margin="5" Click="ScrolPage"/>
         </Grid>
         <Grid Grid.Row="0" Grid.RowSpan="2">
-            <Frame x:Name="frame"/>
+            <Frame x:Name="frame" NavigationUIVisibility="Hidden"/>
         </Grid>
 
     </Grid>

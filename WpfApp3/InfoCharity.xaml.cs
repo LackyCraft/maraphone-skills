@@ -21,14 +21,10 @@ namespace WpfApp3
     {
         public InfoCharity(Charity charity)
         {
-            MessageBox.Show("2");
             InitializeComponent();
-            //MessageBox.Show(charity.CharityName.ToString());
             nameChartity.Text = charity.CharityName.ToString();
-            //chartityPhoto.Source
             chartityPhoto.Source = new BitmapImage(new Uri(charity.CharityLogo.ToString(), UriKind.Relative));
             description.Text = charity.CharityDescription.ToString();
-            // chartityPhoto.Source = (ImageSource).(charity.CharityLogo.ToString());
         }
     }
 }

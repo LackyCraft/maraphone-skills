@@ -75,8 +75,10 @@
 
                 <ComboBox Grid.Column="1" SelectionChanged="ComboBoxCharty_SelectionChanged" Margin="5,0,0,0" HorizontalAlignment="Left" Height="18"  VerticalAlignment="Top" Width="87" x:Name="comboBoxCharty" DisplayMemberPath="CharityName" SelectedValuePath="CharityId"/>
                 <TextBox x:Name="priceInCharty" TextChanged="TextBox_TextChanged"  Grid.Column="1" Margin="5,20,0,0" HorizontalAlignment="Left" Height="18"  VerticalAlignment="Top" Width="87" Text="0" TextAlignment="Center" FontWeight="Bold" FontSize="12"/>
-                <Button x:Name="InfoCharty"  Grid.Column="1" Margin="100,0,0,0" HorizontalAlignment="Left" Height="18"  VerticalAlignment="Top" Width="20" Content="i" Click="infoCharity"/>
-                
+                <Button x:Name="InfoCharty"  Grid.Column="1" Margin="100,0,0,0" HorizontalAlignment="Left" Height="18"  VerticalAlignment="Top" Width="20" Click="infoCharity">
+                    <Image Source="Image\icon\map-icon-information.png"></Image>
+                </Button>
+
                 <Button Click="ScrolPage" x:Name="nextRegister"  Grid.Column="1"  HorizontalAlignment="Left" Height="22"  VerticalAlignment="Bottom" Width="92" Content="Регистрация"/>
 
 

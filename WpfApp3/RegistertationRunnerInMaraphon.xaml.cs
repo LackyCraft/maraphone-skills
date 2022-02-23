@@ -63,7 +63,6 @@ namespace WpfApp3
 
         private void infoCharity(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("1");
             InfoCharity infoCharity = new InfoCharity(comboBoxCharty.SelectedItem as Charity);
             infoCharity.Show();
         }

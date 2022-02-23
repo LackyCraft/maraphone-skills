@@ -56,10 +56,18 @@ namespace WpfApp3
             {
                 errorMessage += "\n Пароли не совпадают";
             }
+
+            if (!Regex.IsMatch(Pass.Password.ToString(), @"\S\S\S\S\S\S"))
+                errorMessage += "\nПароль должен содержать минимум 6 символов";
+            if (!Regex.IsMatch(Pass.Password.ToString(), @"\d"))
+                errorMessage += "\nПароль должен содержать хотя бы 1 цифру";
+            if ( !Regex.IsMatch(Pass.Password.ToString(), @"([A-Z])"))
+                errorMessage += "\nПароль должен содержать хотябы одну заглавную букву";
+
+
             if (textBoxFotoName.Text == "Выберите фотографию")
             {
                 errorMessage += "\n Выберите фотографию или оставьте фото по умолчанию";
-                textBoxFotoName.Text = "Image/User/runner-default.jpg";
             }if (stringCodeCountry.Length <= 0)
                 errorMessage += "\n Выберите вашу страну";
             DateTime d1 = DateTime.Now.AddYears(-1);

@@ -28,7 +28,7 @@ namespace WpfApp3
 
             //Заменить потом на имя через users
 
-            runner.ItemsSource = ws2016Entities5.GetContext().Runner.ToList();
+            runner.ItemsSource = ws2016Entities5.GetContext().Registration.Where(i => i.RegistrationStatusId == 2).ToList();
         }
 
         private void payBoxTextChanged(object sender, TextChangedEventArgs e)
@@ -150,6 +150,15 @@ namespace WpfApp3
         private void Runner_Selected(object sender, RoutedEventArgs e)
         {
 
+            string selectitem = ((runner.SelectedItem as Registration).Charity as Charity).CharityName.ToString();
+            fond.Text = selectitem;
         }
+
+        private void infoCharity(object sender, RoutedEventArgs e)
+        {
+            InfoCharity infoCharity = new InfoCharity((runner.SelectedItem as Registration).Charity as Charity);
+            infoCharity.Show();
+        }
+
     }
 }

@@ -250,7 +250,6 @@ C:\Users\ExamWSR\Desktop\maraphone-skills\maraphone-skills\WpfApp3\obj\Debug\Rol
 C:\Users\ExamWSR\Desktop\maraphone-skills\maraphone-skills\WpfApp3\obj\Debug\RolePage\Runner\editRunner.baml
 C:\Users\Даниил\Desktop\maraphone-skills\WpfApp3\obj\Debug\auth.g.cs
 C:\Users\Даниил\Desktop\maraphone-skills\WpfApp3\obj\Debug\company.g.cs
-C:\Users\Даниил\Desktop\maraphone-skills\WpfApp3\obj\Debug\InfoCharty.g.cs
 C:\Users\Даниил\Desktop\maraphone-skills\WpfApp3\obj\Debug\RegistertationRunnerInMaraphon.g.cs
 C:\Users\Даниил\Desktop\maraphone-skills\WpfApp3\obj\Debug\RegistrationRunner.g.cs
 C:\Users\Даниил\Desktop\maraphone-skills\WpfApp3\obj\Debug\RolePage\Coordinaor\Charty\RemoteRunner.g.cs
@@ -262,7 +261,6 @@ C:\Users\Даниил\Desktop\maraphone-skills\WpfApp3\obj\Debug\RolePage\Runner
 C:\Users\Даниил\Desktop\maraphone-skills\WpfApp3\obj\Debug\thankRegister.g.cs
 C:\Users\Даниил\Desktop\maraphone-skills\WpfApp3\obj\Debug\auth.baml
 C:\Users\Даниил\Desktop\maraphone-skills\WpfApp3\obj\Debug\company.baml
-C:\Users\Даниил\Desktop\maraphone-skills\WpfApp3\obj\Debug\InfoCharty.baml
 C:\Users\Даниил\Desktop\maraphone-skills\WpfApp3\obj\Debug\RegistertationRunnerInMaraphon.baml
 C:\Users\Даниил\Desktop\maraphone-skills\WpfApp3\obj\Debug\RegistrationRunner.baml
 C:\Users\Даниил\Desktop\maraphone-skills\WpfApp3\obj\Debug\RolePage\Coordinaor\Charty\RemoteRunner.baml
@@ -278,3 +276,5 @@ C:\Users\ExamWSR\Desktop\maraphone-skills\maraphone-skills\WpfApp3\obj\Debug\Inf
 C:\Users\ExamWSR\Desktop\maraphone-skills\maraphone-skills\WpfApp3\obj\Debug\InfoCharity.baml
 C:\Users\ExamWSR\Desktop\maraphone-skills\maraphone-skills\WpfApp3\obj\Debug\RolePage\Runner\ResultRunner.g.cs
 C:\Users\ExamWSR\Desktop\maraphone-skills\maraphone-skills\WpfApp3\obj\Debug\RolePage\Runner\ResultRunner.baml
+C:\Users\Даниил\Desktop\maraphone-skills\WpfApp3\obj\Debug\RolePage\Runner\ResultRunner.g.cs
+C:\Users\Даниил\Desktop\maraphone-skills\WpfApp3\obj\Debug\RolePage\Runner\ResultRunner.baml

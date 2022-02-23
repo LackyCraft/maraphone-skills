@@ -189,6 +189,21 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="AllResult">
+      <EntityTypeMapping TypeName="ws2016Model.AllResult">
+        <MappingFragment StoreEntitySet="AllResult">
+          <ScalarProperty Name="RunnerId" ColumnName="RunnerId" />
+          <ScalarProperty Name="NameRunner" ColumnName="NameRunner" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="MarathonId" ColumnName="MarathonId" />
+          <ScalarProperty Name="MarathonName" ColumnName="MarathonName" />
+          <ScalarProperty Name="EventTypeId" ColumnName="EventTypeId" />
+          <ScalarProperty Name="EventTypeName" ColumnName="EventTypeName" />
+          <ScalarProperty Name="RaceTime" ColumnName="RaceTime" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="RemoteUsers">
       <EntityTypeMapping TypeName="ws2016Model.RemoteUsers">
         <MappingFragment StoreEntitySet="RemoteUsers">

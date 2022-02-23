@@ -26,9 +26,9 @@
         </Grid>
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="*"/>
                 <RowDefinition Height="0.3*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
                 <RowDefinition Height="3.5*"/>
             </Grid.RowDefinitions>
             <Grid Grid.Row="1">
@@ -47,8 +47,8 @@
                         <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="Дистанция:" VerticalAlignment="Top" FontWeight="Bold" Margin="0,15,6,0"/>
                     </StackPanel>
                     <StackPanel Grid.Column="1">
-                        <TextBox TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" Margin="6"/>
-                        <TextBox TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" Margin="6"/>
+                        <ComboBox VerticalAlignment="Top" Margin="6" x:Name="marathon" DisplayMemberPath="MarathonName" SelectedValuePath="MarathonId"/>
+                        <ComboBox VerticalAlignment="Top" Margin="6" x:Name="eventType" DisplayMemberPath="EventTypeName" SelectedValuePath="EventTypeId"/>
                     </StackPanel>
                 </Grid>
                 <Grid Grid.Column="1">
@@ -61,22 +61,24 @@
                         <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="Категория:" VerticalAlignment="Top" FontWeight="Bold" Margin="0,15,6,0"/>
                     </StackPanel>
                     <StackPanel Grid.Column="1">
-                        <TextBox TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" Margin="6"/>
-                        <TextBox TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" Margin="6"/>
+                        <ComboBox VerticalAlignment="Top" Margin="6" x:Name="gender" DisplayMemberPath="Gender1" SelectedValuePath="Gender1"/>
+                        <ComboBox VerticalAlignment="Top" Margin="6"/>
                     </StackPanel>
                 </Grid>
                 <Grid Grid.Column="2">
-                    <Button Content="Поиск" VerticalAlignment="Bottom" Margin="6"/>
+                    <Button Content="Поиск" VerticalAlignment="Bottom" Margin="6" Click="ButtonFilterClick"/>
                 </Grid>
             </Grid>
-            <DataGrid x:Name="dataGridOldResults" Grid.Row="3" AutoGenerateColumns="False" IsEnabled="False" VerticalScrollBarVisibility="Auto">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="№"/>
-                    <DataGridTextColumn Header="Время"/>
-                    <DataGridTextColumn Header="Имя" />
-                    <DataGridTextColumn Header="Страна"/>
-                </DataGrid.Columns>
-            </DataGrid>
+            <ScrollViewer Grid.Row="3">
+                <DataGrid ScrollViewer.CanContentScroll="True"  ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto"  Background="White" x:Name="dataGridOldResults" Grid.Row="3"  AutoGenerateColumns="False" IsEnabled="False" HorizontalAlignment="Center" HorizontalContentAlignment="Center"  BorderBrush="White">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Width="0.5*"  Header="Место"/>
+                        <DataGridTextColumn Width="*"  Header="Время" Binding="{Binding Path=RaceTime}"/>
+                        <DataGridTextColumn Width="2*"  Header="Имя бегуна" Binding="{Binding Path=NameRunner}"/>
+                        <DataGridTextColumn Width="*"  Header="Страна" Binding="{Binding Path=CountryName}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </ScrollViewer>
             <TextBlock Text="Информация марофонах предыдущих гонок"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Height="18" FontWeight="Bold" FontSize="14" TextAlignment="Center"/>
         </Grid>
     </Grid>

@@ -12,7 +12,7 @@ namespace WpfApp3
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    
+
     public partial class ws2016Entities5 : DbContext
     {
         private static ws2016Entities5 _context;
@@ -33,7 +33,7 @@ namespace WpfApp3
         {
             throw new UnintentionalCodeFirstException();
         }
-
+    
         public virtual DbSet<Charity> Charity { get; set; }
         public virtual DbSet<Country> Country { get; set; }
         public virtual DbSet<Event> Event { get; set; }
@@ -52,6 +52,7 @@ namespace WpfApp3
         public virtual DbSet<Timesheet> Timesheet { get; set; }
         public virtual DbSet<User> User { get; set; }
         public virtual DbSet<Volunteer> Volunteer { get; set; }
+        public virtual DbSet<AllResult> AllResult { get; set; }
         public virtual DbSet<RemoteUsers> RemoteUsers { get; set; }
         public virtual DbSet<RunnerResult> RunnerResult { get; set; }
     }
