@@ -1,0 +1,133 @@
+﻿<Page x:Class="WpfApp3.how_long"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp3"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="how_long">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*" />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Rectangle Grid.Row="0" Fill="{StaticResource DarkGrey}" />
+        <Rectangle Grid.Row="2" Fill="White" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.2*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="MARATHON SKILLS 2022"  Grid.Column="1" Foreground="White" TextAlignment="Left" FontWeight="Bold" FontSize="36" Margin="0,15,0,0"/>
+            <Button Click="buttonBack" Content="Назад" Grid.Column="0" Background="{StaticResource Grey}"  Height="30" VerticalAlignment="Top" Margin="5,19,5,0"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.1*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="0.5*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="Насколько долгий марофон?" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="23"/>
+
+            <Grid Grid.Row="2" Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="5*"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="Имя выбранного пункта" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="23" Foreground="{StaticResource DarkGrey}"/>
+                <TextBlock Text="Информация о скорости выбранного пункта и сколько времени это взяло бы, что бы закончить марафон" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" Foreground="{StaticResource DarkGrey}" Grid.Row="2" x:Name="textBlockInfo"/>
+                <Image Grid.Row="1" Source="speed/f1-car.jpg" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="imageBox"/>
+            </Grid>
+
+            <TabControl Grid.Row="2" Grid.Column="1">
+                <TabItem Header="Скорость">
+                    <ScrollViewer>
+                    <StackPanel Orientation="Vertical">
+
+                        <StackPanel Orientation="Horizontal" Height="40"  VerticalAlignment="Top" Margin="10">
+                            <Image Source="speed/f1-car.jpg" Width="50"/>
+                                <Button Content="Формула 1" Width="160" Margin="5" x:Name="f1Car" Click="sayInfo"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Height="40"  VerticalAlignment="Top" Margin="10">
+                            <Image Source="speed/capybara.jpg" Width="50"/>
+                                <Button Content="Капибара" Width="160" Margin="5" x:Name="capybara" Click="sayInfo"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Height="40"  VerticalAlignment="Top" Margin="10">
+                            <Image Source="speed/horse.png" Width="50"/>
+                                <Button Content="Лошадь" Width="160" Margin="5" x:Name="horse" Click="sayInfo"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Height="40"  VerticalAlignment="Top" Margin="10">
+                            <Image Source="speed/jaguar.jpg" Width="50"/>
+                                <Button Content="Ягуар" Width="160" Margin="5" x:Name="jaguar" Click="sayInfo"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Height="40"  VerticalAlignment="Top" Margin="10">
+                            <Image Source="speed/sloth.jpg" Width="50"/>
+                                <Button Content="Ленивец" Width="160" Margin="5" x:Name="sloth" Click="sayInfo"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Height="40"  VerticalAlignment="Top" Margin="10">
+                            <Image Source="speed/slug.jpg" Width="50"/>
+                                <Button Content="Слизняк" Width="160" Margin="5" x:Name="slug" Click="sayInfo"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Height="40"  VerticalAlignment="Top" Margin="10">
+                            <Image Source="speed/worm.jpg" Width="50"/>
+                                <Button Content="Червь" Width="160" Margin="5" x:Name="worm" Click="sayInfo"/>
+                        </StackPanel>
+
+                        </StackPanel>
+                    </ScrollViewer>
+                </TabItem>
+                <TabItem Header="Дистанция">
+
+                        <ScrollViewer>
+                        <StackPanel Orientation="Vertical">
+
+                            <StackPanel Orientation="Horizontal" Height="40"  VerticalAlignment="Top" Margin="10">
+                                <Image Source="distance/bus.jpg" Width="50"/>
+                                <Button Content="Автобус" Width="160" Margin="5" x:Name="bus" Click="sayInfo"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" Height="40"  VerticalAlignment="Top" Margin="10">
+                                <Image Source="distance/pair-of-havaianas.jpg" Width="50"/>
+                                <Button Content="Тапочки" Width="160" Margin="5" x:Name="pairOfHar" Click="sayInfo"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" Height="40"  VerticalAlignment="Top" Margin="10">
+                                <Image Source="distance/airbus-a380.jpg" Width="50"/>
+                                <Button Content="Самолет" Width="160" Margin="5" x:Name="airtbus" Click="sayInfo"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" Height="40"  VerticalAlignment="Top" Margin="10">
+                                <Image Source="distance/football-field.jpg" Width="50"/>
+                                <Button Content="Стадион" Width="160" Margin="5" x:Name="footbool" Click="sayInfo"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" Height="40"  VerticalAlignment="Top" Margin="10">
+                                <Image Source="distance/ronaldinho.jpg" Width="50"/>
+                                <Button Content="Рональдо" Width="160" Margin="5" x:Name="ronaldo" Click="sayInfo"/>
+                            </StackPanel>
+
+                        </StackPanel>
+                    </ScrollViewer>
+
+                    </TabItem>
+            </TabControl>
+
+        </Grid>
+    </Grid>
+</Page>

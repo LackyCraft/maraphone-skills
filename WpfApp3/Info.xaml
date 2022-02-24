@@ -43,7 +43,7 @@
             <Button Content="Maraphon Skills 2016" Margin="20" Grid.Row="0" Grid.Column="0" Click="ScrolPage" x:Name="infoWorldSkills"/>
             <Button Content="Предыдущие результаты" Margin="20" Grid.Row="1" Grid.Column="0" Click="ScrolPage" x:Name="oldResult"/>
             <Button Content="BMI калькулятор" Margin="20" Grid.Row="2" Grid.Column="0"/>
-            <Button Content="Насколько долгий марафон" Margin="20" Grid.Row="0" Grid.Column="1"/>
+            <Button Content="Насколько долгий марафон" Margin="20" Grid.Row="0" Grid.Column="1" x:Name="longMaraphon" Click="ScrolPage"/>
             <Button Content="Список благотворительных организаций" Margin="20" Grid.Row="1" Grid.Column="2" Click="ScrolPage" x:Name="ListCompany"/>
             <Button Content="BMR калькулятор" Margin="20" Grid.Row="2" Grid.Column="2"/>
         </Grid>

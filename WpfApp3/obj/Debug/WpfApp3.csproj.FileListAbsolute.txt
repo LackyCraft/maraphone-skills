@@ -278,3 +278,5 @@ C:\Users\ExamWSR\Desktop\maraphone-skills\maraphone-skills\WpfApp3\obj\Debug\Rol
 C:\Users\ExamWSR\Desktop\maraphone-skills\maraphone-skills\WpfApp3\obj\Debug\RolePage\Runner\ResultRunner.baml
 C:\Users\Даниил\Desktop\maraphone-skills\WpfApp3\obj\Debug\RolePage\Runner\ResultRunner.g.cs
 C:\Users\Даниил\Desktop\maraphone-skills\WpfApp3\obj\Debug\RolePage\Runner\ResultRunner.baml
+C:\Users\ExamWSR\Desktop\maraphone-skills\maraphone-skills\WpfApp3\obj\Debug\Image\howLong\how-long.g.cs
+C:\Users\ExamWSR\Desktop\maraphone-skills\maraphone-skills\WpfApp3\obj\Debug\Image\howLong\how-long.baml
