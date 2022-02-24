@@ -373,6 +373,16 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
     <Resource Include="Image\howLong\distance\airbus-a380.jpg" />
     <Resource Include="Image\howLong\distance\bus.jpg" />
     <Resource Include="Image\howLong\speed\capybara.jpg" />
@@ -385,16 +395,10 @@
     <Resource Include="Image\howLong\speed\sloth.jpg" />
     <Resource Include="Image\howLong\speed\slug.jpg" />
     <Resource Include="Image\howLong\speed\worm.jpg" />
-    <Content Include="Model1.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Model1.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
-    </Content>
+    <Resource Include="Image\Map\banco-banespa.jpg" />
+    <Resource Include="Image\Map\ibirapuera-park-lake.jpg" />
+    <Resource Include="Image\Map\marathon-image.jpg" />
+    <Resource Include="Image\Map\teatro-municipal.jpg" />
     <Resource Include="Image\icon\map-icon-drinks.png" />
     <Resource Include="Image\icon\map-icon-energy-bars.png" />
     <Resource Include="Image\icon\map-icon-information.png" />

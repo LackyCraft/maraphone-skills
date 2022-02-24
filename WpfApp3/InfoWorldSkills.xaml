@@ -34,15 +34,34 @@
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="0.3*"/>
-                <ColumnDefinition Width="0.3*"/>
+                <ColumnDefinition Width="0.2*"/>
+                <ColumnDefinition Width="0.2*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
             <TextBlock Text="Информация о Maraphon Skills 2016"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Height="18" FontWeight="Bold" FontSize="14" TextAlignment="Center"/>
             <Image Source="/Image/Map/marathon-skills-2016-marathon-map.jpg" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="3"/>
-            <TextBlock Grid.Column="2" Grid.Row="1" Grid.RowSpan="3" Text="тут будет текст по основной информации" x:Name="Maininfo"/>
-
+            <Image Source="/Image/Map/banco-banespa.jpg" Grid.Row="3" Grid.Column="0" Margin="3"/>
+            <Image Source="/Image/Map/ibirapuera-park-lake.jpg" Grid.Row="4" Grid.Column="0" Margin="3"/>
+            <Image Source="/Image/Map/marathon-image.jpg" Grid.Row="3" Grid.Column="1"  Margin="3" OpacityMask="Black"/>
+            <Image Source="/Image/Map/teatro-municipal.jpg" Grid.Row="4" Grid.Column="1"  Margin="3"/>
+            <TextBlock Grid.Column="2" Grid.Row="1" Grid.RowSpan="2" TextWrapping="Wrap" 
+                       Text="О Marathon Skills 2016
+Marathon Skills - фестиваль бега, проводимый каждый год в разных частях мира. Может быть три зачета: Полный Марафон, Полумарафон и  забег для новичков - таким образом фестиваль подходит всем.
+В прошлых годах марафон был проведен в Осаке, Япония (2014); Лейпциг, Германия (2013); Ханой, Вьетнам (2012) и Йорк, Англия (2011).
+В этом году, Marathon Skills очень зрелищно, продет в  Сан-Паоло, Бразилия, он должен быть самым большим фестивалем бега. Это финансовый центр Бразилии и самый большой город в Южной Америке.Сан-Пауло увидят тысячи бегунов, которые будут бежать мимо небоскребов, зеленые парки и великолепная архитектура.
+Этот фестиваль привлек рекордное количество бегунов со всего мира.  особое внимание будет обращено на участников из Кении и Ямайки, поскольку мы надеемся увидеть победителя 2014 года. (Эфиоп закончил гонку за 45 минут 4 секунды.)
+Атмосфера праздника обещает развлечения для всех зрителей." 
+x:Name="Maininfo"/>
+            <Grid Grid.Column="2" Grid.Row="3" Grid.RowSpan="2">
+                <StackPanel>
+                <TextBlock FontWeight="Bold" Text="События:"/>
+                <TextBlock Text="- Программа Самба Полный Марафон начнется в Руа-Ду-Американо в 6 утра."/>
+                    <TextBlock Text="- Программа Джонго Полумарафон начнет в 7 утра Бегуны будут стартовать от недалеко от пересечения улицы Руа Ciniciata и Авенида."/>
+                    <TextBlock Text="- Программа Капоэйра в 5 км забег для новичков начнется в 15 часов Наши новички побегут от Мемориала Унинове."/> 
+                <TextBlock Text="Спасибо всем волонтерам, которые будут помогать нам проводить марафон!"/>
+                </StackPanel>
+            </Grid>
         </Grid>
     </Grid>
 </Page>

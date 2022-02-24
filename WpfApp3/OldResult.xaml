@@ -62,7 +62,7 @@
                     </StackPanel>
                     <StackPanel Grid.Column="1">
                         <ComboBox VerticalAlignment="Top" Margin="6" x:Name="gender" DisplayMemberPath="Gender1" SelectedValuePath="Gender1"/>
-                        <ComboBox VerticalAlignment="Top" Margin="6"/>
+                        <ComboBox VerticalAlignment="Top" Margin="6" x:Name="wayRunner"/>
                     </StackPanel>
                 </Grid>
                 <Grid Grid.Column="2">
@@ -70,9 +70,9 @@
                 </Grid>
             </Grid>
             <ScrollViewer Grid.Row="3">
-                <DataGrid ScrollViewer.CanContentScroll="True"  ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto"  Background="White" x:Name="dataGridOldResults" Grid.Row="3"  AutoGenerateColumns="False" IsEnabled="False" HorizontalAlignment="Center" HorizontalContentAlignment="Center"  BorderBrush="White">
+                <DataGrid ScrollViewer.CanContentScroll="True" LoadingRow="MyGrid_LoadingRow" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto"  Background="White" x:Name="dataGridOldResults" Grid.Row="3"  AutoGenerateColumns="False" IsEnabled="False" HorizontalAlignment="Center" HorizontalContentAlignment="Center"  BorderBrush="White">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Width="0.5*"  Header="Место"/>
+                       
                         <DataGridTextColumn Width="*"  Header="Время" Binding="{Binding Path=RaceTime}"/>
                         <DataGridTextColumn Width="2*"  Header="Имя бегуна" Binding="{Binding Path=NameRunner}"/>
                         <DataGridTextColumn Width="*"  Header="Страна" Binding="{Binding Path=CountryName}"/>

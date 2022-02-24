@@ -214,6 +214,7 @@
     </Key>
     <Property Name="RunnerId" Type="Int32" Nullable="false" />
     <Property Name="NameRunner" Type="String" MaxLength="161" FixedLength="false" Unicode="true" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
     <Property Name="Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="MarathonId" Type="Byte" Nullable="false" />
     <Property Name="MarathonName" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />

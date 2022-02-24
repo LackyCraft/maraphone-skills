@@ -189,6 +189,7 @@
           </Key>
           <Property Name="RunnerId" Type="int" Nullable="false" />
           <Property Name="NameRunner" Type="nvarchar" MaxLength="161" />
+          <Property Name="DateOfBirth" Type="datetime" />
           <Property Name="Gender" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="MarathonId" Type="tinyint" Nullable="false" />
           <Property Name="MarathonName" Type="nvarchar" MaxLength="80" Nullable="false" />
@@ -438,6 +439,7 @@
             <DefiningQuery>SELECT 
     [AllResult].[RunnerId] AS [RunnerId], 
     [AllResult].[NameRunner] AS [NameRunner], 
+    [AllResult].[DateOfBirth] AS [DateOfBirth], 
     [AllResult].[Gender] AS [Gender], 
     [AllResult].[MarathonId] AS [MarathonId], 
     [AllResult].[MarathonName] AS [MarathonName], 
@@ -748,6 +750,7 @@
           </Key>
           <Property Name="RunnerId" Type="Int32" Nullable="false" />
           <Property Name="NameRunner" Type="String" MaxLength="161" FixedLength="false" Unicode="true" />
+          <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
           <Property Name="Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="MarathonId" Type="Byte" Nullable="false" />
           <Property Name="MarathonName" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
@@ -1256,6 +1259,7 @@
               <MappingFragment StoreEntitySet="AllResult">
                 <ScalarProperty Name="RunnerId" ColumnName="RunnerId" />
                 <ScalarProperty Name="NameRunner" ColumnName="NameRunner" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
                 <ScalarProperty Name="Gender" ColumnName="Gender" />
                 <ScalarProperty Name="MarathonId" ColumnName="MarathonId" />
                 <ScalarProperty Name="MarathonName" ColumnName="MarathonName" />

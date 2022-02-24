@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace WpfApp3
 {
-    /// <summary>
-    /// Логика взаимодействия для ResultRunner.xaml
-    /// </summary>
     public partial class ResultRunner : Page
     {
         public ResultRunner()
@@ -30,5 +27,11 @@ namespace WpfApp3
         {
             this.Content = null;
         }
+
+        private void MyGrid_LoadingRow(object sender, DataGridRowEventArgs e)
+        {
+            e.Row.Header = e.Row.GetIndex() + 1;
+        }
+
     }
 }

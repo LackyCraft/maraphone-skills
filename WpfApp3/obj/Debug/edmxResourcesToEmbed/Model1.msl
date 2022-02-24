@@ -194,6 +194,7 @@
         <MappingFragment StoreEntitySet="AllResult">
           <ScalarProperty Name="RunnerId" ColumnName="RunnerId" />
           <ScalarProperty Name="NameRunner" ColumnName="NameRunner" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
           <ScalarProperty Name="Gender" ColumnName="Gender" />
           <ScalarProperty Name="MarathonId" ColumnName="MarathonId" />
           <ScalarProperty Name="MarathonName" ColumnName="MarathonName" />
