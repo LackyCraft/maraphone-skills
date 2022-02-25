@@ -29,5 +29,12 @@ namespace WpfApp3
             this.Content = null;
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            InteractiveMap interactiveMap = new InteractiveMap();
+            interactiveMap.Show();
+        }
+
+
     }
 }
