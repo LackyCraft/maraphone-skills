@@ -175,6 +175,12 @@
     <Compile Include="Role.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="RolePage\Admin\chartityControl.xaml.cs">
+      <DependentUpon>chartityControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RolePage\Runner\MySponsor.xaml.cs">
+      <DependentUpon>MySponsor.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RolePage\Runner\ResultRunner.xaml.cs">
       <DependentUpon>ResultRunner.xaml</DependentUpon>
     </Compile>
@@ -280,6 +286,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="RolePage\Admin\chartityControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RolePage\Runner\MySponsor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="RolePage\Runner\ResultRunner.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -361,7 +375,6 @@
   <ItemGroup>
     <Folder Include="Image\User\" />
     <Folder Include="Pages\" />
-    <Folder Include="RolePage\Admin\" />
     <Folder Include="RolePage\Coordinaor\Sponser\" />
   </ItemGroup>
   <ItemGroup>
@@ -390,6 +403,20 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="RolePage\Admin\Image\company\upbeat-logo.png" />
+    <Resource Include="RolePage\Admin\Image\company\the-red-cross-logo.png" />
+    <Resource Include="RolePage\Admin\Image\company\stay-pumped-logo.png" />
+    <Resource Include="RolePage\Admin\Image\company\save-the-children-fund-logo.png" />
+    <Resource Include="RolePage\Admin\Image\company\querstadtein-logo.png" />
+    <Resource Include="RolePage\Admin\Image\company\oxfam-international-logo.png" />
+    <Resource Include="RolePage\Admin\Image\company\human-rights-centre-logo.png" />
+    <Resource Include="RolePage\Admin\Image\company\heart-health-sao-paulo-logo.png" />
+    <Resource Include="RolePage\Admin\Image\company\diabetes-brazil-logo.png" />
+    <Resource Include="RolePage\Admin\Image\company\conquer-cancer-brazil.png" />
+    <Resource Include="RolePage\Admin\Image\company\clara-santos-oliveira-institute.png" />
+    <Resource Include="RolePage\Admin\Image\company\aves-do-brazil-logo.png" />
+    <Resource Include="RolePage\Admin\Image\company\arise-logo.png" />
+    <Resource Include="RolePage\Admin\Image\company\wwsm-rescue-logo.png" />
     <Resource Include="Image\howLong\distance\airbus-a380.jpg" />
     <Resource Include="Image\howLong\distance\bus.jpg" />
     <Resource Include="Image\howLong\speed\capybara.jpg" />

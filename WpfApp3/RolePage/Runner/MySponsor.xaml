@@ -1,0 +1,76 @@
+﻿<Page x:Class="WpfApp3.RolePage.Runner.MySponsor"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp3.RolePage.Runner"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="MySponsor">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*" />
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Rectangle Grid.Row="0" Fill="{StaticResource DarkGrey}" />
+        <Rectangle Grid.Row="2" Fill="White" />
+
+        <TextBlock Text="Подробная информация" TextAlignment="Center" Grid.Row="1" VerticalAlignment="Center" FontSize="18"/>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.2*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="MARATHON SKILLS 2022"  Grid.Column="1" Foreground="White" TextAlignment="Left" FontWeight="Bold" FontSize="36" Margin="0,15,0,0"/>
+            <Button Click="buttonBack" Content="Назад" Grid.Column="0" Background="{StaticResource Grey}"  Height="30" VerticalAlignment="Top" Margin="5,19,5,0"/>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition/>
+                <RowDefinition Height="5"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="Наименование благотворительной организации" Grid.Row="0" Grid.Column="0" Foreground="{StaticResource DarkGrey}" TextAlignment="Center" VerticalAlignment="Center" FontSize="18" TextWrapping="Wrap"/>
+            <TextBlock Text="Взнос" Grid.Row="0" Grid.Column="2" Foreground="{StaticResource DarkGrey}" TextAlignment="Right" VerticalAlignment="Center" FontSize="18" TextWrapping="Wrap" Margin="0,0,50,0"/>
+            <TextBlock Text="Спонсор" Grid.Row="0" Grid.Column="2" Foreground="{StaticResource DarkGrey}" TextAlignment="Left" VerticalAlignment="Center" FontSize="18" TextWrapping="Wrap"/>
+
+            <Grid Grid.Row="2" Grid.Column="2" Background="{StaticResource Grey}"/>
+
+            <Image Grid.Row="1" x:Name="imageSource"/>
+            <ScrollViewer Grid.Row="3">
+                <TextBlock Text="Длинное описание Длинное описание Длинное описание Длинное описание Длинное описание Длинное описание Длинное описание Длинное описание Длинное описание Длинное описание"
+                           TextWrapping="Wrap"
+                           x:Name="textBlockChartityDescription"/>
+            </ScrollViewer>
+
+            <TextBlock Text="Всего:" Grid.Row="3" Grid.Column="2" Margin="0,0,50,0" Foreground="{StaticResource DarkGrey}" VerticalAlignment="Top" FontSize="18" HorizontalAlignment="Right" x:Name="textBlockCount"/>
+
+            <ScrollViewer Grid.Row="1" Grid.Column="2">
+                <StackPanel Orientation="Vertical">
+                    <DataGrid Name="listBoxSponsor" HeadersVisibility="None" IsEnabled="False" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Width="2*" Binding="{Binding SponsorName}" Foreground="{StaticResource DarkGrey}" FontSize="18"/>
+                            <DataGridTextColumn Width="0.8*"  Binding="{Binding Amount}" Foreground="{StaticResource DarkGrey}" FontSize="18"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+            </ScrollViewer>
+
+
+        </Grid>
+
+
+    </Grid>
+</Page>

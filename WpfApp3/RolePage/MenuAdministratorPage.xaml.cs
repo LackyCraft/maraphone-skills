@@ -44,7 +44,10 @@ namespace WpfApp3.RolePage
 
         private void ScrolPage(object sender, RoutedEventArgs e)
         {
-
+            if(sender == chartity)
+            {
+                this.NavigationService.Navigate(new Uri("RolePage/Admin/chartityControl.xaml", UriKind.Relative));
+            }
         }
     }
 }

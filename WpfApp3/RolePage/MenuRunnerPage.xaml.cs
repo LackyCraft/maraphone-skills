@@ -40,6 +40,8 @@ namespace WpfApp3.RolePage
                 this.NavigationService.Navigate(new Uri("RolePage/Runner/editRunner.xaml", UriKind.Relative));
             if (sender == MyResult)
                 this.NavigationService.Navigate(new Uri("RolePage/Runner/ResultRunner.xaml", UriKind.Relative));
+            if (sender == MySponser)
+                this.NavigationService.Navigate(new Uri("RolePage/Runner/MySponsor.xaml", UriKind.Relative));
             
         }
     }

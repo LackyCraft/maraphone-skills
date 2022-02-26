@@ -20,15 +20,17 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="0.2*"/>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="20"/>
                 <RowDefinition Height="1.5*"/>
             </Grid.RowDefinitions>
             <TextBlock x:Name="labelInfoMaraphon" Text="LABEL" Grid.Row="0" VerticalAlignment="Center" FontWeight="Bold" TextAlignment="Center" FontSize="24"/>
             <TextBlock x:Name="textInfoPoint" Text="TextInfo" Grid.Row="1" TextWrapping="Wrap" Margin="30,0,0,0"/>
-            <ScrollViewer  Grid.Row="2">
+
+            <TextBlock Text="Доступные сервисы:" FontWeight="Bold" FontSize="18" Grid.Row="2"/>
+
+            <ScrollViewer  Grid.Row="3">
                 <StackPanel x:Name="stackPanel">
-                    <TextBlock Text="Доступные сервисы:" FontWeight="Bold" FontSize="18"/>
-                    
-                    </StackPanel>
+                </StackPanel>
             </ScrollViewer>
 
 
@@ -51,13 +53,13 @@
 
             <Button Click="infoPoint" x:Name="point1" Content="1" Background="#FDFFFFCB" Margin="379,7,0,0" HorizontalAlignment="Left" Height="34"  VerticalAlignment="Top" Width="34"/>
             <Button Click="infoPoint" x:Name="point2" Content="2" Background="#FDFFFFCB" Margin="370,296,0,0" HorizontalAlignment="Left" Height="33"  VerticalAlignment="Top" Width="33" RenderTransformOrigin="4.964,3.286"/>
-            <Button x:Name="point3" Content="3" Background="#FDFFFFCB" Margin="218,182,0,0" HorizontalAlignment="Left" Height="34"  VerticalAlignment="Top" Width="34"/>
-            <Button x:Name="point4" Content="4" Background="#FDFFFFCB" Margin="218,304,0,0" HorizontalAlignment="Left" Height="34"  VerticalAlignment="Top" Width="34"/>
+            <Button Click="infoPoint" x:Name="point3" Content="3" Background="#FDFFFFCB" Margin="218,182,0,0" HorizontalAlignment="Left" Height="34"  VerticalAlignment="Top" Width="34"/>
+            <Button Click="infoPoint" x:Name="point4" Content="4" Background="#FDFFFFCB" Margin="218,304,0,0" HorizontalAlignment="Left" Height="34"  VerticalAlignment="Top" Width="34"/>
 
-            <Button x:Name="point5" Content="5" Background="#FDFFFFCB" Margin="126,281,0,0" HorizontalAlignment="Left" Height="36"  VerticalAlignment="Top" Width="36"/>
-            <Button x:Name="point6" Content="6" Background="#FDFFFFCB" Margin="28,282,0,0" HorizontalAlignment="Left" Height="34"  VerticalAlignment="Top" Width="34"/>
-            <Button x:Name="point7" Content="7" Background="#FDFFFFCB" Margin="127,90,0,0" HorizontalAlignment="Left" Height="35"  VerticalAlignment="Top" Width="35"/>
-            <Button x:Name="point8" Content="8" Background="#FDFFFFCB" Margin="45,7,0,0" HorizontalAlignment="Left" Height="34"  VerticalAlignment="Top" Width="34"/>
+            <Button Click="infoPoint" x:Name="point5" Content="5" Background="#FDFFFFCB" Margin="126,281,0,0" HorizontalAlignment="Left" Height="36"  VerticalAlignment="Top" Width="36"/>
+            <Button Click="infoPoint" x:Name="point6" Content="6" Background="#FDFFFFCB" Margin="28,282,0,0" HorizontalAlignment="Left" Height="34"  VerticalAlignment="Top" Width="34"/>
+            <Button Click="infoPoint" x:Name="point7" Content="7" Background="#FDFFFFCB" Margin="127,90,0,0" HorizontalAlignment="Left" Height="35"  VerticalAlignment="Top" Width="35"/>
+            <Button Click="infoPoint" x:Name="point8" Content="8" Background="#FDFFFFCB" Margin="45,7,0,0" HorizontalAlignment="Left" Height="34"  VerticalAlignment="Top" Width="34"/>
         </Grid>
 
     </Grid>
