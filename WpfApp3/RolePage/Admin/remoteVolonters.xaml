@@ -8,7 +8,82 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="remoteVolonters">
 
-    <Grid>
-        
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*" />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Rectangle Grid.Row="0" Fill="{StaticResource DarkGrey}" />
+        <Rectangle Grid.Row="2" Fill="White" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.2*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="MARATHON SKILLS 2022"  Grid.Column="1" Foreground="White" TextAlignment="Left" FontWeight="Bold" FontSize="36" Margin="0,15,0,0"/>
+            <Button Click="buttonBack" Content="Назад" Grid.Column="0" Background="{StaticResource Grey}"  Height="30" VerticalAlignment="Top" Margin="5,19,5,0"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="0.3*"/>
+                <RowDefinition Height="1.1*"/>
+                <RowDefinition Height="0.3*"/>
+                <RowDefinition Height="3.5*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                
+
+                <Grid Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0">
+                        <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="Сортировать по:" VerticalAlignment="Top" FontWeight="Bold" Margin="0,15,6,0"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1">
+                        <ComboBox VerticalAlignment="Top" 
+                                  x:Name="comboBoxSelectFilter" Margin="6,11,0,0"/>
+                        <Button Content="Обновить" VerticalAlignment="Bottom" 
+                                Click="buttonUpdate"  Height="30" Margin="6"/>
+                    </StackPanel>
+                </Grid>
+
+                <Grid Grid.Column="1">
+                    <StackPanel Orientation="Vertical">
+                        <Button Height="30" Margin="5" Content="Загрузка волонтеров" Width="200" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Grid>
+
+
+            </Grid>
+            <ScrollViewer Grid.Row="4">
+            <DataGrid x:Name="dataGridRemoteVolontors"  AutoGenerateColumns="false" IsEnabled="False" VerticalScrollBarVisibility="Auto">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Width="*"  Header="Фамилия" Binding="{Binding Path=FirstName}"/>
+                        <DataGridTextColumn Width="*"  Header="Имя" Binding="{Binding Path=LastName}"/>
+                        <DataGridTextColumn Width="0.5*"  Header="Страна" Binding="{Binding Path=Country.CountryName}"/>
+                        <DataGridTextColumn Width="0.5*"  Header="Пол" Binding="{Binding Path=Gender}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </ScrollViewer>
+            
+            <TextBlock Text="Управление волонтерами"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" FontSize="28" TextAlignment="Center" Foreground="{StaticResource DarkGrey}"/>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="Сортировка и фильтрация" Height="18" FontSize="14" TextAlignment="Center"  Foreground="{StaticResource DarkGrey}"/>
+                <TextBlock Grid.Column="1" Text="Загрузка" Height="18" FontSize="14" TextAlignment="Center" Foreground="{StaticResource DarkGrey}"/>
+            </Grid>
+        </Grid>
     </Grid>
 </Page>

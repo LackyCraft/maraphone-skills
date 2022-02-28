@@ -48,6 +48,10 @@ namespace WpfApp3.RolePage
             {
                 this.NavigationService.Navigate(new Uri("RolePage/Admin/chartityControl.xaml", UriKind.Relative));
             }
+            if(sender == remoteVolonters)
+            {
+                this.NavigationService.Navigate(new Uri("RolePage/Admin/remoteVolonters.xaml", UriKind.Relative));
+            }
         }
     }
 }

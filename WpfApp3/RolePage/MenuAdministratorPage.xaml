@@ -39,7 +39,7 @@
                 <TextBlock Text="Меню администратора" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" />
                 <Button Content="Пользователи" Margin="20" Grid.Row="1" Grid.Column="0" Click="ScrolPage" x:Name="infoWorldSkills"/>
                 <Button Content="Благотворительные организации" Margin="20" Grid.Row="2" Grid.Column="0" Click="ScrolPage" x:Name="chartity"/>
-                <Button Content="Волонтерпы" Margin="20" Grid.Row="1" Grid.Column="1"/>
+                <Button Content="Волонтерпы" Margin="20" Grid.Row="1" Grid.Column="1" x:Name="remoteVolonters" Click="ScrolPage"/>
                 <Button Content="Инвентарь" Margin="20" Grid.Row="2" Grid.Column="2" Click="ScrolPage" x:Name="ListCompany"/>
             </Grid>
         </Grid>
