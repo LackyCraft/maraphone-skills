@@ -30,7 +30,21 @@ namespace WpfApp3.RolePage.Runner
 
 
             listBoxSponsor.ItemsSource = ws2016Entities5.GetContext().Sponsorship.Where(i => i.RegistrationId == reg.RegistrationId).ToList();
-            textBlockChartityDescription = reg.Charity[0].
+
+            int count = 0;
+
+            for (int i = 0; i < listBoxSponsor.Items.Count; i++)
+            {
+               // MessageBox.Show((listBoxSponsor.Items[i] as Sponsorship).Amount.ToString());
+                count += (int)(listBoxSponsor.Items[i] as Sponsorship).Amount;
+            }
+
+            textBlockCount.Text = "Всего: " + count.ToString();
+
+            textBlockChartityDescription.Text = reg.Charity.CharityDescription;
+            textBlockChartityName.Text = reg.Charity.CharityName;
+
+            imageSource.Source = new BitmapImage(new Uri("/"+ reg.Charity.CharityLogo, UriKind.Relative));
         }
 
         private void buttonBack(object sender, RoutedEventArgs e)

@@ -32,11 +32,15 @@ namespace WpfApp3.RolePage.Admin
             this.Content = null;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void editChartity(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Нажатия");
-            Button button = (Button)sender;
-            MessageBox.Show(button.Uid.ToString());
+            editChartity editPageChartity = new editChartity(Chartity.SelectedItem as Charity);
+            this.NavigationService.Navigate(editPageChartity);
+        }
+
+        private void addChartity(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Uri("/RolePage/Admin/AddChartity.xaml", UriKind.Relative));
         }
     }
 }

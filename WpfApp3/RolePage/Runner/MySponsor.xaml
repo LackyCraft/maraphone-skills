@@ -42,20 +42,27 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <TextBlock Text="Наименование благотворительной организации" Grid.Row="0" Grid.Column="0" Foreground="{StaticResource DarkGrey}" TextAlignment="Center" VerticalAlignment="Center" FontSize="18" TextWrapping="Wrap"/>
+            <TextBlock Text="Наименование благотворительной организации"
+                       Grid.Row="0" Grid.Column="0" Foreground="{StaticResource DarkGrey}"
+                       TextAlignment="Center" VerticalAlignment="Center" FontSize="18" TextWrapping="Wrap"
+                       x:Name="textBlockChartityName"/>
             <TextBlock Text="Взнос" Grid.Row="0" Grid.Column="2" Foreground="{StaticResource DarkGrey}" TextAlignment="Right" VerticalAlignment="Center" FontSize="18" TextWrapping="Wrap" Margin="0,0,50,0"/>
             <TextBlock Text="Спонсор" Grid.Row="0" Grid.Column="2" Foreground="{StaticResource DarkGrey}" TextAlignment="Left" VerticalAlignment="Center" FontSize="18" TextWrapping="Wrap"/>
 
             <Grid Grid.Row="2" Grid.Column="2" Background="{StaticResource Grey}"/>
 
-            <Image Grid.Row="1" x:Name="imageSource"/>
+            <Image Grid.Row="1" x:Name="imageSource" Margin="20,0,0,0"/>
             <ScrollViewer Grid.Row="3">
                 <TextBlock Text="Длинное описание Длинное описание Длинное описание Длинное описание Длинное описание Длинное описание Длинное описание Длинное описание Длинное описание Длинное описание"
                            TextWrapping="Wrap"
-                           x:Name="textBlockChartityDescription"/>
+                           x:Name="textBlockChartityDescription"
+                           Margin="20,0,0,0"/>
             </ScrollViewer>
 
-            <TextBlock Text="Всего:" Grid.Row="3" Grid.Column="2" Margin="0,0,50,0" Foreground="{StaticResource DarkGrey}" VerticalAlignment="Top" FontSize="18" HorizontalAlignment="Right" x:Name="textBlockCount"/>
+            <TextBlock Text="Всего:" Grid.Row="3" Grid.Column="2"
+                       Margin="0,0,50,0" Foreground="{StaticResource DarkGrey}"
+                       VerticalAlignment="Top" FontSize="18" HorizontalAlignment="Right"
+                       x:Name="textBlockCount"/>
 
             <ScrollViewer Grid.Row="1" Grid.Column="2">
                 <StackPanel Orientation="Vertical">

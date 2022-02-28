@@ -175,8 +175,14 @@
     <Compile Include="Role.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="RolePage\Admin\AddChartity.xaml.cs">
+      <DependentUpon>AddChartity.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RolePage\Admin\chartityControl.xaml.cs">
       <DependentUpon>chartityControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RolePage\Admin\EditChartity.xaml.cs">
+      <DependentUpon>EditChartity.xaml</DependentUpon>
     </Compile>
     <Compile Include="RolePage\Runner\MySponsor.xaml.cs">
       <DependentUpon>MySponsor.xaml</DependentUpon>
@@ -286,7 +292,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="RolePage\Admin\AddChartity.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="RolePage\Admin\chartityControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RolePage\Admin\EditChartity.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
