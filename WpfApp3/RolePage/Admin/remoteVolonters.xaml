@@ -38,7 +38,7 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                
+
 
                 <Grid Grid.Column="0">
                     <Grid.ColumnDefinitions>
@@ -55,7 +55,6 @@
                                 Click="buttonUpdate"  Height="30" Margin="6"/>
                     </StackPanel>
                 </Grid>
-
                 <Grid Grid.Column="1">
                     <StackPanel Orientation="Vertical">
                         <Button Height="30" Margin="5" Content="Загрузка волонтеров" Width="200" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
@@ -84,6 +83,11 @@
                 <TextBlock Grid.Column="0" Text="Сортировка и фильтрация" Height="18" FontSize="14" TextAlignment="Center"  Foreground="{StaticResource DarkGrey}"/>
                 <TextBlock Grid.Column="1" Text="Загрузка" Height="18" FontSize="14" TextAlignment="Center" Foreground="{StaticResource DarkGrey}"/>
             </Grid>
+
+            <Grid Grid.Row="3">
+                <TextBlock x:Name="textBlockCountVolunters" Text="Колличество:" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Grid>
+
         </Grid>
     </Grid>
 </Page>

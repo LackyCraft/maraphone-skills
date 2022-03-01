@@ -28,6 +28,7 @@ namespace WpfApp3.RolePage.Admin
             InitializeComponent();
             comboBoxSelectFilter.ItemsSource = new List<string>() { "фамилия", "имя", "страна","пол"};
             dataGridRemoteVolontors.ItemsSource = filterList;
+            textBlockCountVolunters.Text = "Колличество: " + filterList.Count;
         }
         private void buttonBack(object sender, RoutedEventArgs e)
         {

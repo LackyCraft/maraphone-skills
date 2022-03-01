@@ -24,6 +24,7 @@
             <TextBlock Text="MARATHON SKILLS 2022"  Grid.Column="1" Foreground="White" TextAlignment="Left" FontWeight="Bold" FontSize="36" Margin="0,15,0,0"/>
             <Button Click="buttonBack" Content="Назад" Grid.Column="0" Background="{StaticResource Grey}"  Height="30" VerticalAlignment="Top" Margin="5,19,5,0"/>
         </Grid>
+        
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="0.5*"/>
@@ -69,6 +70,10 @@
                     <Button Content="Поиск" VerticalAlignment="Bottom" Margin="6" Click="ButtonFilterClick"/>
                 </Grid>
             </Grid>
+
+            <TextBlock x:Name="textBlockCount"
+                Grid.Row="2" Text="Всего бегунов:" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
             <ScrollViewer Grid.Row="3">
                 <DataGrid ScrollViewer.CanContentScroll="True" LoadingRow="MyGrid_LoadingRow" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto"  Background="White" x:Name="dataGridOldResults" Grid.Row="3"  AutoGenerateColumns="False" IsEnabled="False" HorizontalAlignment="Center" HorizontalContentAlignment="Center"  BorderBrush="White">
                     <DataGrid.Columns>

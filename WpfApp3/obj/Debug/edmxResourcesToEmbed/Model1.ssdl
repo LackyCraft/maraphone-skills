@@ -42,6 +42,14 @@
     </Key>
     <Property Name="Gender" Type="nvarchar" MaxLength="10" Nullable="false" />
   </EntityType>
+  <EntityType Name="Inventory">
+    <Key>
+      <PropertyRef Name="IdItem" />
+    </Key>
+    <Property Name="Item" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Count" Type="int" Nullable="false" />
+    <Property Name="IdItem" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
   <EntityType Name="Marathon">
     <Key>
       <PropertyRef Name="MarathonId" />
@@ -69,6 +77,17 @@
     <Property Name="RaceKitOptionId" Type="nchar" MaxLength="1" Nullable="false" />
     <Property Name="RaceKitOption" Type="nvarchar" MaxLength="80" Nullable="false" />
     <Property Name="Cost" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Count" Type="int" />
+  </EntityType>
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "ws2016.dbo.RegInventory" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+  <EntityType Name="RegInventory">
+    <Key>
+      <PropertyRef Name="RaceKitOptionId" />
+      <PropertyRef Name="IdItem" />
+    </Key>
+    <Property Name="RaceKitOptionId" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="IdItem" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Registration">
     <Key>
@@ -90,7 +109,7 @@
     <Property Name="RegistrationEventId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="RegistrationId" Type="int" Nullable="false" />
     <Property Name="EventId" Type="nchar" MaxLength="6" Nullable="false" />
-    <Property Name="BibNumber" Type="smallint" />
+    <Property Name="BibNumber" Type="int" Nullable="false" />
     <Property Name="RaceTime" Type="int" />
   </EntityType>
   <EntityType Name="RegistrationStatus">
@@ -194,6 +213,84 @@
     <Property Name="CountryName" Type="nvarchar" MaxLength="100" Nullable="false" />
   </EntityType>
   <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "ws2016.dbo.Participants2022" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+  <EntityType Name="Participants2022">
+    <Key>
+      <PropertyRef Name="RegistrationEventId" />
+      <PropertyRef Name="RegistrationId" />
+      <PropertyRef Name="EventId" />
+      <PropertyRef Name="BibNumber" />
+      <PropertyRef Name="Expr1" />
+      <PropertyRef Name="RunnerId" />
+      <PropertyRef Name="RegistrationDateTime" />
+      <PropertyRef Name="RaceKitOptionId" />
+      <PropertyRef Name="RegistrationStatusId" />
+      <PropertyRef Name="Cost" />
+      <PropertyRef Name="CharityId" />
+      <PropertyRef Name="SponsorshipTarget" />
+      <PropertyRef Name="Expr2" />
+      <PropertyRef Name="Email" />
+      <PropertyRef Name="Gender" />
+      <PropertyRef Name="CountryCode" />
+      <PropertyRef Name="Expr3" />
+      <PropertyRef Name="Password" />
+      <PropertyRef Name="RoleId" />
+      <PropertyRef Name="Expr4" />
+      <PropertyRef Name="CountryName" />
+      <PropertyRef Name="CountryFlag" />
+      <PropertyRef Name="Expr5" />
+      <PropertyRef Name="RegistrationStatus" />
+      <PropertyRef Name="Expr6" />
+      <PropertyRef Name="EventName" />
+      <PropertyRef Name="EventTypeId" />
+      <PropertyRef Name="MarathonId" />
+      <PropertyRef Name="Expr8" />
+      <PropertyRef Name="MarathonName" />
+      <PropertyRef Name="Expr9" />
+    </Key>
+    <Property Name="RegistrationEventId" Type="int" Nullable="false" />
+    <Property Name="RegistrationId" Type="int" Nullable="false" />
+    <Property Name="EventId" Type="nchar" MaxLength="6" Nullable="false" />
+    <Property Name="BibNumber" Type="int" Nullable="false" />
+    <Property Name="RaceTime" Type="int" />
+    <Property Name="Expr1" Type="int" Nullable="false" />
+    <Property Name="RunnerId" Type="int" Nullable="false" />
+    <Property Name="RegistrationDateTime" Type="datetime" Nullable="false" />
+    <Property Name="RaceKitOptionId" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="RegistrationStatusId" Type="tinyint" Nullable="false" />
+    <Property Name="Cost" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="CharityId" Type="int" Nullable="false" />
+    <Property Name="SponsorshipTarget" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Expr2" Type="int" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="DateOfBirth" Type="datetime" />
+    <Property Name="CountryCode" Type="nchar" MaxLength="3" Nullable="false" />
+    <Property Name="Expr3" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="80" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="80" />
+    <Property Name="RoleId" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="Patch" Type="varchar" MaxLength="100" />
+    <Property Name="Expr4" Type="nchar" MaxLength="3" Nullable="false" />
+    <Property Name="CountryName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="CountryFlag" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Expr5" Type="tinyint" Nullable="false" />
+    <Property Name="RegistrationStatus" Type="nvarchar" MaxLength="80" Nullable="false" />
+    <Property Name="Expr6" Type="nchar" MaxLength="6" Nullable="false" />
+    <Property Name="EventName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="EventTypeId" Type="nchar" MaxLength="2" Nullable="false" />
+    <Property Name="MarathonId" Type="tinyint" Nullable="false" />
+    <Property Name="StartDateTime" Type="datetime" />
+    <Property Name="Expr7" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="MaxParticipants" Type="smallint" />
+    <Property Name="Expr8" Type="tinyint" Nullable="false" />
+    <Property Name="MarathonName" Type="nvarchar" MaxLength="80" Nullable="false" />
+    <Property Name="CityName" Type="nvarchar" MaxLength="80" />
+    <Property Name="Expr9" Type="nchar" MaxLength="3" Nullable="false" />
+    <Property Name="YearHeld" Type="smallint" />
+  </EntityType>
+  <!--Ошибки, обнаруженные при создании:
 предупреждение 6002: В таблице или представлении "ws2016.dbo.RemoteUsers" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
   <EntityType Name="RemoteUsers">
     <Key>
@@ -219,30 +316,6 @@
     <Property Name="RaceTime" Type="int" />
     <Property Name="place" Type="bigint" />
   </EntityType>
-  <Association Name="Event_FK">
-    <End Role="Marathon" Type="Self.Marathon" Multiplicity="1" />
-    <End Role="Event" Type="Self.Event" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Marathon">
-        <PropertyRef Name="MarathonId" />
-      </Principal>
-      <Dependent Role="Event">
-        <PropertyRef Name="MarathonId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="Event_FK_1">
-    <End Role="EventType" Type="Self.EventType" Multiplicity="1" />
-    <End Role="Event" Type="Self.Event" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="EventType">
-        <PropertyRef Name="EventTypeId" />
-      </Principal>
-      <Dependent Role="Event">
-        <PropertyRef Name="EventTypeId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK__User__RoleId__3F466844">
     <End Role="Role" Type="Self.Role" Multiplicity="1" />
     <End Role="User" Type="Self.User" Multiplicity="*" />
@@ -276,6 +349,30 @@
       </Principal>
       <Dependent Role="Volunteer">
         <PropertyRef Name="Gender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RegInventory_Inventory">
+    <End Role="Inventory" Type="Self.Inventory" Multiplicity="1" />
+    <End Role="RegInventory" Type="Self.RegInventory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Inventory">
+        <PropertyRef Name="IdItem" />
+      </Principal>
+      <Dependent Role="RegInventory">
+        <PropertyRef Name="IdItem" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RegInventory_RaceKitOption">
+    <End Role="RaceKitOption" Type="Self.RaceKitOption" Multiplicity="1" />
+    <End Role="RegInventory" Type="Self.RegInventory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RaceKitOption">
+        <PropertyRef Name="RaceKitOptionId" />
+      </Principal>
+      <Dependent Role="RegInventory">
+        <PropertyRef Name="RaceKitOptionId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -339,30 +436,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="RegistrationEvent_FK">
-    <End Role="Registration" Type="Self.Registration" Multiplicity="1" />
-    <End Role="RegistrationEvent" Type="Self.RegistrationEvent" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Registration">
-        <PropertyRef Name="RegistrationId" />
-      </Principal>
-      <Dependent Role="RegistrationEvent">
-        <PropertyRef Name="RegistrationId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="RegistrationEvent_FK_1">
-    <End Role="Event" Type="Self.Event" Multiplicity="1" />
-    <End Role="RegistrationEvent" Type="Self.RegistrationEvent" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Event">
-        <PropertyRef Name="EventId" />
-      </Principal>
-      <Dependent Role="RegistrationEvent">
-        <PropertyRef Name="EventId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="Runner_FK">
     <End Role="User" Type="Self.User" Multiplicity="1" />
     <End Role="Runner" Type="Self.Runner" Multiplicity="*" />
@@ -417,6 +490,7 @@
     <EntitySet Name="Event" EntityType="Self.Event" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="EventType" EntityType="Self.EventType" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Gender" EntityType="Self.Gender" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Inventory" EntityType="Self.Inventory" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Marathon" EntityType="Self.Marathon" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Positions" EntityType="Self.Positions" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="RaceKitOption" EntityType="Self.RaceKitOption" Schema="dbo" store:Type="Tables" />
@@ -430,6 +504,12 @@
     <EntitySet Name="Timesheet" EntityType="Self.Timesheet" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Volunteer" EntityType="Self.Volunteer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RegInventory" EntityType="Self.RegInventory" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [RegInventory].[RaceKitOptionId] AS [RaceKitOptionId], 
+    [RegInventory].[IdItem] AS [IdItem]
+    FROM [dbo].[RegInventory] AS [RegInventory]</DefiningQuery>
+    </EntitySet>
     <EntitySet Name="AllResult" EntityType="Self.AllResult" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 
     [AllResult].[RunnerId] AS [RunnerId], 
@@ -443,6 +523,51 @@
     [AllResult].[RaceTime] AS [RaceTime], 
     [AllResult].[CountryName] AS [CountryName]
     FROM [dbo].[AllResult] AS [AllResult]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Participants2022" EntityType="Self.Participants2022" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Participants2022].[RegistrationEventId] AS [RegistrationEventId], 
+    [Participants2022].[RegistrationId] AS [RegistrationId], 
+    [Participants2022].[EventId] AS [EventId], 
+    [Participants2022].[BibNumber] AS [BibNumber], 
+    [Participants2022].[RaceTime] AS [RaceTime], 
+    [Participants2022].[Expr1] AS [Expr1], 
+    [Participants2022].[RunnerId] AS [RunnerId], 
+    [Participants2022].[RegistrationDateTime] AS [RegistrationDateTime], 
+    [Participants2022].[RaceKitOptionId] AS [RaceKitOptionId], 
+    [Participants2022].[RegistrationStatusId] AS [RegistrationStatusId], 
+    [Participants2022].[Cost] AS [Cost], 
+    [Participants2022].[CharityId] AS [CharityId], 
+    [Participants2022].[SponsorshipTarget] AS [SponsorshipTarget], 
+    [Participants2022].[Expr2] AS [Expr2], 
+    [Participants2022].[Email] AS [Email], 
+    [Participants2022].[Gender] AS [Gender], 
+    [Participants2022].[DateOfBirth] AS [DateOfBirth], 
+    [Participants2022].[CountryCode] AS [CountryCode], 
+    [Participants2022].[Expr3] AS [Expr3], 
+    [Participants2022].[Password] AS [Password], 
+    [Participants2022].[FirstName] AS [FirstName], 
+    [Participants2022].[LastName] AS [LastName], 
+    [Participants2022].[RoleId] AS [RoleId], 
+    [Participants2022].[Patch] AS [Patch], 
+    [Participants2022].[Expr4] AS [Expr4], 
+    [Participants2022].[CountryName] AS [CountryName], 
+    [Participants2022].[CountryFlag] AS [CountryFlag], 
+    [Participants2022].[Expr5] AS [Expr5], 
+    [Participants2022].[RegistrationStatus] AS [RegistrationStatus], 
+    [Participants2022].[Expr6] AS [Expr6], 
+    [Participants2022].[EventName] AS [EventName], 
+    [Participants2022].[EventTypeId] AS [EventTypeId], 
+    [Participants2022].[MarathonId] AS [MarathonId], 
+    [Participants2022].[StartDateTime] AS [StartDateTime], 
+    [Participants2022].[Expr7] AS [Expr7], 
+    [Participants2022].[MaxParticipants] AS [MaxParticipants], 
+    [Participants2022].[Expr8] AS [Expr8], 
+    [Participants2022].[MarathonName] AS [MarathonName], 
+    [Participants2022].[CityName] AS [CityName], 
+    [Participants2022].[Expr9] AS [Expr9], 
+    [Participants2022].[YearHeld] AS [YearHeld]
+    FROM [dbo].[Participants2022] AS [Participants2022]</DefiningQuery>
     </EntitySet>
     <EntitySet Name="RemoteUsers" EntityType="Self.RemoteUsers" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 
@@ -461,14 +586,6 @@
     [RunnerResult].[place] AS [place]
     FROM [dbo].[RunnerResult] AS [RunnerResult]</DefiningQuery>
     </EntitySet>
-    <AssociationSet Name="Event_FK" Association="Self.Event_FK">
-      <End Role="Marathon" EntitySet="Marathon" />
-      <End Role="Event" EntitySet="Event" />
-    </AssociationSet>
-    <AssociationSet Name="Event_FK_1" Association="Self.Event_FK_1">
-      <End Role="EventType" EntitySet="EventType" />
-      <End Role="Event" EntitySet="Event" />
-    </AssociationSet>
     <AssociationSet Name="FK__User__RoleId__3F466844" Association="Self.FK__User__RoleId__3F466844">
       <End Role="Role" EntitySet="Role" />
       <End Role="User" EntitySet="User" />
@@ -480,6 +597,14 @@
     <AssociationSet Name="FK__Volunteer__Gende__4316F928" Association="Self.FK__Volunteer__Gende__4316F928">
       <End Role="Gender" EntitySet="Gender" />
       <End Role="Volunteer" EntitySet="Volunteer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RegInventory_Inventory" Association="Self.FK_RegInventory_Inventory">
+      <End Role="Inventory" EntitySet="Inventory" />
+      <End Role="RegInventory" EntitySet="RegInventory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RegInventory_RaceKitOption" Association="Self.FK_RegInventory_RaceKitOption">
+      <End Role="RaceKitOption" EntitySet="RaceKitOption" />
+      <End Role="RegInventory" EntitySet="RegInventory" />
     </AssociationSet>
     <AssociationSet Name="Marathon_FK" Association="Self.Marathon_FK">
       <End Role="Country" EntitySet="Country" />
@@ -500,14 +625,6 @@
     <AssociationSet Name="Registration_FK3" Association="Self.Registration_FK3">
       <End Role="RegistrationStatus" EntitySet="RegistrationStatus" />
       <End Role="Registration" EntitySet="Registration" />
-    </AssociationSet>
-    <AssociationSet Name="RegistrationEvent_FK" Association="Self.RegistrationEvent_FK">
-      <End Role="Registration" EntitySet="Registration" />
-      <End Role="RegistrationEvent" EntitySet="RegistrationEvent" />
-    </AssociationSet>
-    <AssociationSet Name="RegistrationEvent_FK_1" Association="Self.RegistrationEvent_FK_1">
-      <End Role="Event" EntitySet="Event" />
-      <End Role="RegistrationEvent" EntitySet="RegistrationEvent" />
     </AssociationSet>
     <AssociationSet Name="Runner_FK" Association="Self.Runner_FK">
       <End Role="User" EntitySet="User" />

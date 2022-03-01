@@ -14,12 +14,6 @@ namespace WpfApp3
     
     public partial class Marathon
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Marathon()
-        {
-            this.Event = new HashSet<Event>();
-        }
-    
         public byte MarathonId { get; set; }
         public string MarathonName { get; set; }
         public string CityName { get; set; }
@@ -27,7 +21,5 @@ namespace WpfApp3
         public Nullable<short> YearHeld { get; set; }
     
         public virtual Country Country { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Event> Event { get; set; }
     }
 }

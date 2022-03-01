@@ -20,7 +20,7 @@ namespace WpfApp3
     /// </summary>
     public partial class RegistertationRunnerInMaraphon : Page
     {
-
+        string selectEventId;
         int price = 0;
 
         public RegistertationRunnerInMaraphon()
@@ -48,11 +48,21 @@ namespace WpfApp3
             if (typeC.IsChecked == true)
                 price += 45;
             if (chekBox42km.IsChecked == true)
+            {
                 price += 145;
+                selectEventId = "22_6FM";
+            }
             if (chekBox21km.IsChecked == true)
+            {
                 price += 75;
+                selectEventId = "22_6HM";
+            }
             if (chekBox5km.IsChecked == true)
+            {
+                selectEventId = "22_6FM";
                 price += 20;
+            }
+
             payTextBlock.Text = "$" + (price + int.Parse(priceInCharty.Text)).ToString();
         }
 
@@ -92,6 +102,16 @@ namespace WpfApp3
                 };
                 ws2016Entities5.GetContext().Registration.Add(NewReg);
                 ws2016Entities5.GetContext().SaveChanges();
+
+                RegistrationEvent newRegEvent = new RegistrationEvent
+                {
+                    RegistrationId = NewReg.RegistrationId,
+                    EventId = selectEventId,
+                };
+
+                ws2016Entities5.GetContext().RegistrationEvent.Add(newRegEvent);
+                ws2016Entities5.GetContext().SaveChanges();
+
                 this.NavigationService.Navigate(new Uri("thankRegister.xaml", UriKind.Relative));
             }
 

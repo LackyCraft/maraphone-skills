@@ -30,6 +30,7 @@ namespace WpfApp3
             dataGridOldResults.ItemsSource = runnerResult;
             wayRunner.ItemsSource = new List<string>() { "до 18", "18 - 29", "30 - 39", "40 - 55", "56-70",
                                                      "более 70"};
+            textBlockCount.Text = "Всего бегунов: " + runnerResult.Count;
             //dataGridOldResults.ItemsSource = ws2016Entities3.GetContext().Registration.ToList();
             //id - comboBoxCharty.SelectedValue.ToString();
         }
@@ -74,6 +75,7 @@ namespace WpfApp3
 
 
             dataGridOldResults.ItemsSource = filterListRunnerResult.OrderBy(i => i.RaceTime);
+            textBlockCount.Text = "Всего бегунов: " + filterListRunnerResult.Count;
         }
     }
 }

@@ -33,11 +33,13 @@ namespace WpfApp3
         {
             throw new UnintentionalCodeFirstException();
         }
+    
         public virtual DbSet<Charity> Charity { get; set; }
         public virtual DbSet<Country> Country { get; set; }
         public virtual DbSet<Event> Event { get; set; }
         public virtual DbSet<EventType> EventType { get; set; }
         public virtual DbSet<Gender> Gender { get; set; }
+        public virtual DbSet<Inventory> Inventory { get; set; }
         public virtual DbSet<Marathon> Marathon { get; set; }
         public virtual DbSet<Positions> Positions { get; set; }
         public virtual DbSet<RaceKitOption> RaceKitOption { get; set; }
@@ -52,6 +54,7 @@ namespace WpfApp3
         public virtual DbSet<User> User { get; set; }
         public virtual DbSet<Volunteer> Volunteer { get; set; }
         public virtual DbSet<AllResult> AllResult { get; set; }
+        public virtual DbSet<Participants2022> Participants2022 { get; set; }
         public virtual DbSet<RemoteUsers> RemoteUsers { get; set; }
         public virtual DbSet<RunnerResult> RunnerResult { get; set; }
     }

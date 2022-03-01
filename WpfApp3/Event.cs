@@ -14,12 +14,6 @@ namespace WpfApp3
     
     public partial class Event
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Event()
-        {
-            this.RegistrationEvent = new HashSet<RegistrationEvent>();
-        }
-    
         public string EventId { get; set; }
         public string EventName { get; set; }
         public string EventTypeId { get; set; }
@@ -27,10 +21,5 @@ namespace WpfApp3
         public Nullable<System.DateTime> StartDateTime { get; set; }
         public Nullable<decimal> Cost { get; set; }
         public Nullable<short> MaxParticipants { get; set; }
-    
-        public virtual Marathon Marathon { get; set; }
-        public virtual EventType EventType { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RegistrationEvent> RegistrationEvent { get; set; }
     }
 }

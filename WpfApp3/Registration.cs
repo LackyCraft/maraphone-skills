@@ -17,7 +17,6 @@ namespace WpfApp3
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Registration()
         {
-            this.RegistrationEvent = new HashSet<RegistrationEvent>();
             this.Sponsorship = new HashSet<Sponsorship>();
         }
     
@@ -34,8 +33,6 @@ namespace WpfApp3
         public virtual RaceKitOption RaceKitOption { get; set; }
         public virtual Runner Runner { get; set; }
         public virtual RegistrationStatus RegistrationStatus { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RegistrationEvent> RegistrationEvent { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Sponsorship> Sponsorship { get; set; }
     }

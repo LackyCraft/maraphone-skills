@@ -36,7 +36,10 @@ namespace WpfApp3.RolePage
 
         private void ScrolPage(object sender, RoutedEventArgs e)
         {
-
+            if(sender == remoteRunner)
+            {
+                this.NavigationService.Navigate(new Uri("RolePage/Coordinaor/Runner/RemoteRunner.xaml", UriKind.Relative));
+            }
         }
     }
 }

@@ -124,6 +124,9 @@
     <Compile Include="InteractiveMap.xaml.cs">
       <DependentUpon>InteractiveMap.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Inventory.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Marathon.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -144,6 +147,9 @@
     </Compile>
     <Compile Include="OldResult.xaml.cs">
       <DependentUpon>OldResult.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Participants2022.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Positions.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -186,6 +192,9 @@
     </Compile>
     <Compile Include="RolePage\Admin\remoteVolonters.xaml.cs">
       <DependentUpon>remoteVolonters.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RolePage\Coordinaor\Runner\RemoteRunner.xaml.cs">
+      <DependentUpon>RemoteRunner.xaml</DependentUpon>
     </Compile>
     <Compile Include="RolePage\Runner\MySponsor.xaml.cs">
       <DependentUpon>MySponsor.xaml</DependentUpon>
@@ -308,6 +317,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="RolePage\Admin\remoteVolonters.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RolePage\Coordinaor\Runner\RemoteRunner.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

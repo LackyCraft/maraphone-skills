@@ -16,7 +16,7 @@ namespace WpfApp3
     {
         public int RunnerId { get; set; }
         public string NameRunner { get; set; }
-        public DateTime DateOfBirth { get; set; }
+        public Nullable<System.DateTime> DateOfBirth { get; set; }
         public string Gender { get; set; }
         public byte MarathonId { get; set; }
         public string MarathonName { get; set; }
