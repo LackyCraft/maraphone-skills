@@ -28,6 +28,7 @@ namespace WpfApp3.RolePage.Coordinaor.runner
             comboBoxEventType.ItemsSource = ws2016Entities5.GetContext().EventType.ToList();
             comboBoxStatus.ItemsSource = ws2016Entities5.GetContext().RegistrationStatus.ToList();
             comboBoxFilterSort.ItemsSource = new List<string> {"Имя","Фамилия","Email","Статус"};
+            textBlockCount.Text = "Всего бегунов:" + participants2022s.Count;
         }
 
         private void buttonBack(object sender, RoutedEventArgs e)
@@ -64,8 +65,12 @@ namespace WpfApp3.RolePage.Coordinaor.runner
                 }
             }
             dataGridResults.ItemsSource = participants2022sFilter;
+            textBlockCount.Text = "Всего бегунов:" + participants2022sFilter.Count;
         }
 
+        private void editRunner(object sender, RoutedEventArgs e)
+        {
 
+        }
     }
 }
