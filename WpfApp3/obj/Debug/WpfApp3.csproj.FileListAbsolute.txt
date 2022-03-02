@@ -404,3 +404,5 @@ C:\Users\ExamWSR\Desktop\maraphone-skills\maraphone-skills\WpfApp3\bin\Debug\ru\
 C:\Users\ExamWSR\Desktop\maraphone-skills\maraphone-skills\WpfApp3\obj\Debug\WpfApp3.exe.config
 C:\Users\ExamWSR\Desktop\maraphone-skills\maraphone-skills\WpfApp3\obj\Debug\RolePage\Coordinaor\Runner\importEmailRunners.g.cs
 C:\Users\ExamWSR\Desktop\maraphone-skills\maraphone-skills\WpfApp3\obj\Debug\RolePage\Coordinaor\Runner\importEmailRunners.baml
+C:\Users\ExamWSR\Desktop\maraphone-skills\maraphone-skills\WpfApp3\obj\Debug\BMICalculator.g.cs
+C:\Users\ExamWSR\Desktop\maraphone-skills\maraphone-skills\WpfApp3\obj\Debug\BMICalculator.baml

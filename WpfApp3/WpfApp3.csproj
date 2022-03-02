@@ -112,6 +112,9 @@
     <Compile Include="Benevolence.xaml.cs">
       <DependentUpon>Benevolence.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BMICalculator.xaml.cs">
+      <DependentUpon>BMICalculator.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Charity.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -276,6 +279,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="BMICalculator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="company.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -435,7 +442,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Image\User\" />
     <Folder Include="Pages\" />
     <Folder Include="RolePage\Coordinaor\Sponser\" />
   </ItemGroup>
@@ -455,6 +461,13 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Image\iconBMI\bmi-healthy-icon.png" />
+    <Resource Include="Image\iconBMI\bmi-obese-icon.png" />
+    <Resource Include="Image\iconBMI\bmi-overweight-icon.png" />
+    <Resource Include="Image\iconBMI\bmi-underweight-icon.png" />
+    <Resource Include="Image\Gender\female-icon.png" />
+    <Resource Include="Image\Gender\male-icon.png" />
+    <Resource Include="Image\iconBMI\treugoul.png" />
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>

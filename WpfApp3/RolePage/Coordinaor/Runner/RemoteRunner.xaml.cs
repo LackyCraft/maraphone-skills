@@ -104,7 +104,6 @@ namespace WpfApp3.RolePage.Coordinaor.runner
 
         private void inputEmail(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("check");
             WpfApp3.RolePage.Coordinaor.Runner.importEmailRunners newWindow = new WpfApp3.RolePage.Coordinaor.Runner.importEmailRunners();
             newWindow.Show();
         }
