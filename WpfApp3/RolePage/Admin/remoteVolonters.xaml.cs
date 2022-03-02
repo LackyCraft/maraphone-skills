@@ -1,17 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.IO;
+using CsvHelper;
 
 namespace WpfApp3.RolePage.Admin
 {
@@ -46,6 +39,20 @@ namespace WpfApp3.RolePage.Admin
             if (comboBoxSelectFilter.SelectedItem.ToString() == "пол")
                 filterList = filterList.OrderBy(i => i.Gender).ToList();
             dataGridRemoteVolontors.ItemsSource = filterList;
+        }
+        public void Button_Click(object sender, RoutedEventArgs e)
+        {
+        /*    string pathCsvFile = "D:\\programmingLanguages.csv";
+            
+            using (StreamWriter streamReader = new StreamWriter(pathCsvFile))
+            {
+                using (CsvWriter csvReader = new CsvWriter(streamReader, System.Globalization.CultureInfo.InvariantCulture))
+                {
+                    // указываем разделитель, который будет использоваться в файле
+                    // записываем данные в csv файл
+                    csvReader.WriteRecords(filterList);
+                }
+            }*/
         }
     }
 }

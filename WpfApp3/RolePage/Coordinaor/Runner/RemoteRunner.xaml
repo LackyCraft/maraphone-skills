@@ -63,8 +63,21 @@
                     <StackPanel Grid.Column="1"/>
                 </Grid>
                 <Grid Grid.Column="1">
-                    <Button Content="Обновить" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="6" Click="buttonFilterClick" Width="150"/>
+                    <Button Content="Обновить" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="6" Click="buttonFilterClick" Width="150" Height="28"/>
                 </Grid>
+
+                <StackPanel Orientation="Vertical" Grid.Column="2" VerticalAlignment="Bottom" Margin="0,0,0,5">
+                    <Button Content="Детальная выгрузка"
+                            Width="150" Height="28"
+                            HorizontalAlignment="Left"
+                            Click="importAllCSV"/>
+                    <Button Content="Выгрузка Email"
+                            Width="150" Height="28"
+                            HorizontalAlignment="Left"
+                            Click="inputEmail"
+                            Margin="0,5,0,0"/>
+                </StackPanel>
+
             </Grid>
 
             <TextBlock x:Name="textBlockCount"

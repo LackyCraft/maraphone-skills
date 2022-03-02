@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
+using CsvHelper;
 
 namespace WpfApp3.RolePage.Coordinaor.runner
 {
@@ -21,6 +23,7 @@ namespace WpfApp3.RolePage.Coordinaor.runner
     public partial class RemoteRunner : Page
     {
         List<Participants2022> participants2022s = ws2016Entities5.GetContext().Participants2022.ToList();
+        List<Participants2022> participants2022sFilter = ws2016Entities5.GetContext().Participants2022.ToList();
         public RemoteRunner()
         {
             InitializeComponent();
@@ -38,7 +41,7 @@ namespace WpfApp3.RolePage.Coordinaor.runner
 
         private void buttonFilterClick(object sender, RoutedEventArgs e)
         {
-            List<Participants2022> participants2022sFilter = participants2022s;
+            participants2022sFilter = participants2022s;
             if (comboBoxStatus.SelectedValue is null || comboBoxEventType.SelectedValuePath is null)
             {
                 MessageBox.Show("Выберите статус и дистанцию");
@@ -72,5 +75,39 @@ namespace WpfApp3.RolePage.Coordinaor.runner
         {
 
         }
+
+        private void importAllCSV(object sender, RoutedEventArgs e)
+        {
+
+            System.Windows.Forms.FolderBrowserDialog FBD = new System.Windows.Forms.FolderBrowserDialog();
+            FBD.ShowNewFolderButton = false;
+            if (FBD.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                MessageBox.Show(FBD.SelectedPath);
+
+                string pathCsvFile = FBD.SelectedPath + "import.csv";
+
+                using (StreamWriter streamReader = new StreamWriter(pathCsvFile))
+                {
+                    using (CsvWriter csvReader = new CsvWriter(streamReader, System.Globalization.CultureInfo.InvariantCulture))
+                    {
+                        csvReader.WriteRecords(participants2022s);
+                    }
+                }
+                MessageBox.Show("Загрузка произошла успешно, данные были импортированы по пути:\n" + FBD.SelectedPath + "import.csv");
+            }
+            else
+            {
+                MessageBox.Show("Warning 0\nПроизошла непредвиденная ошибка");
+            }
+        }
+
+        private void inputEmail(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("check");
+            WpfApp3.RolePage.Coordinaor.Runner.importEmailRunners newWindow = new WpfApp3.RolePage.Coordinaor.Runner.importEmailRunners();
+            newWindow.Show();
+        }
+
     }
 }

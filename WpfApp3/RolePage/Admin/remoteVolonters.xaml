@@ -57,7 +57,10 @@
                 </Grid>
                 <Grid Grid.Column="1">
                     <StackPanel Orientation="Vertical">
-                        <Button Height="30" Margin="5" Content="Загрузка волонтеров" Width="200" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                        <Button Height="30" Margin="5"
+                                Content="Загрузка волонтеров" Width="200"
+                                VerticalAlignment="Bottom" HorizontalAlignment="Center"
+                                Click="Button_Click"/>
                     </StackPanel>
                 </Grid>
 
