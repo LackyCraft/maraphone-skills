@@ -1,0 +1,22 @@
+﻿<Window x:Class="WpfApp3.RolePage.Coordinaor.Runner.importEmailRunners"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp3.RolePage.Coordinaor.Runner"
+        mc:Ignorable="d"
+        Title="importEmailRunners" Height="500" Width="400">
+    <Grid>
+        <ScrollViewer>
+            <DataGrid x:Name="dataGridEmail"
+                      ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto"  Background="White" 
+                      AutoGenerateColumns="False" IsEnabled="True" BorderBrush="White">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="*"  Header="Имя" Binding="{Binding Path=LastName}"/>
+                    <DataGridTextColumn Width="*"  Header="Фамилия" Binding="{Binding Path=FirstName}"/>
+                    <DataGridTextColumn Width="2*"  Header="Email" Binding="{Binding Path=Email}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </ScrollViewer>
+    </Grid>
+</Window>
