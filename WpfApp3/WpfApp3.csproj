@@ -220,6 +220,9 @@
     <Compile Include="RolePage\Admin\EditChartity.xaml.cs">
       <DependentUpon>EditChartity.xaml</DependentUpon>
     </Compile>
+    <Compile Include="RolePage\Admin\RemoteRunner.xaml.cs">
+      <DependentUpon>RemoteRunner.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RolePage\Admin\remoteVolonters.xaml.cs">
       <DependentUpon>remoteVolonters.xaml</DependentUpon>
     </Compile>
@@ -358,6 +361,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="RolePage\Admin\EditChartity.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RolePage\Admin\RemoteRunner.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

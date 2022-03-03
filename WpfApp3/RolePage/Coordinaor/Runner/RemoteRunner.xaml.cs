@@ -44,7 +44,7 @@ namespace WpfApp3.RolePage.Coordinaor.runner
             participants2022sFilter = participants2022s;
             if (comboBoxStatus.SelectedValue is null || comboBoxEventType.SelectedValuePath is null)
             {
-                MessageBox.Show("Выберите статус и дистанцию");
+                MessageBox.Show("Выберите статус и дистанцию"); 
             }
             else
             {

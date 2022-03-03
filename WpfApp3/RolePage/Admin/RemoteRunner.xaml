@@ -8,7 +8,93 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="RemoteRunner">
 
-    <Grid>
-        
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*" />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Rectangle Grid.Row="0" Fill="{StaticResource DarkGrey}" />
+        <Rectangle Grid.Row="2" Fill="White" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.2*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="MARATHON SKILLS 2022"  Grid.Column="1" Foreground="White" TextAlignment="Left" FontWeight="Bold" FontSize="36" Margin="0,15,0,0"/>
+            <Button Click="ButtonBack" Content="Назад" Grid.Column="0" Background="{StaticResource Grey}"  Height="30" VerticalAlignment="Top" Margin="5,19,5,0"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.3*"/>
+                <RowDefinition Height="0.3*"/>
+                <RowDefinition Height="1.7*"/>
+                <RowDefinition Height="0.3*"/>
+                <RowDefinition Height="3.5*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Column="1" Content="Обновить" VerticalAlignment="Bottom" Height="30" Margin="6"/>
+
+                <Grid Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0">
+                        <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="Фильтр по ролям:" VerticalAlignment="Top" FontWeight="Bold" Margin="0,15,6,0"/>
+                        <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="Сортировать по:" VerticalAlignment="Top" FontWeight="Bold" Margin="0,17,6,0"/>
+                        <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="Поиск:" VerticalAlignment="Top" FontWeight="Bold" Margin="0,17,6,0"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1">
+                        <ComboBox VerticalAlignment="Top" FontWeight="Bold" Margin="6,11,0,0"/>
+                        <ComboBox VerticalAlignment="Top" FontWeight="Bold" Margin="6,9,0,0"/>
+                        <TextBox VerticalAlignment="Top" FontWeight="Bold" Margin="6,9,0,0"/>
+                    </StackPanel>
+                </Grid>
+
+                <Grid Grid.Column="2">
+                    <StackPanel Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Right">
+                        <Button Height="30" Width="150" Margin="5" Content="+ Добавление нового"/>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+
+            <ScrollViewer Grid.Row="4">
+                <DataGrid ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto"  Background="White" 
+                          x:Name="dataGridResults" Grid.Row="4"  AutoGenerateColumns="False" IsEnabled="False" HorizontalAlignment="Center" HorizontalContentAlignment="Center"  BorderBrush="White">
+                    <DataGrid.Columns>
+
+                        <DataGridTextColumn Width="*"  Header="Имя" Binding="{Binding Path=LastName}"/>
+                        <DataGridTextColumn Width="2*"  Header="Фамилия" Binding="{Binding Path=FirstName}"/>
+                        <DataGridTextColumn Width="*"  Header="Email" Binding="{Binding Path=Email}"/>
+                        <DataGridTextColumn Width="*"  Header="Роль" Binding="{Binding Path=RegistrationStatus}"/>
+                        <DataGridTemplateColumn Width="100" Header="Редактирование">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="Edit" Uid="{Binding RegistrationEventId}" Height="30" Width="100" Click="editRunner"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </ScrollViewer>
+
+
+            <TextBlock Text="Информация марофонах предыдущих гонок"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Height="18" FontWeight="Bold" FontSize="14" TextAlignment="Center"/>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="Сортировка и фильтрация" Height="18" FontSize="14" TextAlignment="Center"/>
+                <TextBlock Grid.Column="1" Text="Действия" Height="18" FontSize="14" TextAlignment="Center"/>
+            </Grid>
+        </Grid>
     </Grid>
 </Page>
