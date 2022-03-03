@@ -42,6 +42,8 @@ namespace WpfApp3
                 frame.NavigationService.Navigate(new Uri("Image/howLong/how-long.xaml", UriKind.Relative));
             if (sender == calculatorBMI)
                 frame.NavigationService.Navigate(new Uri("BMICalculator.xaml", UriKind.Relative));
+            if (sender == dmrcalculator)
+                frame.NavigationService.Navigate(new Uri("BMRcalculator.xaml", UriKind.Relative));
         }
 
         private void InfoWorldSkills_Click(object sender, RoutedEventArgs e)

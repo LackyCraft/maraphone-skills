@@ -31,16 +31,26 @@ namespace WpfApp3
 
             textBlockBMIcount.Text = (Decimal.Round(decimal.Parse(bmi.ToString()), 2)).ToString();
             stackPanelBMI.Margin = new Thickness(bmi * 6,0,0,0);
-            
+
             if (bmi < 18.5)
+            {
                 health.Content = "Недостаточный вес";
-            if (bmi > 18.5 && bmi <24.9)
+                imageHealthStep.Source = new BitmapImage(new Uri("Image/iconBMI/bmi-underweight-icon.png",UriKind.Relative));
+            }
+            if (bmi > 18.5 && bmi < 24.9) {
                 health.Content = "Здоровый";
-            if (bmi > 25 && bmi < 29.9)
+                imageHealthStep.Source = new BitmapImage(new Uri("Image/iconBMI/bmi-healthy-icon.png", UriKind.Relative));
+            }
+            if (bmi > 25 && bmi < 29.9) { 
                 health.Content = "Избыточный вес";
+                imageHealthStep.Source = new BitmapImage(new Uri("Image/iconBMI/bmi-overweight-icon.png", UriKind.Relative));
+            }
             if (bmi > 30)
+            {
                 health.Content = "Ожирение";
-        }
+                imageHealthStep.Source = new BitmapImage(new Uri("Image/iconBMI/bmi-obese-icon.png", UriKind.Relative));
+            }
+}
 
 
         private void buttonBack(object sender, RoutedEventArgs e)
@@ -48,6 +58,18 @@ namespace WpfApp3
             this.NavigationService.Navigate(new Uri("Info.xaml", UriKind.Relative));
         }
 
-
+        private void ButtonGender(object sender, RoutedEventArgs e)
+        {
+            female.Background = (Brush)new BrushConverter().ConvertFrom("#ebebeb");
+            male.Background = (Brush)new BrushConverter().ConvertFrom("#ebebeb");
+            if (sender == female)
+            {
+                female.Background = (Brush)new BrushConverter().ConvertFrom("#FFA2A2A2");
+            }
+            if (sender == male)
+            {
+                male.Background = (Brush)new BrushConverter().ConvertFrom("#FFA2A2A2");
+            }
+        }
     }
 }

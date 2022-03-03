@@ -49,10 +49,10 @@
                            TextWrapping="Wrap"/>
                 <Grid Grid.Row="1">
                     <StackPanel  Orientation="Horizontal" HorizontalAlignment="Center">
-                        <Button Width="100" Height="100" Margin="0,0,10,0">
+                        <Button Width="100" Height="100" Margin="0,0,10,0" Click="ButtonGender" x:Name="female">
                             <Image Source="Image/Gender/female-icon.png"/>
                         </Button>
-                        <Button Width="100" Height="100">
+                        <Button Width="100" Height="100"  Click="ButtonGender" x:Name="male">
                             <Image Source="Image/Gender/male-icon.png"/>
                         </Button>        
                     </StackPanel>
@@ -94,7 +94,7 @@
                 </Grid.RowDefinitions>
                 
                 <Button Width="200" Margin="0,0,0,30">
-                    <Image Source="Image/iconBMI/bmi-healthy-icon.png"/>
+                    <Image Source="Image/iconBMI/bmi-healthy-icon.png" x:Name="imageHealthStep"/>
                 </Button>
                 <Button x:Name="health" Grid.Row="0" Height="30" Width="200" VerticalAlignment="Bottom"/>
 
@@ -109,9 +109,9 @@
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Grid.Row="2" Margin="0,0,0,0">
-                        <Grid Background="Yellow" Height="10" Width="111"/>
-                        <Grid Background="{StaticResource Green}" Height="10" Width="38.4"/>
-                        <Grid Background="Yellow" Height="10" Width="39.2"/>
+                        <Grid Background="Yellow" Height="10" Width="120"/>
+                        <Grid Background="{StaticResource Green}" Height="10" Width="47"/>
+                        <Grid Background="Yellow" Height="10" Width="48"/>
                         <Grid Background="Red" Height="10" Width="100"/>
                     </StackPanel>
                 </Grid>
