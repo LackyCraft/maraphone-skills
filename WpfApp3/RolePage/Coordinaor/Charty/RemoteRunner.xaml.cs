@@ -30,7 +30,7 @@ namespace WpfApp3.RolePage.Coordinaor.Charty
         {
             InitializeComponent();
         }
-        private void buttonBack(object sender, RoutedEventArgs e)
+        private void ButtonBack(object sender, RoutedEventArgs e)
         {
             this.Content = null;
         }

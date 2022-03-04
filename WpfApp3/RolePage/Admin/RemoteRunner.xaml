@@ -73,7 +73,7 @@
                         <DataGridTextColumn Width="*"  Header="Имя" Binding="{Binding Path=LastName}"/>
                         <DataGridTextColumn Width="2*"  Header="Фамилия" Binding="{Binding Path=FirstName}"/>
                         <DataGridTextColumn Width="*"  Header="Email" Binding="{Binding Path=Email}"/>
-                        <DataGridTextColumn Width="*"  Header="Роль" Binding="{Binding Path=RegistrationStatus}"/>
+                        <DataGridTextColumn Width="*"  Header="Роль" Binding="{Binding Path=Role.RoleName}"/>
                         <DataGridTemplateColumn Width="100" Header="Редактирование">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>

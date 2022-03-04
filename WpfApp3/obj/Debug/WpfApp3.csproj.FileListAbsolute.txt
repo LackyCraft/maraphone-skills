@@ -410,3 +410,5 @@ C:\Users\ExamWSR\Desktop\maraphone-skills\maraphone-skills\WpfApp3\obj\Debug\BMR
 C:\Users\ExamWSR\Desktop\maraphone-skills\maraphone-skills\WpfApp3\obj\Debug\BMRcalculator.baml
 C:\Users\ExamWSR\Desktop\maraphone-skills\maraphone-skills\WpfApp3\obj\Debug\infoBMRCalculator.g.cs
 C:\Users\ExamWSR\Desktop\maraphone-skills\maraphone-skills\WpfApp3\obj\Debug\infoBMRCalculator.baml
+C:\Users\ExamWSR\Desktop\maraphone-skills\maraphone-skills\WpfApp3\obj\Debug\RolePage\Admin\RemoteRunner.g.cs
+C:\Users\ExamWSR\Desktop\maraphone-skills\maraphone-skills\WpfApp3\obj\Debug\RolePage\Admin\RemoteRunner.baml

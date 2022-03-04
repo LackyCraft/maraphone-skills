@@ -52,6 +52,10 @@ namespace WpfApp3.RolePage
             {
                 this.NavigationService.Navigate(new Uri("RolePage/Admin/remoteVolonters.xaml", UriKind.Relative));
             }
+            if(sender == remoteUsers)
+            {
+                this.NavigationService.Navigate(new Uri("RolePage/Admin/RemoteRunner.xaml",UriKind.Relative));
+            }
         }
     }
 }

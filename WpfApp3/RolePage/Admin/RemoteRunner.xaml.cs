@@ -23,14 +23,17 @@ namespace WpfApp3.RolePage.Admin
         public RemoteRunner()
         {
             InitializeComponent();
-            dataGridResults.ItemsSource = 
+            dataGridResults.ItemsSource = ws2016Entities5.GetContext().User.ToList();
         }
 
-        private void buttonBack(object sender, RoutedEventArgs e)
+        private void editRunner(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonBack(object sender, RoutedEventArgs e)
         {
             this.Content = null;
         }
-
-
     }
 }
