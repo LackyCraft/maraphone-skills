@@ -31,7 +31,10 @@ namespace WpfApp3.RolePage.Admin
 
         private void editRunner(object sender, RoutedEventArgs e)
         {
-
+            editUser editPageUSer = new editUser(dataGridResults.SelectedItem as User);
+            //this.NavigationService.Navigate(editPageUSer);
+            this.NavigationService.Navigate(editPageUSer);
+            //editPageUSer.NavigationService.Navigate(new Uri("RolePage/Admin/editUser.xaml", UriKind.Relative));
         }
 
         private void ButtonBack(object sender, RoutedEventArgs e)

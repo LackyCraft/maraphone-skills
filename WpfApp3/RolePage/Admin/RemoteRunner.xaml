@@ -70,7 +70,7 @@
 
             <ScrollViewer Grid.Row="4">
                 <DataGrid ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto"  Background="White" 
-                          x:Name="dataGridResults" Grid.Row="4"  AutoGenerateColumns="False" IsEnabled="False" HorizontalAlignment="Center" HorizontalContentAlignment="Center"  BorderBrush="White">
+                          x:Name="dataGridResults" Grid.Row="4"  AutoGenerateColumns="False" IsReadOnly="True" HorizontalAlignment="Center" HorizontalContentAlignment="Center"  BorderBrush="White">
                     <DataGrid.Columns>
 
                         <DataGridTextColumn Width="*"  Header="Имя" Binding="{Binding Path=LastName}"/>
@@ -80,7 +80,7 @@
                         <DataGridTemplateColumn Width="100" Header="Редактирование">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Button Content="Edit" Uid="{Binding RegistrationEventId}" Height="30" Width="100" Click="editRunner"/>
+                                    <Button Content="Edit" Uid="{Binding Email}" Height="30" Width="100" Click="editRunner"/>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
