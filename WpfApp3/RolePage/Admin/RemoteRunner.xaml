@@ -39,7 +39,8 @@
                     <ColumnDefinition Width="3*"/>
                 </Grid.ColumnDefinitions>
 
-                <Button Grid.Column="1" Content="Обновить" VerticalAlignment="Bottom" Height="30" Margin="6"/>
+                <Button Grid.Column="1" Content="Обновить" VerticalAlignment="Bottom" Height="30" Margin="6"
+                        Click="ButtonUpdate"/>
 
                 <Grid Grid.Column="0">
                     <Grid.ColumnDefinitions>
@@ -52,9 +53,11 @@
                         <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="Поиск:" VerticalAlignment="Top" FontWeight="Bold" Margin="0,17,6,0"/>
                     </StackPanel>
                     <StackPanel Grid.Column="1">
-                        <ComboBox VerticalAlignment="Top" FontWeight="Bold" Margin="6,11,0,0"/>
-                        <ComboBox VerticalAlignment="Top" FontWeight="Bold" Margin="6,9,0,0"/>
-                        <TextBox VerticalAlignment="Top" FontWeight="Bold" Margin="6,9,0,0"/>
+                        <ComboBox VerticalAlignment="Top" FontWeight="Bold" Margin="6,11,0,0" SelectedValuePath="RoleId"
+                                  x:Name="selectedRole" DisplayMemberPath="RoleName"/>
+                        <ComboBox VerticalAlignment="Top" FontWeight="Bold" Margin="6,9,0,0"
+                                  x:Name="wayColumn"/>
+                        <TextBox VerticalAlignment="Top" FontWeight="Bold" Margin="6,9,0,0" TextChanged="TextBox_TextChanged" x:Name="textBoxSearch"/>
                     </StackPanel>
                 </Grid>
 
