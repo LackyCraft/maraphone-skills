@@ -34,8 +34,39 @@ namespace WpfApp3.RolePage.Coordinaor.Runner
             textBlockChartity.Text = ws2016Entities5.GetContext().Charity.Where(i => i.CharityId == runnerInfo.CharityId).ToList()[0].CharityName;
             TextBlockCategory.Text = runnerInfo.RaceKitOptionId;
 
-            
+            if (runnerInfo.Patch != "null")
+            {
+                fotoRunner.Source = new BitmapImage(new Uri(runnerInfo.Patch));
+                //textBoxFotoName.Text = runnerInfo.Patch;
+            }
+            if (runnerInfo.RegistrationStatusId == 1)
+                statusReg.Source = new BitmapImage(new Uri("/Image/icon/tick-icon.png",UriKind.Relative));
+            if (runnerInfo.RegistrationStatusId == 2)
+            {
+                statusReg.Source = new BitmapImage(new Uri("/Image/icon/tick-icon.png", UriKind.Relative));
+                statusDinedPay.Source = new BitmapImage(new Uri("/Image/icon/tick-icon.png", UriKind.Relative));
+            }
+
+            if (runnerInfo.RegistrationStatusId == 3)
+            {
+                statusReg.Source = new BitmapImage(new Uri("/Image/icon/tick-icon.png", UriKind.Relative));
+                statusDinedPay.Source = new BitmapImage(new Uri("/Image/icon/tick-icon.png", UriKind.Relative));
+                statusGiveRaceKit.Source = new BitmapImage(new Uri("/Image/icon/tick-icon.png", UriKind.Relative));
+            }
+            if (runnerInfo.RegistrationStatusId == 4)
+            {
+                statusReg.Source = new BitmapImage(new Uri("/Image/icon/tick-icon.png", UriKind.Relative));
+                statusDinedPay.Source = new BitmapImage(new Uri("/Image/icon/tick-icon.png", UriKind.Relative));
+                statusGiveRaceKit.Source = new BitmapImage(new Uri("/Image/icon/tick-icon.png", UriKind.Relative));
+                statusStart.Source = new BitmapImage(new Uri("/Image/icon/tick-icon.png", UriKind.Relative));
+            }
 
         }
+
+        private void buttonBack(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Uri("/RolePage/MenuCoordinatorPage.xaml",UriKind.Relative));
+        }
+
     }
 }

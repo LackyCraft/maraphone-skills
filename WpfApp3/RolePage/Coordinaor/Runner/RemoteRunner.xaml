@@ -85,13 +85,13 @@
 
             <ScrollViewer Grid.Row="3">
                 <DataGrid ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto"  Background="White" 
-                          x:Name="dataGridResults" Grid.Row="3"  AutoGenerateColumns="False" IsEnabled="False" HorizontalAlignment="Center" HorizontalContentAlignment="Center"  BorderBrush="White">
+                          x:Name="dataGridResults" Grid.Row="3"  AutoGenerateColumns="False" IsEnabled="True" HorizontalAlignment="Center" HorizontalContentAlignment="Center"  BorderBrush="White">
                     <DataGrid.Columns>
 
-                        <DataGridTextColumn Width="*"  Header="Имя" Binding="{Binding Path=LastName}"/>
-                        <DataGridTextColumn Width="2*"  Header="Фамилия" Binding="{Binding Path=FirstName}"/>
-                        <DataGridTextColumn Width="*"  Header="Email" Binding="{Binding Path=Email}"/>
-                        <DataGridTextColumn Width="*"  Header="Статус" Binding="{Binding Path=RegistrationStatus}"/>
+                        <DataGridTextColumn Width="*" IsReadOnly="True"  Header="Имя" Binding="{Binding Path=LastName}"/>
+                        <DataGridTextColumn Width="2*" IsReadOnly="True"  Header="Фамилия" Binding="{Binding Path=FirstName}"/>
+                        <DataGridTextColumn Width="*" IsReadOnly="True"  Header="Email" Binding="{Binding Path=Email}"/>
+                        <DataGridTextColumn Width="*" IsReadOnly="True"  Header="Статус" Binding="{Binding Path=RegistrationStatus}"/>
                         <DataGridTemplateColumn Width="100" Header="Редактирование">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>

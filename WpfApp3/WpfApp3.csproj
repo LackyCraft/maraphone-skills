@@ -503,6 +503,10 @@
     <Resource Include="Image\Gender\female-icon.png" />
     <Resource Include="Image\Gender\male-icon.png" />
     <Resource Include="Image\iconBMI\treugoul.png" />
+    <Resource Include="Image\icon\cross-icon.png" />
+    <Resource Include="Image\icon\marathon-skills-2014-certificate-seal.png" />
+    <Resource Include="Image\icon\marathon-skills-2014-logo.png" />
+    <Resource Include="Image\icon\tick-icon.png" />
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
