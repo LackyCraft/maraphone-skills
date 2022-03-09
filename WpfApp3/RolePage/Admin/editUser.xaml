@@ -74,7 +74,7 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <StackPanel/>
-                <Image  x:Name="fotoRunner" Source="runner-default.jpg" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center"/>
+                <Image  x:Name="fotoRunner" Source="/RolePage/Runner/runner-default.jpg" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center"/>
 
                 <TextBlock Text="Введите пароль:" Margin="0,10,0,0" Grid.Row="1" Grid.Column="0" Height="20" VerticalAlignment="Top" TextAlignment="Right" />
                 <TextBlock Text="Повторите пароль:" Margin="0,35,0,0" Grid.Row="1" Grid.Column="0" Height="20" VerticalAlignment="Top" TextAlignment="Right" />

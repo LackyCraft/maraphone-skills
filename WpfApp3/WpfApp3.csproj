@@ -244,6 +244,9 @@
     <Compile Include="RolePage\Coordinaor\Runner\RemoteRunner.xaml.cs">
       <DependentUpon>RemoteRunner.xaml</DependentUpon>
     </Compile>
+    <Compile Include="RolePage\Coordinaor\Sponser\sponsor.xaml.cs">
+      <DependentUpon>sponsor.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RolePage\Runner\MySponsor.xaml.cs">
       <DependentUpon>MySponsor.xaml</DependentUpon>
     </Compile>
@@ -408,6 +411,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="RolePage\Coordinaor\Sponser\sponsor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="RolePage\Runner\MySponsor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -492,7 +499,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\" />
-    <Folder Include="RolePage\Coordinaor\Sponser\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">

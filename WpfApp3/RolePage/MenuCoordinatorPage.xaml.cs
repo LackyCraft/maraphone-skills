@@ -40,6 +40,10 @@ namespace WpfApp3.RolePage
             {
                 this.NavigationService.Navigate(new Uri("RolePage/Coordinaor/Runner/RemoteRunner.xaml", UriKind.Relative));
             }
+            if(sender == sponsor)
+            {
+                this.NavigationService.Navigate(new Uri("RolePage/Coordinaor/Sponser/sponsor.xaml", UriKind.Relative));
+            }
         }
     }
 }

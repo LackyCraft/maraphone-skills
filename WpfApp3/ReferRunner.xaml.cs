@@ -121,6 +121,12 @@ namespace WpfApp3
             }
             if (ErrorMessage.Text == "")
             {
+                Sponsorship newSponsor = new Sponsorship();
+                newSponsor.SponsorName = textName.Text;
+                newSponsor.RegistrationId = int.Parse(runner.SelectedValue.ToString());
+                newSponsor.Amount = Convert.ToDecimal(payBox.Text.ToString());
+                ws2016Entities5.GetContext().Sponsorship.Add(newSponsor);
+                ws2016Entities5.GetContext().SaveChanges();
                 Application.Current.Resources["Price"] = payTextBlock.Text; 
                 Application.Current.Resources["PriceRunner"] = runner.SelectedItem;
                 this.NavigationService.Navigate(new Uri("Benevolence.xaml?parameter=", UriKind.Relative),textRunner.Text);
@@ -149,7 +155,6 @@ namespace WpfApp3
 
         private void Runner_Selected(object sender, RoutedEventArgs e)
         {
-
             string selectitem = ((runner.SelectedItem as Registration).Charity as Charity).CharityName.ToString();
             fond.Text = selectitem;
         }
