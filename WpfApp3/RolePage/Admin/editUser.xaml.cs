@@ -75,7 +75,7 @@ namespace WpfApp3.RolePage.Admin
 
         private void ButtonBack(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("RemoteRunner.xaml", UriKind.Relative));
+            this.NavigationService.Navigate(new Uri("/RolePage/MenuAdministratorPage.xaml", UriKind.Relative));
         }
 
     }

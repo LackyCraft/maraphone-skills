@@ -74,7 +74,6 @@ namespace WpfApp3.RolePage.Coordinaor.runner
 
         private void editRunner(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("lol");
             EditRunner editRunners = new EditRunner(dataGridResults.SelectedItem as Participants2022);
             this.NavigationService.Navigate(editRunners);
         }

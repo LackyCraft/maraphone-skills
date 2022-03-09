@@ -214,6 +214,9 @@
     <Compile Include="RolePage\Admin\AddChartity.xaml.cs">
       <DependentUpon>AddChartity.xaml</DependentUpon>
     </Compile>
+    <Compile Include="RolePage\Admin\AddUser.xaml.cs">
+      <DependentUpon>AddUser.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RolePage\Admin\chartityControl.xaml.cs">
       <DependentUpon>chartityControl.xaml</DependentUpon>
     </Compile>
@@ -362,6 +365,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="RolePage\Admin\AddChartity.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RolePage\Admin\AddUser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

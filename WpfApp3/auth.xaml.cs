@@ -45,8 +45,6 @@ namespace WpfApp3
 
             if (authInfo.Count > 0)
             {
-                // For test  //
-                MessageBox.Show("Email: " + authInfo[0].Email.ToString() + "\n" + authInfo[0].Password.ToString()+"\n"+ authInfo[0].RoleId.ToString());
 
                 Application.Current.Resources["Email"] = authInfo[0].Email.ToString();
                 Application.Current.Resources["Role"] = authInfo[0].RoleId.ToString();

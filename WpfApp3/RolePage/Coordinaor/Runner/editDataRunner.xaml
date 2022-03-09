@@ -64,7 +64,7 @@
                 <ComboBox Margin="4" x:Name="boxGender" DisplayMemberPath="Gender1" SelectedValuePath="Gender1"/>
 
                 <StackPanel Orientation="Horizontal" Height="25">
-                    <Button Content="Регистрация" Width="90" Click="Register_Click"  x:Name="Register"/>
+                    <Button Content="Сохранить" Width="90" Click="Register_Click"  x:Name="Register"/>
                 </StackPanel>
 
             </StackPanel>

@@ -77,5 +77,10 @@ namespace WpfApp3.RolePage.Admin
         {
 
         }
+
+        private void AddNewUser(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Uri("RolePage/Admin/AddUser.xaml", UriKind.Relative));
+        }
     }
 }
