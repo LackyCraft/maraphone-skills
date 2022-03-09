@@ -1,0 +1,83 @@
+﻿<Page x:Class="WpfApp3.RolePage.Coordinaor.Runner.EditRunner"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp3.RolePage.Coordinaor.Runner"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="EditRunner">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*" />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Rectangle Grid.Row="0" Fill="{StaticResource DarkGrey}" />
+        <Rectangle Grid.Row="2" Fill="White" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.2*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="MARATHON SKILLS 2022"  Grid.Column="1" Foreground="White" TextAlignment="Left" FontWeight="Bold" FontSize="36" Margin="0,15,0,0"/>
+            <Button Click="buttonBack" Content="Назад" Grid.Column="0" Background="{StaticResource Grey}"  Height="30" VerticalAlignment="Top" Margin="5,19,5,0"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Orientation="Vertical">
+                <StackPanel Margin="50,0,0,0" Orientation="Horizontal">
+                    <TextBlock Text="Email: "/>
+                    <TextBlock Text="text@mail.ru" x:Name="textBlockEmail"/>
+                </StackPanel>
+
+                <StackPanel Margin="50,0,0,0" Orientation="Horizontal">
+                    <TextBlock Text="Имя: "/>
+                    <TextBlock Text="Имя" x:Name="textLastName"/>
+                </StackPanel>
+
+                <StackPanel Margin="50,0,0,0" Orientation="Horizontal">
+                    <TextBlock Text="Фамилия: "/>
+                    <TextBlock Text="Фамилия" x:Name="textBlockFirstName"/>
+                </StackPanel>
+
+                <StackPanel Margin="50,0,0,0" Orientation="Horizontal">
+                    <TextBlock Text="Пол: "/>
+                    <TextBlock Text="gender" x:Name="textBlockGender"/>
+                </StackPanel>
+
+                <StackPanel Margin="50,0,0,0" Orientation="Horizontal">
+                    <TextBlock Text="Дата рождения: "/>
+                    <TextBlock Text="birdth" x:Name="textBlockBerthDay"/>
+                </StackPanel>
+
+                <StackPanel Margin="50,0,0,0" Orientation="Horizontal">
+                    <TextBlock Text="Страна: "/>
+                    <TextBlock Text="country" x:Name="textBlockCountry"/>
+                </StackPanel>
+
+                <StackPanel Margin="50,0,0,0" Orientation="Horizontal">
+                    <TextBlock Text="Благ.орг.: "/>
+                    <TextBlock Text="наименование" x:Name="textBlockChartity"/>
+                </StackPanel>
+
+                <StackPanel Margin="50,0,0,0" Orientation="Horizontal">
+                    <TextBlock Text="Выбранный пакет: "/>
+                    <TextBlock Text="Вариант:" x:Name="TextBlockCategory"/>
+                </StackPanel>
+
+            </StackPanel>
+
+            <Grid Grid.Column="1">
+                <Image Source="Image/">
+            </Grid>
+
+        </Grid>
+    </Grid>
+</Page>

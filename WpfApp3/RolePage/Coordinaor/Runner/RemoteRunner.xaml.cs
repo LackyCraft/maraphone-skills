@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using CsvHelper;
+using WpfApp3.RolePage.Coordinaor.Runner;
 
 namespace WpfApp3.RolePage.Coordinaor.runner
 {
@@ -73,7 +74,8 @@ namespace WpfApp3.RolePage.Coordinaor.runner
 
         private void editRunner(object sender, RoutedEventArgs e)
         {
-
+            EditRunner editRunners = new EditRunner(dataGridResults.SelectedItem as Participants2022);
+            this.NavigationService.Navigate(editRunners);
         }
 
         private void importAllCSV(object sender, RoutedEventArgs e)
