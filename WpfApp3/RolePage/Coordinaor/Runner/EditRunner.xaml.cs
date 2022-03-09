@@ -68,11 +68,16 @@ namespace WpfApp3.RolePage.Coordinaor.Runner
             this.NavigationService.Navigate(new Uri("/RolePage/MenuCoordinatorPage.xaml",UriKind.Relative));
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void EditDataRunner(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(new Uri("/RolePage/Coordinaor/Runner/editDataRunner.xaml", UriKind.Relative));
             editDataRunner nextPage = new editDataRunner(textBlockEmail.Text);
             this.NavigationService.Navigate(nextPage);
+        }
+
+        private void SaySertificate(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Ранее участник не участвовал в марафоне");
         }
     }
 }

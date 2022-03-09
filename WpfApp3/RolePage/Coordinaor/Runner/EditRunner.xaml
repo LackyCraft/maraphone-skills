@@ -114,7 +114,9 @@
                 </StackPanel>
             </Grid>
 
-            <Button Grid.Row="1" Grid.Column="2" Width="150" HorizontalAlignment="Right" Content="Редактирование профиля" Click="Button_Click"/>
+            <Button Grid.Row="1" Grid.Column="2" Width="150" HorizontalAlignment="Right" Content="Редактирование профиля" Click="EditDataRunner"/>
+            <Button Grid.Row="1" Grid.Column="0" Width="150" HorizontalAlignment="Left" Content="Показ сертификата" Click="SaySertificate"/>
+
 
         </Grid>
     </Grid>

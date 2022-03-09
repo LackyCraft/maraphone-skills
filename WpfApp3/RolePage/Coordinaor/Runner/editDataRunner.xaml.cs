@@ -24,6 +24,8 @@ namespace WpfApp3.RolePage.Coordinaor.Runner
     /// </summary>
     public partial class editDataRunner : Page
     {
+        int idEditRunner;
+
         public editDataRunner(string email)
         {
             InitializeComponent();
@@ -41,10 +43,11 @@ namespace WpfApp3.RolePage.Coordinaor.Runner
             boxGender.ItemsSource = ws2016Entities5.GetContext().Gender.ToList();
             boxGender.SelectedValue = selectedRunner[0].Runner.ToList()[0].Gender1.ToString();
             DataOfBrith.Text = selectedRunner[0].Runner.ToList()[0].DateOfBirth.ToString();
+            idEditRunner = selectedRunner[0].Runner.ToList()[0].RunnerId;
         }
         private void buttonBack(object sender, RoutedEventArgs e)
         {
-            this.Content = null;
+            this.NavigationService.Navigate(new Uri("/RolePage/MenuCoordinatorPage.xaml", UriKind.Relative));
         }
 
         private void selectedFoto(object sender, RoutedEventArgs e)
@@ -93,7 +96,7 @@ namespace WpfApp3.RolePage.Coordinaor.Runner
             else
             {
                 var EditUser = ws2016Entities5.GetContext().User.Find(Email.Text.ToString());
-                var EditRunner = ws2016Entities5.GetContext().Runner.Find(int.Parse(Application.Current.Resources["idRunner"].ToString()));
+                var EditRunner = ws2016Entities5.GetContext().Runner.Find(idEditRunner);
 
                 string dates = DataOfBrith.Text;
                 DateTime bhirder = DataOfBrith.SelectedDate.Value.Date;
