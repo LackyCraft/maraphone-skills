@@ -229,6 +229,9 @@
     <Compile Include="RolePage\Admin\remoteVolonters.xaml.cs">
       <DependentUpon>remoteVolonters.xaml</DependentUpon>
     </Compile>
+    <Compile Include="RolePage\Coordinaor\Runner\editDataRunner.xaml.cs">
+      <DependentUpon>editDataRunner.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RolePage\Coordinaor\Runner\EditRunner.xaml.cs">
       <DependentUpon>EditRunner.xaml</DependentUpon>
     </Compile>
@@ -379,6 +382,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="RolePage\Admin\remoteVolonters.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RolePage\Coordinaor\Runner\editDataRunner.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
